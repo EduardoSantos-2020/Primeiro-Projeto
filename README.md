@@ -3,4 +3,4 @@
 
 ## Link site Infortec no GitHub
 
-[Entrar no site ](https://eduardosantos-2020.github.io/Primeiro-Projeto/)
+Visite o <a href="https://eduardosantos-2020.github.io/Primeiro-Projeto/" target="_blank" rel="noopener noreferrer"> Infortec Inicio</a>.
