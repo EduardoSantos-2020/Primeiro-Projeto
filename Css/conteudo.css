@@ -536,6 +536,7 @@ aside:not(.styleSidebar) .menu--secao:hover {
 .container-principal {
     position: relative;
     border: 2px solid #1c1c1c;
+    background-color: #000;
 }
 
 .conteiner--slider {
