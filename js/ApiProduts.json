@@ -1,8 +1,21 @@
  [
    {
-      "name": "Headset Gamer Havit",
+      "name": "Havit Headphone Fone de Ouvido H2002d, Gamer, com Microfone, Falante 53mm, Plug 3, 5mm",
       "price": "221,00",
-      "image": "imagens/Conteudo/headset-gamer.png"
+      "image": "imagens/Conteudo/headset-gamer.png",
+       "descricao":[
+         { "p":"Experimente a imersão total em seus jogos com o Headset Gamer Havit H2002d Edição. Com um design over-ear, ele proporciona conforto durante longas sessões de jogo, enquanto os drivers de 53 mm garantem um som potente e envolvente. A configuração de canais 5.1 e a resposta de frequência de 20 Hz a 20 kHz permitem que você ouça cada detalhe, desde os passos furtivos dos inimigos até a trilha sonora épica." },
+
+         { "p": "O microfone flexível e com cancelamento de ruído assegura que sua comunicação com os colegas de equipe seja clara e sem interferências. Compatível com consoles como PlayStation 4 e Xbox, o H2002d é a escolha ideal para gamers que buscam qualidade e desempenho. O cabo de 1,7 m oferece liberdade de movimento, enquanto o controle de volume facilita ajustes rápidos durante o jogo." },
+
+         { "p": "Além disso, sua resistência à água e ao pó garante durabilidade, tornando-o perfeito para qualquer ambiente de jogo. Sinta a diferença em cada partida e eleve sua experiência de entretenimento com o Headset Gamer Havit H2002d Edição." }
+         
+      ],
+   
+
+      "caracteristics":[
+         { "p":"O Havit H2002D é um headset gamer de ótimo custo-benefício, com grandes drivers de 53mm para som imersivo, microfone destacável, design confortável com faixa de cabeça suspensa, compatibilidade ampla (PC, PS4, Xbox One) via conexão P2 3.5mm, além de ser resistente e durável, ideal para longas sessões de jogo."}
+      ]
    },
    {
       "name": "Teclado Gamer Redragon Mecânico Kumara K552 RGB ABNT2",
@@ -25,39 +38,132 @@
 
    ]},
    {
-      "name": "Mouse Gamer Razer Deathadder V2 Mini Chroma",
+      "name": "Mouse Gamer Razer Deathadder V2 Mini Chroma  optical switch",
       "price": "123,20",
-      "image": "imagens/Conteudo/mouse.png"
-   },
+      "image": "imagens/Conteudo/mouse.png",
+
+       "descricao":[
+         { "p":"Mouse Óptico Gamer Deathadder Mini V2 8.500 Dpi RazerO Razer DeathAdder V2 Mini é um mouse gamer ergonômico de tamanho pequeno, ideal para jogadores com mãos menores. Oferece manuseio e conforto excepcionais, repleto de tecnologia avançada." },
+
+         { "p": "Conta com switches ópticos que se acionam com um tempo de resposta de 0,2 milésimos de segundo, utilizando um feixe de luz infravermelha para registrar cada clique, o que elimina atrasos de deslocamento e cliques não intencionais, garantindo controle preciso e execução impecável." }
+         
+      ],
+   
+
+      "caracteristics":[
+         { "p":"Com sensor óptico de alta precisão com resolução real de 8500 DPI possui até 300 polegadas por segundo (IPS) / 35 G de aceleração máx, o design ergonômico derivado do Razer DeathAdder, otimizado para mãos menores, faz ser requisitado por todos gamers."},
+
+         { "p": "Os witches ópticos de mouse Razer com 70 milhões de cliques nominais, fazem esse Mouse ter a qualidade que nenhum da categoria tem. " },
+
+         { "p": "Scroll tátil próprio para jogos com ajuste de sensibilidade em tempo real (Estágios padrão: 400/800/1600/3200/6400), facilita seu jogo com alguns perfil na memória integrada. A iluminação Razer Chroma RGB com 16,8 milhões de opções reais e personalizáveis de cor, deixa o design desse Mouse exclusivo, e bonito. " },
+         
+         { "p": "Seus seis botões Hyperesponse com programação independente, deixa a sensação de poder nas palmas das mãos " }
+
+   ]
+},
    {
       "name": "Mouse Pad Gamer Speed MPG-101 Vermelho Fortrek",
       "price": "34,00",
-      "image": "imagens/Conteudo/mousePad.png"
+      "image": "imagens/Conteudo/mousePad.png",
+       "descricao":[
+         
+         { "p":"Com sensor óptico de alta precisão com resolução real de 8500 DPI possui até 300 polegadas por segundo (IPS) / 35 G de aceleração máx, o design ergonômico derivado do Razer DeathAdder, otimizado para mãos menores, faz ser requisitado por todos gamers."},
+
+         { "p": "O Mouse Pad Gamer Fortrek Speed MPG101 é a escolha ideal para os jogadores que buscam maior rapidez e precisão de movimentos nos seus jogos. Com sua superfície de tecido de microfibra e elastano, proporciona um baixo atrito e um deslize suave do mouse, permitindo que você execute movimentos com extrema precisão e rapidez. " },
+
+         { "p": "Sua base antiderrapante especial garante uma aderência firme à mesa, evitando deslizamentos desnecessários durante as partidas intensas. Isso significa que o mouse pad permanecerá no lugar, mesmo nos momentos mais frenéticos dos jogos, proporcionando estabilidade e segurança." },
+         
+         { "p": "O tecido acolchoado do Mouse Pad Gamer Fortrek Speed MPG101 oferece um conforto adicional para o pulso, permitindo que você jogue por longas horas sem sentir desconforto. As bordas costuradas com o acabamento em overlock evitam o desfiamento, garantindo uma maior durabilidade ao mouse pad." }
+
+      ],
+   
+      "caracteristics":[
+         { "p":"Dimensões: 240x320x3mm Material: Borracha Natural Superfície: Elastano e Microfibra Informação adicional Compatível com qualquer tipo de sensor" }
+         
+      ]
    },
+
    {
-      "name": "Repetidor Sinal Wifi Expansor wifi Wireless aumenta sinal wi-fi",
+      "name": "Repetidor Sinal Expansor Wireless aumenta sinal WI-FI",
       "price": "39,00",
-      "image": "imagens/Conteudo/amplificador.png"
+      "image": "imagens/Conteudo/amplificador.png",
+
+        "descricao":[
+         
+         { "p":"Repetidor Sinal Wi-Fi Expansor Wireless Aumenta sinal - direto do Distribuidor/Importador os Melhores."},
+
+         { "p": "Permite que uma rede sem fio seja expandida usando pontos de acesso múltiplo sem a necessidade de fios para conectar, basta ser ligado a uma tomada. É compatível também com os protocolos wireless 11b/g e 11n." }
+
+      ],
+   
+      "caracteristics":[
+         { "p":"Estrutura: Plástico e Metal Largura de Banda: 2,4 Ghz Taxa Wireless: 50m Função WPS: SimInterface e Velocidade: 1 Porta LAN de Auto Negociação 10/100Mbps Segurança Wireless: WEP, WPA ( TKIP, AES ). Alimentação: Bivolt Tamanho: 6x11x9cm (aprox) Peso 0 24 g Peso do Produto: 0,098 kg Código UPC: 501585190" }
+         
+      ]
    },
    {
       "name": "Placa Wi-Fi Fenvi Dual Band Wireless AC 9260 Gigabit PC PCIe 2030Mbps BT5.0 802.11ac",
       "price": "370,00",
-      "image": "imagens/Conteudo/adaptadorWifi.png"
+      "image": "imagens/Conteudo/adaptadorWifi.png",
+       "descricao":[
+         
+         { "p":"placa de rede pci-e ac1200, banda dupla 2.4g/5ghz bluetooth 4.0 fengvi-wifi informações gerais &bull adaptador fenvi wifi 5 :este adaptador oferece conexão wireless wifi 5, garantindo uma experiência de internet rápida e estável."},
+
+         { "p": "&bull pci-e de alta velocidade :equipado com um socket pci-e, este adaptador transfere dados com uma velocidade de 1200 mbps, proporcionando uma conexão rápida e eficiente. &bull suporte para bluetooth 4.0 :com suporte para bluetooth 4.0, este adaptador permite a conexão sem fio de dispositivos bluetooth, ampliando a sua experiência de uso digital."}
+      ],
+   
+      "caracteristics":[
+         { "p":"O Adaptador Sem Fio Fengvi-Wifi 5 PCI-E AC1200 oferece conectividade de alta velocidade e estabilidade para desktops, suportando banda dupla nas frequências de 2.4GHz e 5GHz. Com tecnologia 802.11ac, proporciona velocidades rápidas de transferência de dados e transmissão de sinal otimizada. Além disso, inclui Bluetooth 4.0 para conexões sem fio adicionais. Compatível com sistemas operacionais Windows 7/8/10/11, é ideal para atualizar a capacidade de rede de seu computador, garantindo uma experiência de internet fluida e confiável." }
+         
+      ]
    },
    {
       "name": "Caixa de som 12w, Preta, DHS-2101, 8CA76AA, HP - CX 1 UN",
       "price": "170,00",
-      "image": "imagens/Conteudo/caixinha.png"
+      "image": "imagens/Conteudo/caixinha.png",
+      "descricao":[
+         
+         { "p":"Não deixe de realizar suas apresentações ou até mesmo de conseguir ouvir claramente seus filmes e aulas por conta do som baixo. A HP traz a caixa de som DHS-2101 com design sofisticado e moderno procurando deixar o ambiente do seu escritório ou casa ainda mais harmônico."},
+
+         { "p": "A caixa DHS-2101 foi especialmente projetada com uma sutil inclinação, reduzindo interferências causadas pelo som refletido a partir do seu desktop, mas também projetando o som diretamente a você. Com seu conector P2 você pode ouvir as músicas que mais gosta conectando facilmente em qualquer dispositivo. Menos cabos significa menos confusão em seu espaço de trabalho."}
+      ],
+   
+      "caracteristics":[
+         { "p":" 12w Dispositivos Controle de volume Som estéreo Design de ângulo inclinado pequeno para ampliação do volume Ajuste conveniente do volume no botão de rotação frontal A almofada do pé de design humanizado na parte inferior evita o escorregamento" }
+         
+      ]
    },
    {
       "name": "Monitor Gamer Bluecase 27 Pol, Full HD, 144Hz.",
       "price": "800,00",
-      "image": "imagens/Conteudo/monitor.png"
+      "image": "imagens/Conteudo/monitor.png",
+      "image": "imagens/Conteudo/caixinha.png",
+      "descricao":[
+         
+         { "p":"Monitor Gamer Full HD BM277GW 27 144hz de atualização para melhores gráficos. Com 1 conector DisplayPort e 1 conector HDMI. Garantia - 12 meses de garantia (9 meses de garantia contratual junto ao fabricante + 3 meses referentes à garantia legal, nos termos do artigo 26, II, do Código de Defesa do Consumidor)"}
+
+   
+      ],
+   
+      "caracteristics":[
+         { "p":" Marca: Bluecase Modelo: BM277GW  Tela: - Tamanho: 27 - Formato: 16:9 - Resolução: 1920 x 1080 (Full HD) - Taxa de atualização: 144Hz (DisplayPort) - Luz de fundo: LED - Painel: VA - Tempo de resposta: 1ms (GTG) - Brilho: 350 cd/m² - Contraste: 5.000.000:1 - Suporte de cores: 16,7 milhões de cores - Dot Pitch: 0,233mm x 0,233mm Conexões: - 1x DisplayPort - 1x HDMI - 1x Audio (P2) - 1x DC Conteúdo da Embalagem: - Monitor e base - Fonte de alimentação - Cabo HDMI - Manual de Instruções Dimensões - Com base: 46,5 x 0,8 x 61,5 cm - Sem base: 37 x 0,8 x 61,5cm Peso - 5460 gramas (bruto com embalagem)" }
+         
+      ]
    },
    {
       "name": "PLACA DE VIDEO AMD RX580 8GB PCYES RADEON 8GB DDR5 256 BITS",
       "price": "983,90",
-      "image": "imagens/Conteudo/placa_de_video_amd_rx580_8gb.png"
+      "image": "imagens/Conteudo/placa_de_video_amd_rx580_8gb.png",
+      "descricao":[
+         
+         { "p":"A AMD Radeon RX 580 8GB da PCYES é uma placa de vídeo de gama média-alta da geração Polaris, conhecida por seu bom desempenho em 1080p para jogos, com 8GB de memória GDDR5 e interface de 256 bits, oferecendo boa fluidez em títulos atuais, embora com configurações ajustadas, sendo uma opção robusta para gamers e criadores de conteúdo que buscam performance sem gastar muito, utilizando PCI Express 3.0 "}
+   
+   
+      ],
+   
+      "caracteristics":[
+         { "p":" GPU: AMD Radeon RX 580. Memória: 8GB GDDR5. Interface de Memória: 256 bits Clock da GPU (Boost): 1340 MHz. Stream Processors (Shaders): 2304 unidades.Interface: PCI Express 3.0 x16. API: DirectX 12, OpenGL 4.6, Vulkan 1.3. Conexões de Vídeo: 3x DisplayPort, 1x HDMI, 1x DVI. Conector de Energia: 1x 8-pin. TDP (Potência): 175W(nominal). Desempenho: Ótima para jogos atuais em 1080p (Full HD) com boa taxa de FPS,mas sem suporte a Ray Tracing de hardware. " }         
+      ]
    }
 ]
 
