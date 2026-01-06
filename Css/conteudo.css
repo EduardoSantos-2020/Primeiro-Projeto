@@ -537,6 +537,7 @@ aside:not(.styleSidebar) .menu--secao:hover {
     position: relative;
     border: 2px solid #1c1c1c;
     background-color: #000;
+   
 }
 
 .conteiner--slider {
@@ -667,7 +668,7 @@ aside:not(.styleSidebar) .menu--secao:hover {
     .conteiner--slider {
         position: relative;
         width: 100%;
-        height: 40.5em;
+        height: 42em;
     }
 
 
