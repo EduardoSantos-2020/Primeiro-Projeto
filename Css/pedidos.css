@@ -225,27 +225,32 @@ body {
         Menu Hanburguer
     \*-------------------------*/
 
-    .button-prop {
+  .button-prop {
         position: absolute;
-        top: 25px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        top: 20px;
         right: 25px;
-        width: 45px;
-        height: 43px;
+        width: 50px;
+        height: 50px;
+        border-radius: 8px;
+        
         overflow: hidden;
         transition: all 0.5s ease;
     }
 
 
-
     .menu-btn {
-        position: absolute;
+        position: relative;
         display: flex;
-        width: 55px;
-        height: 40px;
         align-items: center;
-        justify-content: center;
+        width: 40px;
+        height: 40px;
+        margin: 0 auto;
         cursor: pointer;
     }
+
 
     .menu-btn .line {
         position: absolute;
@@ -293,6 +298,14 @@ body {
         transform: translateY(50%) rotate(45deg);
     }
 
+    .button-prop:hover{
+        -webkit-tap-highlight-color:transparent;
+    }
+
+    .button-prop:active{
+        
+        background-color: #4947475b;
+    }   
 
     /*-------------------------*/
 
