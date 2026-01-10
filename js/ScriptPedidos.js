@@ -47,6 +47,7 @@ $(window).ready(() => {
          data = JSON.parse(sessionStorage.getItem("data"))
 
          $(btnLogin).css('display', 'none')
+         $('#btn-login').css('width', '100%')
          $('#btn-login').removeAttr('href')
          image = $('<div></div>').addClass('userImg').append($('<img>').attr('src', data.picture).attr('loading', 'lazy').attr('priority', 'high'));
          nome = $(`<p></p>`).addClass('textName').text(data.name);
@@ -60,6 +61,7 @@ $(window).ready(() => {
             sessionStorage.removeItem('access_token')
             sessionStorage.removeItem("data");
             sessionStorage.removeItem("page");
+            $('#btn-login').css('width', '0');
 
             if (location.protocol == 'https:') {
 
@@ -114,6 +116,7 @@ $(window).ready(() => {
             const data = JSON.parse(sessionStorage.getItem("data"));
 
             if (sessionStorage.getItem('data')) {
+               $('#btn-login').css('width', '100%')
                $(btnLogin).css('display', 'none')
                $('#btn-login').removeAttr('href')
                image = $('<div></div>').addClass('userImg').append($('<img>').attr('src', data.picture).attr('loading', 'lazy').attr('priority', 'high'));
@@ -128,6 +131,7 @@ $(window).ready(() => {
                   sessionStorage.removeItem('access_token')
                   sessionStorage.removeItem("data");
                   sessionStorage.removeItem("page");
+                  $('#btn-login').css('width', '0')
 
                   if (location.protocol == 'https:') {
 
