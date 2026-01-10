@@ -40,7 +40,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
 }
 
 .containerMenu {
@@ -49,7 +49,7 @@ body {
     padding: 30px;
     width: 52em;
     height: fit-content;
-     background-color: #141414;
+    background-color: #141414;
     border-radius: var(--radius);
     box-shadow: var(--card-shadow);
 }
@@ -67,6 +67,15 @@ body {
     flex-direction: column;
     justify-content: center;
     padding: .5em 2em .5em 2em;
+}
+
+#imgLink {
+    -webkit-tap-highlight-color: transparent;
+    border-radius: .5rem;
+}
+
+#imgLink:active {
+    background-color: #4947475b;
 }
 
 .img-title {
@@ -137,18 +146,18 @@ body {
 
 
 .input-cad:-webkit-autofill,
-.input-cad:-webkit-autofill:hover, 
-.input-cad:-webkit-autofill:focus, 
-.input-cad:-webkit-autofill:active{
+.input-cad:-webkit-autofill:hover,
+.input-cad:-webkit-autofill:focus,
+.input-cad:-webkit-autofill:active {
     -webkit-background-clip: text;
     -webkit-text-fill-color: #ffffff;
     transition: background-color 5000s ease-in-out 0s;
 }
 
 .passwordGrupo input:-webkit-autofill,
-.passwordGrupo input:-webkit-autofill:hover, 
-.passwordGrupo input:-webkit-autofill:focus, 
-.passwordGrupo input:-webkit-autofill:active{
+.passwordGrupo input:-webkit-autofill:hover,
+.passwordGrupo input:-webkit-autofill:focus,
+.passwordGrupo input:-webkit-autofill:active {
     -webkit-background-clip: text;
     -webkit-text-fill-color: #ffffff;
     transition: background-color 5000s ease-in-out 0s;
@@ -191,7 +200,12 @@ body {
 
 #link {
     width: 100%;
+    -webkit-tap-highlight-color: transparent;
+}
 
+#recovery {
+    width: 12em;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .btn-Login {
@@ -359,6 +373,10 @@ body {
 
     }
 
+    #recovery {
+        width: 12em;
+    }
+
     .recovery .btn-confirmar {
         width: 9.5rem;
     }
@@ -387,9 +405,7 @@ body {
 
     .cadastrar .nameLabel .namePassword,
     .cadastrar .emailLabel,
-    .cadastrar .namePassword {
-       
-    }
+    .cadastrar .namePassword {}
 
     .cadastrar .namePassword {
         font-size: 90%;
@@ -454,6 +470,7 @@ body {
         margin: 0;
         padding: 0;
     }
+
     .recovery #link {
         width: 90%;
         margin: 0 auto;
@@ -515,7 +532,7 @@ body {
         width: 85%;
     }
 
-    .cadastrar .btn-google{
+    .cadastrar .btn-google {
         width: 80%;
     }
 
@@ -529,11 +546,11 @@ body {
 @media screen and (max-width:654px) {
 
     .recovery .namePassword {
-       width: 12em;
-       transition:none;
+        width: 12em;
+        transition: none;
     }
 
-     .recovery .namePassword {
+    .recovery .namePassword {
         width: 10em;
         font-size: 1.4rem;
     }
@@ -563,11 +580,12 @@ body {
 
 @media screen and (max-width:548px) {
     .recovery .namePassword {
-       width: 11em;
-       transition:none;
+        width: 11em;
+        transition: none;
         font-size: 1.4rem;
     }
-  .recovery .passwordGrupo .input-cad{
+
+    .recovery .passwordGrupo .input-cad {
         padding-left: 0;
     }
 
@@ -577,48 +595,53 @@ body {
 
     .recovery .namePassword {
         width: 10em;
-        transition:none;
+        transition: none;
         margin: .8rem 0 0 0;
         font-size: 1.1rem;
     }
 
 }
+
 @media screen and (max-width:421px) {
 
     .recovery .namePassword {
         width: 11em;
-        transition:none;
+        transition: none;
     }
 
-     .recovery .passwordGrupo .input-cad{
-        
-    }
+    .recovery .passwordGrupo .input-cad {}
 }
 
 
 @media screen and (max-width:370px) {
-    body,html {
-        min-width: 370px; 
+
+    body,
+    html {
+        min-width: 370px;
         max-height: 446px;
     }
 
 
-   .container, .containerMenu{
-        min-width: 370px; 
-        
+    .container,
+    .containerMenu {
+        min-width: 370px;
+
     }
 
-    .container-titulo, .container-gruop,.botoesGrupo{
+    .container-titulo,
+    .container-gruop,
+    .botoesGrupo {
         min-width: 350px;
 
     }
+
     .recovery .namePassword {
         width: 12em;
-        transition:none;
+        transition: none;
     }
 
 
-     .recovery .passwordGrupo .input-cad{
-        padding-left:.2rem ;
+    .recovery .passwordGrupo .input-cad {
+        padding-left: .2rem;
     }
 }

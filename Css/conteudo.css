@@ -297,10 +297,18 @@ aside:not(.styleSidebar) .menu--secao:hover {
         transition: all .3s ease;
     }
 
-    #btn-login {
+    .container--login{
         width: 100%;
         display: flex;
         justify-content: center;
+        margin: 1rem 0;
+    }
+
+    #btn-login {
+        display: flex;
+        justify-content: center;
+
+        transition: width 1.5s ease-in;
     }
 
     .sidebar .container-User {
@@ -390,7 +398,7 @@ aside:not(.styleSidebar) .menu--secao:hover {
 
     .login {
         width: 100px;
-        margin: 30px;
+        margin: 0;
         padding: 10px;
         color: #fff;
         font-family: var(--fontTerceiry);
