@@ -22,8 +22,8 @@ $(function () {
             window.history.replaceState({}, document.title, '/index.html');
 
             if (window.location.host.includes('github.io')) {
-             window.history.replaceState({}, document.title, 'Primeiro-Projeto/index.html');
-          }
+               window.history.replaceState({}, document.title, 'Primeiro-Projeto/index.html');
+            }
          }
 
 
@@ -237,7 +237,6 @@ $.getJSON('js/ApiProduts.json', function (arrayProdutos) {
       if (correntSlider >= max) {
          correntSlider = 0;
          $(totalSlider[correntSlider]).css('opacity', '.5');
-
       }
    }
 
@@ -261,9 +260,7 @@ $.getJSON('js/ApiProduts.json', function (arrayProdutos) {
 
          nameLogo.css('color', '#fff')
          menu.css('background-color', '#fff')
-
       }
-
 
       $('section').each(function () {
          let target = $(this).offset().top;
@@ -277,9 +274,6 @@ $.getJSON('js/ApiProduts.json', function (arrayProdutos) {
 
    })
 
-   // function Section() {
-   // }
-
    $('.menu--secao').each(function (i, section) {
       $(section).click((e) => {
          if (e.type == 'click') {
@@ -288,15 +282,7 @@ $.getJSON('js/ApiProduts.json', function (arrayProdutos) {
       })
    })
 
-   $('html').ready(function () {
-      //$(document).scrollTop(0)
-      //Section()
-      // $(window).on('resize', (e) => {
-      //    e.currentTarget.innerWidth <= 992 ? nameLogo.css('color', '#000') : nameLogo.css('color', '#fff');
-      // });
-
-   });
-   setInterval(showSlider, 15000)
+   setInterval(showSlider, 15000);
 })
 
 
