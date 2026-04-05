@@ -187,23 +187,23 @@ function btnConfirm() {
 }
 
 if (location.protocol == 'https:') {
-
+  
   if (window.location.host.includes('.app')) {
-
+    
     urlVerified = `${location.protocol + '//' + location.host + '/' + destino}`;
-
+    
     linkTitle.setAttribute('href', location.protocol + '//' + location.host + '/index.html');
-
+    
  
     
 
   } else if (window.location.host.includes('github.io')) {
-
+    
     urlVerified = `${location.protocol + '//' + location.host + '/Primeiro-Projeto/' + destino}`;
-
+    
     linkTitle.setAttribute('href', location.protocol + '//' + location.host + '/Primeiro-Projeto/' + 'index.html')
   }
-
+  
 }else if (location.protocol == 'http:') {
   urlVerified = `${location.protocol + '//' + location.host + '/' + destino}`;
   linkTitle.setAttribute('href', location.protocol + '//' + location.host + '/index.html')
