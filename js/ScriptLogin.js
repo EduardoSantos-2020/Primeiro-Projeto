@@ -62,7 +62,7 @@ btnEnter.addEventListener('click', function () {
 
   if (location.protocol == 'https:') {
 
-    if (window.location.host.includes('ngrok-free.app')) {
+    if (window.location.host.includes('.app')) {
       window.location.href = location.protocol + '//' + location.host +'/' + destino;
     } else {
       window.location.href = location.protocol + '//' + location.host + '/Primeiro-Projeto/' + destino;
@@ -188,7 +188,7 @@ function btnConfirm() {
 
 if (location.protocol == 'https:') {
 
-  if (window.location.host.includes('ngrok-free.app')) {
+  if (window.location.host.includes('.app')) {
 
     urlVerified = `${location.protocol + '//' + location.host + '/' + destino}`;
 

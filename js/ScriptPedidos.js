@@ -68,7 +68,7 @@ $(window).ready(() => {
 
                if (location.protocol == 'https:') {
 
-                  if (window.location.host.includes('ngrok-free.app')) {
+                  if (window.location.host.includes('.app')) {
 
                      window.location.href = '/index.html';
 
@@ -90,7 +90,7 @@ $(window).ready(() => {
       if (accessToken) {
          if (location.protocol == 'https:') {
 
-            if (window.location.host.includes('ngrok-free.app')) {
+            if (window.location.host.includes('.app')) {
                window.history.replaceState({}, document.title, '/pedidos.html');
             } else {
                window.history.replaceState({}, document.title, '/Primeiro-Projeto/pedidos.html');
@@ -135,7 +135,7 @@ $(window).ready(() => {
 
                   if (location.protocol == 'https:') {
 
-                     if (window.location.host.includes('ngrok-free.app')) {
+                     if (window.location.host.includes('.app')) {
                         window.location.href = '/index.html';
                      } else {
                         window.location.href = '/Primeiro-Projeto/' + 'index.html';
@@ -159,7 +159,7 @@ $(window).ready(() => {
 
       if (location.protocol == 'https:') {
 
-         if (window.location.host.includes('ngrok-free.app')) {
+         if (window.location.host.includes('.app')) {
             window.location.href = location.protocol + '//' + location.host + '/index.html';
          } else {
             window.location.href = location.protocol + '//' + location.host + '/Primeiro-Projeto/' + 'index.html';
