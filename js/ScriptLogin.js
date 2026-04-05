@@ -19,6 +19,7 @@ const linkSenha = document.querySelector('.linkSenha')
 const fileImg = document.querySelector('#upFile')
 const nome = document.getElementById('Name')
 const email = document.getElementById('Email')
+const authEndpoint = "https://accounts.google.com/o/oauth2/v2/auth";
 const imgPhoto = document.getElementById('Photo')
 
 urlVerified = '';
@@ -56,39 +57,18 @@ window.addEventListener("hashchange", function (event) {
 
 })
 
-btnEnter.addEventListener('click', function () {
+btnEnter.addEventListener('click', btnEnterConfirm)
 
-  sessionStorage.setItem('data', JSON.stringify({ 'name': nome.value, 'email': email.value, 'picture': imgPhoto.src }))
+btnCancelRecovery.addEventListener('click',removeCadastro)
 
-  if (location.protocol == 'https:') {
-
-    if (window.location.host.includes('.app')) {
-      window.location.href = location.protocol + '//' + location.host +'/' + destino;
-    } else {
-      window.location.href = location.protocol + '//' + location.host + '/Primeiro-Projeto/' + destino;
-    }
-
-  } else if (location.protocol == 'http:') {
-
-    window.location.href = location.protocol + '//' + location.host + '/' + destino;
-
-  }
-
-})
-
-btnRecovery.addEventListener('click', function () {
-  //link.setAttribute('href', '#password') // não precisa esta no html
-})
-
+btnGoogle.addEventListener('click', btnGoogleConfirm)
 
 btnCreateUser.addEventListener('click', function () {
   link.setAttribute('href', '#registrar-se')
 })
-
-btnCancelRecovery.addEventListener('click', function () {
-  removeCadastro()
-})
-
+// btnRecovery.addEventListener('click', function () {
+//   link.setAttribute('href', '#password') // não precisa esta no html
+// })
 
 function recoveryFunction() {
   containerCadastro.classList.add('recovery')
@@ -124,24 +104,21 @@ function registerFunction() {
 
 function recoveryPassFunction() {
   link.setAttribute('href', '#password')
-
-  containerCadastro.classList.add('recovery')
-  btnCreate.classList.remove('btn-cadastrar')
-  btnCreate.classList.add('btn-confirmar')
-
-  btnConfirm()
-
-  LabelPassword.innerHTML = 'Confirme o codigo'
-  InputEmail.placeholder = 'Digite seu e-mail cadastrado'
-  InputEmail.focus()
-  btnRecovery.style.display = 'none'
-  InputPassword.placeholder = 'Digite  o codigo'
-  InputPassword.setAttribute('type', 'number')
-  Title.innerHTML = 'Esqueceu a sua senha ?'
-  btnEnter.innerHTML = 'Enviar código'
-  btnCreate.innerHTML = 'Confirmar código'
-  btnCancelRecovery.style.display = 'block'
-  btnGoogle.style.display = 'none'
+  containerCadastro.classList.add('recovery');
+  btnCreate.classList.remove('btn-cadastrar');
+  btnCreate.classList.add('btn-confirmar');
+  LabelPassword.innerHTML = 'Confirme o codigo';
+  InputEmail.placeholder = 'Digite seu e-mail cadastrado';
+  InputEmail.focus();
+  btnRecovery.style.display = 'none';
+  InputPassword.placeholder = 'Digite  o codigo';
+  InputPassword.setAttribute('type', 'number');
+  Title.innerHTML = 'Esqueceu a sua senha ?';
+  btnEnter.innerHTML = 'Enviar código';
+  btnCreate.innerHTML = 'Confirmar código';
+  btnCancelRecovery.style.display = 'block';
+  btnGoogle.style.display = 'none';
+  btnConfirmRecoveryPass();
 }
 
 function loginFunction() {
@@ -175,7 +152,7 @@ function removeCadastro() {
   link.setAttribute('href', '#login')
 }
 
-function btnConfirm() {
+function btnConfirmRecoveryPass() {
 
   const btnConfirmCode = document.querySelector('.btn-confirmar')
   btnConfirmCode.addEventListener('click', function () {
@@ -185,6 +162,27 @@ function btnConfirm() {
     }
   })
 }
+function btnEnterConfirm() {
+
+  sessionStorage.setItem('data', JSON.stringify({ 'name': nome.value, 'email': email.value, 'picture': imgPhoto.src }))
+
+  if (location.protocol == 'https:') {
+
+    if (window.location.host.includes('.app')) {
+      window.location.href = location.protocol + '//' + location.host +'/' + destino;
+    } else {
+      window.location.href = location.protocol + '//' + location.host + '/Primeiro-Projeto/' + destino;
+    }
+
+  } else if (location.protocol == 'http:') {
+
+    window.location.href = location.protocol + '//' + location.host + '/' + destino;
+
+  }
+}
+
+function btnGoogleConfirm () {
+  //const state = encodeURIComponent(urlVerified);
 
 if (location.protocol == 'https:') {
   
@@ -194,9 +192,6 @@ if (location.protocol == 'https:') {
     
     linkTitle.setAttribute('href', location.protocol + '//' + location.host + '/index.html');
     
- 
-    
-
   } else if (window.location.host.includes('github.io')) {
     
     urlVerified = `${location.protocol + '//' + location.host + '/Primeiro-Projeto/' + destino}`;
@@ -208,14 +203,7 @@ if (location.protocol == 'https:') {
   urlVerified = `${location.protocol + '//' + location.host + '/' + destino}`;
   linkTitle.setAttribute('href', location.protocol + '//' + location.host + '/index.html')
 }
-
 // Caso for ver no Mobile  mude a URL redirect_uri;
-
-const authEndpoint = "https://accounts.google.com/o/oauth2/v2/auth";
-
-btnGoogle.addEventListener('click', function () {
-  //const state = encodeURIComponent(urlVerified);
-
   const authUrl = `https://accounts.google.com/o/oauth2/v2/auth?` +
     `client_id=112123801593-t7p4obmhr3qpgsss44qsrlioqsht149q.apps.googleusercontent.com&` +
     `redirect_uri=${urlVerified}&` +
@@ -225,8 +213,15 @@ btnGoogle.addEventListener('click', function () {
   //`state=?`;
 
   window.location.href = authUrl;
+
   //window.location.hash = state;
-})
+}
+
+
+
+
+
+  
 
 
 
