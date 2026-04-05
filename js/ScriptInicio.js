@@ -53,7 +53,7 @@ $(function () {
 
                if (location.protocol == 'https:') {
 
-                  if (window.location.host.includes('ngrok-free.app')) {
+                  if (window.location.host.includes('.app')) {
 
                      window.location.href = '/index.html';
 
@@ -106,7 +106,7 @@ $(function () {
 
                   if (location.protocol == 'https:') {
 
-                     if (window.location.host.includes('ngrok-free.app')) {
+                     if (window.location.host.includes('.app')) {
                         window.location.href = '/index.html';
                      } else {
                         window.location.href = '/Primeiro-Projeto/' + 'index.html';
@@ -145,7 +145,7 @@ $.getJSON('js/ApiProduts.json', function (arrayProdutos) {
             sessionStorage.setItem('produts', JSON.stringify(produts));
             if (location.protocol == 'https:') {
 
-               if (window.location.host.includes('ngrok-free.app')) {
+               if (window.location.host.includes('.app')) {
                   window.location.href = location.protocol + '//' + location.host + '/pedidos.html';
                } else {
                   window.location.href = location.protocol + '//' + location.host + '/Primeiro-Projeto/' + 'pedidos.html';
