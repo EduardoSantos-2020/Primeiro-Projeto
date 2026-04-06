@@ -27,35 +27,9 @@ urlVerified = '';
 if (!containerCadastro.classList.contains('recovery') || !containerCadastro.classList.contains('cadastrar') && window.location.reload) {
   location.hash = 'login';
 }
+window.addEventListener('load',genereLinkPage)
 
-fileImg.addEventListener('change', (item) => {
-
-  let file = item.target.files[0];
-
-  if (file && file.type.startsWith('image/')) {
-    const reader = new FileReader();
-
-    reader.onload = function (e) {
-      imgPhoto.src = e.target.result;
-    };
-
-    reader.readAsDataURL(file);
-  }
-})
-
-window.addEventListener("hashchange", function (event) {
-
-  if (this.location.hash == '#login') {
-    loginFunction()
-  }
-  else if (this.location.hash == '#registrar-se') {
-    registerFunction()
-  }
-  else if (this.location.hash == '#password') {
-    recoveryPassFunction()
-  }
-
-})
+window.addEventListener("hashchange", redirectUrlPages)
 
 btnEnter.addEventListener('click', btnEnterConfirm)
 
@@ -67,8 +41,36 @@ btnCreateUser.addEventListener('click', function () {
   link.setAttribute('href', '#registrar-se')
 })
 // btnRecovery.addEventListener('click', function () {
-//   link.setAttribute('href', '#password') // não precisa esta no html
+  // ink.setAttribute('href', '#password') // não precisa esta no html
 // })
+
+fileImg.addEventListener('change', (item) => {
+  
+    let file = item.target.files[0];
+  
+    if (file && file.type.startsWith('image/')) {
+      const reader = new FileReader();
+  
+      reader.onload = function (e) {
+        imgPhoto.src = e.target.result;
+      };
+  
+      reader.readAsDataURL(file);
+    }
+})
+  
+function redirectUrlPages(){
+    if (this.location.hash == '#login') {
+    loginFunction()
+  }
+  else if (this.location.hash == '#registrar-se') {
+    registerFunction()
+  }
+  else if (this.location.hash == '#password') {
+    recoveryPassFunction()
+  }
+    
+}
 
 function recoveryFunction() {
   containerCadastro.classList.add('recovery')
@@ -162,11 +164,13 @@ function btnConfirmRecoveryPass() {
     }
   })
 }
+
 function btnEnterConfirm() {
 
   sessionStorage.setItem('data', JSON.stringify({ 'name': nome.value, 'email': email.value, 'picture': imgPhoto.src }))
 
-  if (location.protocol == 'https:') {
+
+    if (location.protocol == 'https:') {
 
     if (window.location.host.includes('.app')) {
       window.location.href = location.protocol + '//' + location.host +'/' + destino;
@@ -175,46 +179,49 @@ function btnEnterConfirm() {
     }
 
   } else if (location.protocol == 'http:') {
-
     window.location.href = location.protocol + '//' + location.host + '/' + destino;
+  }
 
+}
+
+function genereLinkPage(){
+  if (location.protocol == 'https:') {
+  
+    if (window.location.host.includes('.app')) {
+      
+      urlVerified = `${location.protocol + '//' + location.host + '/' + destino}`;
+    
+      linkTitle.setAttribute('href', location.protocol + '//' + location.host + '/'+ destino);
+      
+    } else if (window.location.host.includes('github.io')) {
+      
+      urlVerified = `${location.protocol + '//' + location.host + '/Primeiro-Projeto/' + destino}`;
+      
+      linkTitle.setAttribute('href', location.protocol + '//' + location.host + '/Primeiro-Projeto/' + '/'+ destino)
+    }
+  
+  } else if (location.protocol == 'http:') {
+    urlVerified = `${location.protocol + '//' + location.host + '/' + destino}`;
+    linkTitle.setAttribute('href', location.protocol + '//' + location.host + '/'+destino)
   }
 }
 
 function btnGoogleConfirm () {
-  //const state = encodeURIComponent(urlVerified);
+// const state = encodeURIComponent(urlVerified);
 
-if (location.protocol == 'https:') {
-  
-  if (window.location.host.includes('.app')) {
-    
-    urlVerified = `${location.protocol + '//' + location.host + '/' + destino}`;
-    
-    linkTitle.setAttribute('href', location.protocol + '//' + location.host + '/index.html');
-    
-  } else if (window.location.host.includes('github.io')) {
-    
-    urlVerified = `${location.protocol + '//' + location.host + '/Primeiro-Projeto/' + destino}`;
-    
-    linkTitle.setAttribute('href', location.protocol + '//' + location.host + '/Primeiro-Projeto/' + 'index.html')
-  }
-  
-}else if (location.protocol == 'http:') {
-  urlVerified = `${location.protocol + '//' + location.host + '/' + destino}`;
-  linkTitle.setAttribute('href', location.protocol + '//' + location.host + '/index.html')
-}
 // Caso for ver no Mobile  mude a URL redirect_uri;
+
   const authUrl = `https://accounts.google.com/o/oauth2/v2/auth?` +
     `client_id=112123801593-t7p4obmhr3qpgsss44qsrlioqsht149q.apps.googleusercontent.com&` +
     `redirect_uri=${urlVerified}&` +
     `response_type=token&` +
     `scope=openid%20email%20profile&` +
     `prompt=consent&`;
-  //`state=?`;
+//`state=?`;
 
   window.location.href = authUrl;
 
-  //window.location.hash = state;
+// window.location.hash = state;
 }
 
 
