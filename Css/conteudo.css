@@ -75,37 +75,42 @@ a {
     margin: 0 10px;
     align-items: center;
 }
+.container-User {
+    position: relative;
+    width: 16em;
+    /* padding: 0 .5rem; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    transform: translateY(-10%);
+    border-radius: 8px 8px 0 0;
+    
+}
 
 
 .container-User p {
+
     font-size: 1.3rem;
     font-weight: bold;
-
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 .container-User .textEmail {
     width: 20.5em;
-    top: 2.3rem;
-    left: 3.5rem;
+    top: 2.5rem;
+    left: 4rem;
     position: absolute;
-    word-break: break-all;
+    white-space: nowrap;
     font-size: .56rem;
     text-align: start;
     line-height: .7rem;
+    overflow: hidden;
     letter-spacing: .1rem;
     margin: 0;
 
-}
-
-.container-User {
-    position: relative;
-    width: 16em;
-    padding: 0 .5rem;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    transform: translateY(-25%);
-    border-radius: 8px 8px 0 0;
 }
 
 .sidebar .container-User {
@@ -117,26 +122,27 @@ a {
 }
 
 .userGrup {
-    width: 100%;
-    display: flex;
+    display: inline-flex;
     align-items: center;
-    padding-top: .8rem;
+   padding-left: 1.5rem;
 }
 
 .userGrup p {
     letter-spacing: .2rem;
+    margin-left: .4rem;
+    overflow: hidden;
 }
 
 .userImg {
-    width: 32px;
-    height: 32px;
-    margin: 0 10px 0 0;
+  
     object-fit: cover;
+    padding: .4rem 0;
+    border-radius: 8px 8px 0 0;
 }
 
 .userImg img {
-    width: 100%;
-    object-fit: cover;
+    width: 32px;
+    height: 32px;
     border-radius: 50%;
 }
 
@@ -144,51 +150,114 @@ a {
     color: rgb(70, 68, 68);
 } */
 
-.sidebar .container-User:hover {
-    background-color: #13121228;
-    color: #ffffff1a;
-}
 
-
-.styleSidebar .container-User:hover {
-    background-color: #ffffff1a;
+.sidebar .container-User .userGrup:hover {
     color: #ffffff1a;
 }
 
 .sidebar .container-User:hover .btnExit {
-    background-color: #13121228;
+    /* background-color: #13121228; */
+}
+
+.sidebar .container-User .btnExit {
+    opacity: 0;
 }
 
 .sidebar .container-User:hover .btnExit {
-    display: flex;
-}
-
-.sidebar .btnExit:hover {
     color: #3f3c3c;
 }
 
-.styleSidebar .btnExit:hover {
+.sidebar .container-User .btnExit:hover  {
+  color: #afafaf;
+}
+
+ .sidebar .container-User .userGrup{
+     width: 100%;
+     transition: .7s ease-in;
+    }
+.sidebar .container-User:hover .userGrup{
+    width: 30%;
+    transition: .7s ease-out;
+}
+ .sidebar .container-User .userGrup:hover p {
+ position: absolute;
+ opacity: 0;
+
+}
+.sidebar .container-User:hover p {
+ position: absolute;
+opacity: 0;
+  
+}
+
+.sidebar .container-User:hover .btnExit {
+    opacity: 1;
     color: #afafaf;
 }
 
-.styleSidebar .container-User:hover .btnExit {
-    background-color: #ffffff1a;
+.sidebar .container-User .btnExit:hover  {
+    opacity: 1;
+    color: #000;
+    
 }
+
 
 .btnExit {
     position: absolute;
     top: 3.1rem;
-    width: 100%;
+    width: 30%;
     padding: 0 20px;
     border: none;
     font-weight: 900;
     font-size: 1.2rem;
     color: #fdfbfb;
-    background-color: #ffffff1a;
     border-radius: 0 0 8px 8px;
     text-transform: uppercase;
-    display: none;
+    opacity: 0;
     justify-content: center;
+    background: none;
+}
+
+
+/* .styleSidebar .container-User :hover {
+    color: #ffffff1a;
+} */
+
+.styleSidebar .container-User .btnExit{
+    opacity: 0;
+}
+
+.styleSidebar .container-User:hover .btnExit {
+    opacity: 1;
+    color: #afafaf;
+}
+.styleSidebar .container-User .btnExit:hover  {
+    opacity: 1;
+    color: #fff;
+    
+}
+
+/* .styleSidebar .container-User:hover .btnExit {
+    background-color: #ffffff1a;  
+} */
+
+ .styleSidebar .container-User .userGrup{
+     width: 100%;
+     transition: .7s ease-in;
+    }
+.styleSidebar .container-User:hover .userGrup{
+    width: 30%;
+    transition: .7s ease-out;
+}
+ .styleSidebar .container-User .userGrup:hover p {
+ position: absolute;
+ opacity: 0;
+
+}
+.styleSidebar .container-User:hover p {
+ position: absolute;
+opacity: 0;
+  
 }
 
 
