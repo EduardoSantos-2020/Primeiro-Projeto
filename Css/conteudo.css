@@ -77,8 +77,7 @@ a {
 }
 .container-User {
     position: relative;
-    width: 16em;
-    /* padding: 0 .5rem; */
+    width: 17.5em;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -141,8 +140,8 @@ a {
 }
 
 .userImg img {
-    width: 32px;
-    height: 32px;
+    width: 2.3rem;
+    height: 2.3rem;
     border-radius: 50%;
 }
 
@@ -402,50 +401,55 @@ aside:not(.styleSidebar) .menu--secao:hover {
         background: none;
     }
 
+   .sidebar .container-User .userGrup,.styleSidebar .container-User .userGrup{
+     width: 70%;
+    
+     padding-left: 0;
+     transition: .7s ease-in;
+    }
+
+     .container-User:hover  .userGrup img{
+        margin: 0 1rem;
+     }
+
     .container-User .textEmail {
         position: absolute;
-        top: 3.5rem;
-        left: 30%;
+        top: 3rem;
+        left: 7rem;
         width: 19em;
         margin: 0;
-        display: flex;
         align-items: baseline;
         font-size: .9rem;
         word-break: break-all;
         text-align: start;
         line-height: 1.3rem;
+        opacity: 1;
     }
 
     .container-User p {
-        font-size: 1.7rem;
+        font-size: 1.5rem;
         font-weight: bold;
-        width: 80%;
     }
 
 
     .userGrup {
-        display: flex;
-        width: 80%;
-        height: 100%;
-        align-items: center;
-        padding: 0;
-        justify-content: space-around;
+        margin: 0 auto;
     }
 
-    .userImg {
-        width: 4.5rem;
-        height: 4.5rem;
-        margin: 0 1.5rem 0 0;
-        object-fit: cover;
-    }
+    .styleSidebar .container-User:hover .userGrup{
+    width: 20%;
+    transition: .7s ease-out;
+}
+ 
 
     .userImg img {
-        width: 100%;
+        width: 3rem;
+        height: 3rem;
         object-fit: cover;
         border-radius: 50%;
     }
 
-    .container-User .btnExit {
+    /* .container-User .btnExit {
         position: absolute;
         top: 5rem;
         width: 100%;
@@ -459,7 +463,34 @@ aside:not(.styleSidebar) .menu--secao:hover {
         text-transform: uppercase;
         display: none;
         justify-content: center;
-    }
+    } */
+
+    .btnExit {
+    position: absolute;
+    top: 4.5rem;
+    width: 30%;
+    padding: 0 20px;
+    border: none;
+    font-weight: 900;
+    font-size: 1.4rem;
+    color: #fdfbfb;
+    border-radius: 0 0 8px 8px;
+    text-transform: uppercase;
+    opacity: 0;
+    justify-content: center;
+    background: none;
+}
+
+
+
+.styleSidebar .container-User .btnExit{
+    opacity: 0;
+}
+
+.styleSidebar .container-User:hover .btnExit {
+    opacity: 1;
+    color: #afafaf;
+}
 
     .styleSidebar .container-User:hover .btnExit {
         background: none;
@@ -970,6 +1001,10 @@ aside:not(.styleSidebar) .menu--secao:hover {
     .produto--item h2 {
         font-size: 0.7em;
         text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.5);
+    }
+
+    .produto--item p{
+        padding: 0 1.7rem;
     }
 
     .produto--img {
