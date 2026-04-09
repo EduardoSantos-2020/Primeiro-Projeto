@@ -133,17 +133,33 @@ a {
 }
 
 .userImg {
-  
+    position: relative;
     object-fit: cover;
     padding: .4rem 0;
     border-radius: 8px 8px 0 0;
+    
 }
 
 .userImg img {
+    
     width: 2.3rem;
     height: 2.3rem;
     border-radius: 50%;
+    
 }
+.userImg::after{
+    position: absolute;
+    top: .4rem;
+    left: 0;
+    content: '';
+     width: 2.3rem;
+    height: 2.3rem;
+    display: block;
+    background-color:transparent;
+    border-radius: 50%;
+}
+
+
 
 /* aside:not(.styleSidebar) .container-User:hover .userGrup p {
     color: rgb(70, 68, 68);
@@ -199,6 +215,12 @@ opacity: 0;
     color: #000;
     
 }
+.sidebar .container-User:hover .userImg::after,.styleSidebar .container-User:hover .userImg .userImg::after   {
+background-color: #31313186;
+
+}  
+
+
 
 
 .btnExit {
@@ -408,8 +430,10 @@ aside:not(.styleSidebar) .menu--secao:hover {
      transition: .7s ease-in;
     }
 
+ 
      .container-User:hover  .userGrup img{
-        margin: 0 1rem;
+        margin: 0 auto;
+      z-index: 1;
      }
 
     .container-User .textEmail {
@@ -424,7 +448,15 @@ aside:not(.styleSidebar) .menu--secao:hover {
         text-align: start;
         line-height: 1.3rem;
         opacity: 1;
+        transition: all .7s ease-in;
     }
+
+
+  .container-User:hover .textEmail{
+   width: 1px;
+   transition: all .3s ease-in;
+}
+
 
     .container-User p {
         font-size: 1.5rem;
@@ -433,14 +465,17 @@ aside:not(.styleSidebar) .menu--secao:hover {
 
 
     .userGrup {
-        margin: 0 auto;
+        
     }
 
+
     .styleSidebar .container-User:hover .userGrup{
-    width: 20%;
+   display: block;
     transition: .7s ease-out;
 }
- 
+ .userImg{
+    padding: 0 .5rem;
+ }
 
     .userImg img {
         width: 3rem;
@@ -449,21 +484,17 @@ aside:not(.styleSidebar) .menu--secao:hover {
         border-radius: 50%;
     }
 
-    /* .container-User .btnExit {
-        position: absolute;
-        top: 5rem;
-        width: 100%;
-        padding: 0 20px;
-        border: none;
-        font-weight: 900;
-        font-size: 2rem;
-        color: #fdfbfb;
-        background: none;
-        border-radius: 0 0 8px 8px;
-        text-transform: uppercase;
-        display: none;
-        justify-content: center;
-    } */
+    .userImg::after{
+        top: 0;
+        left: 2.5rem;
+        width: 3rem;
+        height: 3rem;
+    }
+
+    .container-User:hover .userImg{
+    padding: 0 2.5rem;
+ }
+
 
     .btnExit {
     position: absolute;
