@@ -388,6 +388,11 @@ aside:not(.styleSidebar) .menu--secao:hover {
     .sidebar .container-User {
         color: #fff;
     }
+    
+    .sidebar .container-User .textName,
+.sidebar .container-User .textEmail {
+    color: #fff;
+}
 
     .container-User {
         position: relative;
