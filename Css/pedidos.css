@@ -68,7 +68,7 @@ body {
 
 }
 
-.container-User p {
+.container-User .textName {
     font-size: 1.3rem;
     font-weight: bold;
     display: inline-block;
@@ -77,19 +77,25 @@ body {
 }
 
 .container-User .userGrup .textEmail {
-    width: 20.5em;
     top: 2.5rem;
     left: 4rem;
+    width: 20.5em;
     position: absolute;
+    display: inline-block;
     white-space: nowrap;
+    font-size: 1.3rem;
+    font-weight: bold;
+    overflow: hidden;
+
     font-size: .56rem;
     text-align: start;
     line-height: .7rem;
     overflow: hidden;
     letter-spacing: .1rem;
     margin: 0;
-    transition: .7s ease-in;
+    transition: .3s ease-in;
 }
+
 
 .userGrup {
     position: relative;
@@ -154,7 +160,7 @@ body {
     transition: .7s ease-in;
 }
 
- .container-User .userGrup:hover .textEmail{
+.container-User .userGrup:hover .textEmail {
     width: .5em;
     transition: .3s ease-in;
 }
@@ -326,7 +332,6 @@ body {
         position: relative;
         width: 100%;
         height: 5em;
-
         margin: 0.5rem 0;
         display: flex;
         align-items: center;
@@ -347,72 +352,55 @@ body {
     }
 
     .container-User:hover .userGrup img {
-        margin: 0 .5rem;
         z-index: 1;
     }
 
-    /* .styleSidebar .container-User .userGrup p {
-        width: 80%;
-    } */
+    .container-User .textName {
+        font-size: 1.3rem;
+        overflow: hidden;
+    }
 
     .container-User .userGrup .textEmail {
-        position: absolute;
-        top: 3.3rem;
-        left: 4.8rem;
-        width: 20em;
-        margin: 0;
-        align-items: baseline;
         font-size: .9rem;
-        word-break: break-all;
-        text-align: start;
-        line-height: 1.3rem;
-        opacity: 1;
-        transition: all .7s ease-in;
+        color: #fff;
+        overflow: hidden;
     }
 
     .container-User .userGrup:hover .textEmail {
-        width: .5rem;
         transition: none;
     }
 
-    /* .sidebar .container-User:hover .userGrup p,
-    .sidebar .container-User:hover .textEmail {
-        color: #ffffff1a;
-    } */
-
     .userGrup {
         display: flex;
-        width: 100%;
-        height: 100%;
         align-items: center;
-        padding: 0;
+        padding: 0 auto;
         background: none;
-        justify-content: space-evenly;
+
     }
 
     .userGrup p {
-        margin-left: .5rem;
+        margin: 0 0 0 1rem;
     }
 
-    /* .container-User:hover .userGrup p {
-        margin: 0;
-    } */
-
-
-
-    .container-User p {
+    .container-User .userGrup p {
         font-size: 1.5rem;
-        margin: 0;
         font-weight: bold;
+        white-space: nowrap;
     }
 
     .styleSidebar .container-User:hover .userGrup {
-       
+
         transition: .7s ease-out;
     }
 
+    .sidebar .container-User:hover .userGrup {
+        width: 10%;
+        transition: .7s ease-out;
+    }
+
+
     .userImg {
-    padding: 0 .2.2rem
+        padding: 0
     }
 
     .userImg img {
@@ -420,23 +408,22 @@ body {
         height: 3rem;
         object-fit: cover;
         border-radius: 50%;
-    
+
     }
 
     .userImg::after {
-        top: .4rem;
-        left: .5rem;
+        top: 0;
+        left: 0;
         width: 3rem;
         height: 3rem;
     }
 
-    .container-User:hover .userImg {
-    }
+    .container-User:hover .userImg {}
 
-   .container-User .btnExit {
+    .container-User .btnExit {
         position: absolute;
-        top: 4rem;
-        left: 10rem;
+        top: 4.2rem;
+        left: 35%;
         width: 30%;
         padding: 0 20px;
         border: none;
@@ -841,7 +828,7 @@ span.buttonText {
     }
 
     .containerbuttons p {
-      
+
         font-size: 1.7rem;
         font-weight: bold;
     }
