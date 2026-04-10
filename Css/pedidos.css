@@ -56,144 +56,152 @@ body {
     text-transform: uppercase;
 }
 
-
-/* ======= */
-
-
 .container-User {
     position: relative;
-    width: 16em;
-    padding: 0 .5rem;
+    width: 17.5em;
     display: flex;
     align-items: center;
+    justify-content: center;
     flex-direction: column;
-    transform: translateY(-25%);
+    transform: translateY(-10%);
     border-radius: 8px 8px 0 0;
-}
-
-.userGrup {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    padding-top: .8rem;
 
 }
 
 .container-User p {
     font-size: 1.3rem;
     font-weight: bold;
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
-.container-User .textEmail {
-    width: 17.5em;
-    top: 2.2rem;
-    left: 3.4rem;
+.container-User .userGrup .textEmail {
+    width: 20.5em;
+    top: 2.5rem;
+    left: 4rem;
     position: absolute;
+    white-space: nowrap;
     font-size: .56rem;
-    user-select: auto;
+    text-align: start;
+    line-height: .7rem;
+    overflow: hidden;
     letter-spacing: .1rem;
     margin: 0;
-
+    transition: .7s ease-in;
 }
 
+.userGrup {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    padding-left: 1.5rem;
+}
 
 .userGrup p {
     letter-spacing: .2rem;
+    margin-left: .4rem;
+    overflow: hidden;
 }
 
+
 .userImg {
-    width: 32px;
-    height: 32px;
-    margin: 0 10px 0 0;
+    position: relative;
+    object-fit: cover;
+    padding: .4rem 0;
+    border-radius: 8px 8px 0 0;
+
 }
 
 .userImg img {
-    width: 100%;
-    object-fit: cover;
+    width: 2.3rem;
+    height: 2.3rem;
+    border-radius: 50%;
+}
+
+.userImg::after {
+    position: absolute;
+    top: .4rem;
+    left: 0;
+    content: '';
+    width: 2.3rem;
+    height: 2.3rem;
+    display: block;
+    background-color: transparent;
     border-radius: 50%;
 }
 
 
-.btnExit {
-    position: absolute;
-    top: 3.1rem;
-    width: 100%;
-    padding: 0 20px;
-    border: none;
-    font-weight: 900;
-    font-size: 1.2rem;
-    color: #fdfbfb;
-    background-color: #ffffff1a;
-    border-radius: 0 0 8px 8px;
-    text-transform: uppercase;
-    display: none;
-    justify-content: center;
-}
-
-
-.styleSidebar .container-User .userGrup p {
-    color: #fff;
-}
-
-.styleSidebar .container-User:hover .userGrup p {
-    color: #ffffff1a;
-}
-
-
 .sidebar .container-User:hover .btnExit {
-    background-color: #13121228;
+    color: #3f3c3c;
+    opacity: 1;
 }
-
-
-
 
 .sidebar .container-User:hover .userGrup p {
     color: #13121228;
 }
 
 .sidebar .container-User:hover {
-    background-color: #13121228;
     color: #13121228;
 }
 
-.sidebar .container-User:hover .btnExit {
-    display: flex;
-}
-
-
-.sidebar .btnExit:hover {
-    color: #3f3c3c;
-}
-
-.styleSidebar .btnExit:hover {
+.sidebar .container-User .btnExit:hover {
     color: #afafaf;
 }
 
-.styleSidebar .container-User:hover .userGrup .textEmail {
-    color: #13121228;
+.sidebar .container-User .userGrup {
+    width: 100%;
+    transition: .7s ease-in;
 }
 
-.styleSidebar .sidebar .container-User:hover .userGrup .textName {
-    color: #ffffff1a;
+ .container-User .userGrup:hover .textEmail{
+    width: .5em;
+    transition: .3s ease-in;
 }
 
-.styleSidebar .container-User:hover .userGrup .textName {
-    color: #ffffff1a;
+.sidebar .container-User:hover .userGrup {
+    width: 30%;
+    transition: .7s ease-out;
 }
 
-.styleSidebar .container-User:hover .btnExit {
-    background-color: #ffffff1a;
+.sidebar .container-User .userGrup:hover p {
+    position: absolute;
+    opacity: 0;
+
 }
 
-/* ---- */
+.sidebar .container-User:hover p {
+    position: absolute;
+    opacity: 0;
 
+}
+
+.sidebar .container-User:hover .userImg::after,
+.styleSidebar .container-User:hover .userImg .userImg::after {
+    background-color: #31313186;
+
+}
+
+.btnExit {
+    position: absolute;
+    top: 3.1rem;
+    width: 30%;
+    padding: 0 20px;
+    border: none;
+    font-weight: 900;
+    font-size: 1.2rem;
+    color: #fdfbfb;
+    border-radius: 0 0 8px 8px;
+    text-transform: uppercase;
+    opacity: 0;
+    justify-content: center;
+    background: none;
+}
 
 .btnExit:hover {
     color: #3f3c3c;
 
 }
-
-
 
 .login {
     width: 100px;
@@ -225,7 +233,7 @@ body {
         Menu Hanburguer
     \*-------------------------*/
 
-  .button-prop {
+    .button-prop {
         position: absolute;
         display: flex;
         align-items: center;
@@ -235,7 +243,7 @@ body {
         width: 50px;
         height: 50px;
         border-radius: 8px;
-        
+
         overflow: hidden;
         transition: all 0.5s ease;
     }
@@ -298,14 +306,14 @@ body {
         transform: translateY(50%) rotate(45deg);
     }
 
-    .button-prop:hover{
-        -webkit-tap-highlight-color:transparent;
+    .button-prop:hover {
+        -webkit-tap-highlight-color: transparent;
     }
 
-    .button-prop:active{
-        
+    .button-prop:active {
+
         background-color: #4947475b;
-    }   
+    }
 
     /*-------------------------*/
 
@@ -316,8 +324,9 @@ body {
 
     .container-User {
         position: relative;
-        width: 80%;
+        width: 100%;
         height: 5em;
+
         margin: 0.5rem 0;
         display: flex;
         align-items: center;
@@ -326,32 +335,50 @@ body {
         border-radius: 8px 8px 0 0;
     }
 
-       .sidebar .container-User:hover {
-        background:none ;
+    .sidebar .container-User:hover {
+        background: none;
     }
 
-    .styleSidebar .container-User .userGrup p {
+    .sidebar .container-User .userGrup,
+    .styleSidebar .container-User .userGrup {
+        width: 70%;
+        padding-left: 0;
+        transition: .7s ease-in;
+    }
+
+    .container-User:hover .userGrup img {
+        margin: 0 .5rem;
+        z-index: 1;
+    }
+
+    /* .styleSidebar .container-User .userGrup p {
         width: 80%;
-    }
+    } */
 
-    .container-User .textEmail {
+    .container-User .userGrup .textEmail {
         position: absolute;
-        top: 3.5rem;
-        left: 25%;
-        width: 19em;
+        top: 3.3rem;
+        left: 4.8rem;
+        width: 20em;
         margin: 0;
-        display: flex;
         align-items: baseline;
         font-size: .9rem;
         word-break: break-all;
         text-align: start;
         line-height: 1.3rem;
+        opacity: 1;
+        transition: all .7s ease-in;
     }
 
-   .sidebar .container-User:hover .userGrup p,
+    .container-User .userGrup:hover .textEmail {
+        width: .5rem;
+        transition: none;
+    }
+
+    /* .sidebar .container-User:hover .userGrup p,
     .sidebar .container-User:hover .textEmail {
         color: #ffffff1a;
-    }
+    } */
 
     .userGrup {
         display: flex;
@@ -363,38 +390,73 @@ body {
         justify-content: space-evenly;
     }
 
+    .userGrup p {
+        margin-left: .5rem;
+    }
+
+    /* .container-User:hover .userGrup p {
+        margin: 0;
+    } */
+
+
+
+    .container-User p {
+        font-size: 1.5rem;
+        margin: 0;
+        font-weight: bold;
+    }
+
+    .styleSidebar .container-User:hover .userGrup {
+       
+        transition: .7s ease-out;
+    }
 
     .userImg {
-        width: 4.5rem;
-        height: 4.5rem;
-        margin: 0 1.5rem 0 0;
-        object-fit: cover;
+    padding: 0 .2.2rem
     }
 
     .userImg img {
-        width: 100%;
+        width: 3rem;
+        height: 3rem;
         object-fit: cover;
         border-radius: 50%;
+    
     }
 
-    .btnExit {
+    .userImg::after {
+        top: .4rem;
+        left: .5rem;
+        width: 3rem;
+        height: 3rem;
+    }
+
+    .container-User:hover .userImg {
+    }
+
+   .container-User .btnExit {
         position: absolute;
-        top: 5rem;
-        width: 100%;
+        top: 4rem;
+        left: 10rem;
+        width: 30%;
         padding: 0 20px;
         border: none;
         font-weight: 900;
-        font-size: 2rem;
+        font-size: 1.4rem;
         color: #fdfbfb;
-        background: none;
         border-radius: 0 0 8px 8px;
         text-transform: uppercase;
-        display: none;
+        opacity: 0;
         justify-content: center;
+        background: none;
+    }
+
+    .sidebar .container-User .btnExit {
+        opacity: 0;
     }
 
     .sidebar .container-User:hover .btnExit {
-        background: none;
+        opacity: 1;
+        color: #afafaf;
     }
 
     .login {
@@ -417,8 +479,6 @@ body {
         transition: all 0.5s ease-in;
     }
 }
-
-
 
 .container {
     display: flex;
@@ -781,18 +841,19 @@ span.buttonText {
     }
 
     .containerbuttons p {
-        width: 80%;
+      
         font-size: 1.7rem;
         font-weight: bold;
     }
 
-    .container--login{
+    .container--login {
         width: 100%;
         display: flex;
         justify-content: center;
         margin: 1rem 0;
     }
-       #btn-login {
+
+    #btn-login {
         display: flex;
         justify-content: center;
 

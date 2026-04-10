@@ -75,6 +75,7 @@ a {
     margin: 0 10px;
     align-items: center;
 }
+
 .container-User {
     position: relative;
     width: 17.5em;
@@ -84,12 +85,10 @@ a {
     flex-direction: column;
     transform: translateY(-10%);
     border-radius: 8px 8px 0 0;
-    
+
 }
 
-
 .container-User p {
-
     font-size: 1.3rem;
     font-weight: bold;
     display: inline-block;
@@ -97,7 +96,7 @@ a {
     overflow: hidden;
 }
 
-.container-User .textEmail {
+.container-User .userGrup .textEmail {
     width: 20.5em;
     top: 2.5rem;
     left: 4rem;
@@ -109,8 +108,10 @@ a {
     overflow: hidden;
     letter-spacing: .1rem;
     margin: 0;
-
+    transition: .3s ease-in;
 }
+
+
 
 .sidebar .container-User {
     color: #000;
@@ -121,9 +122,10 @@ a {
 }
 
 .userGrup {
+    position: relative;
     display: inline-flex;
     align-items: center;
-   padding-left: 1.5rem;
+    padding-left: 1.5rem;
 }
 
 .userGrup p {
@@ -137,41 +139,34 @@ a {
     object-fit: cover;
     padding: .4rem 0;
     border-radius: 8px 8px 0 0;
-    
+
 }
 
 .userImg img {
-    
     width: 2.3rem;
     height: 2.3rem;
     border-radius: 50%;
-    
+
 }
-.userImg::after{
+
+.userImg::after {
     position: absolute;
     top: .4rem;
     left: 0;
     content: '';
-     width: 2.3rem;
+    width: 2.3rem;
     height: 2.3rem;
     display: block;
-    background-color:transparent;
+    background-color: transparent;
     border-radius: 50%;
 }
-
-
 
 /* aside:not(.styleSidebar) .container-User:hover .userGrup p {
     color: rgb(70, 68, 68);
 } */
 
-
 .sidebar .container-User .userGrup:hover {
     color: #ffffff1a;
-}
-
-.sidebar .container-User:hover .btnExit {
-    /* background-color: #13121228; */
 }
 
 .sidebar .container-User .btnExit {
@@ -182,27 +177,35 @@ a {
     color: #3f3c3c;
 }
 
-.sidebar .container-User .btnExit:hover  {
-  color: #afafaf;
+.sidebar .container-User .btnExit:hover {
+    color: #afafaf;
 }
 
- .sidebar .container-User .userGrup{
-     width: 100%;
-     transition: .7s ease-in;
-    }
-.sidebar .container-User:hover .userGrup{
+.sidebar .container-User .userGrup {
+    width: 100%;
+    transition: .7s ease-in;
+}
+
+ .container-User .userGrup:hover .textEmail{
+    width: .5em;
+    transition: .3s ease-in;
+}
+
+.sidebar .container-User:hover .userGrup {
     width: 30%;
     transition: .7s ease-out;
 }
- .sidebar .container-User .userGrup:hover p {
- position: absolute;
- opacity: 0;
+
+.sidebar .container-User .userGrup:hover p {
+    position: absolute;
+    opacity: 0;
 
 }
+
 .sidebar .container-User:hover p {
- position: absolute;
-opacity: 0;
-  
+    position: absolute;
+    opacity: 0;
+
 }
 
 .sidebar .container-User:hover .btnExit {
@@ -210,18 +213,16 @@ opacity: 0;
     color: #afafaf;
 }
 
-.sidebar .container-User .btnExit:hover  {
+.sidebar .container-User .btnExit:hover {
     opacity: 1;
     color: #000;
-    
+
 }
-.sidebar .container-User:hover .userImg::after,.styleSidebar .container-User:hover .userImg .userImg::after   {
-background-color: #31313186;
 
-}  
-
-
-
+.sidebar .container-User:hover .userImg::after,
+.styleSidebar .container-User:hover .userImg .userImg::after {
+    background-color: #31313186;
+}
 
 .btnExit {
     position: absolute;
@@ -244,7 +245,8 @@ background-color: #31313186;
     color: #ffffff1a;
 } */
 
-.styleSidebar .container-User .btnExit{
+
+.styleSidebar .container-User .btnExit {
     opacity: 0;
 }
 
@@ -252,33 +254,37 @@ background-color: #31313186;
     opacity: 1;
     color: #afafaf;
 }
-.styleSidebar .container-User .btnExit:hover  {
+
+.styleSidebar .container-User .btnExit:hover {
     opacity: 1;
     color: #fff;
-    
+
 }
 
 /* .styleSidebar .container-User:hover .btnExit {
     background-color: #ffffff1a;  
 } */
 
- .styleSidebar .container-User .userGrup{
-     width: 100%;
-     transition: .7s ease-in;
-    }
-.styleSidebar .container-User:hover .userGrup{
+.styleSidebar .container-User .userGrup {
+    width: 100%;
+    transition: .7s ease-in;
+}
+
+.styleSidebar .container-User:hover .userGrup {
     width: 30%;
     transition: .7s ease-out;
 }
- .styleSidebar .container-User .userGrup:hover p {
- position: absolute;
- opacity: 0;
+
+.styleSidebar .container-User .userGrup:hover p {
+    position: absolute;
+    opacity: 0;
 
 }
+
 .styleSidebar .container-User:hover p {
- position: absolute;
-opacity: 0;
-  
+    position: absolute;
+    opacity: 0;
+
 }
 
 
@@ -387,7 +393,7 @@ aside:not(.styleSidebar) .menu--secao:hover {
         transition: all .3s ease;
     }
 
-    .container--login{
+    .container--login {
         width: 100%;
         display: flex;
         justify-content: center;
@@ -413,6 +419,7 @@ aside:not(.styleSidebar) .menu--secao:hover {
         margin: 0.5rem 0;
         display: flex;
         align-items: center;
+        justify-content: center;
         padding: 0;
         transform: none;
         border-radius: 8px 8px 0 0;
@@ -423,24 +430,24 @@ aside:not(.styleSidebar) .menu--secao:hover {
         background: none;
     }
 
-   .sidebar .container-User .userGrup,.styleSidebar .container-User .userGrup{
-     width: 70%;
-    
-     padding-left: 0;
-     transition: .7s ease-in;
+    .sidebar .container-User .userGrup,
+    .styleSidebar .container-User .userGrup {
+        width: 70%;
+        padding-left: 0;
+        transition: .7s ease-in;
     }
 
- 
-     .container-User:hover  .userGrup img{
-        margin: 0 auto;
-      z-index: 1;
-     }
 
-    .container-User .textEmail {
+    .container-User:hover .userGrup img {
+        margin: 0 .5rem;
+        z-index: 1;
+    }
+
+    .container-User .userGrup .textEmail {
         position: absolute;
-        top: 3rem;
-        left: 7rem;
-        width: 19em;
+        top: 3.3rem;
+        left: 4.8rem;
+        width: 20em;
         margin: 0;
         align-items: baseline;
         font-size: .9rem;
@@ -452,30 +459,44 @@ aside:not(.styleSidebar) .menu--secao:hover {
     }
 
 
-  .container-User:hover .textEmail{
-   width: 1px;
-   transition: all .3s ease-in;
-}
+    .container-User .userGrup:hover .textEmail {
+        width: .5rem;
+        transition: none;
+    }
+
+    .userGrup {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        align-items: center;
+        padding: 0;
+        background: none;
+        justify-content: space-evenly;
+    }
+
+    .userGrup p {
+         margin-left: .5rem ;
+    }
+
+    /* .container-User:hover .userGrup p {
+        margin: 0;
+    } */
 
 
     .container-User p {
         font-size: 1.5rem;
+        margin: 0;
         font-weight: bold;
     }
 
-
-    .userGrup {
-        
+    .styleSidebar .container-User:hover .userGrup {
+      
+        transition: .7s ease-out;
     }
 
-
-    .styleSidebar .container-User:hover .userGrup{
-   display: block;
-    transition: .7s ease-out;
-}
- .userImg{
-    padding: 0 .5rem;
- }
+    .userImg {
+    padding: 0 .2.2rem;
+    }
 
     .userImg img {
         width: 3rem;
@@ -484,44 +505,45 @@ aside:not(.styleSidebar) .menu--secao:hover {
         border-radius: 50%;
     }
 
-    .userImg::after{
-        top: 0;
-        left: 2.5rem;
+    .userImg::after {
+        top: .4rem;
+        left: .5rem;
         width: 3rem;
         height: 3rem;
+        
     }
 
-    .container-User:hover .userImg{
-    padding: 0 2.5rem;
- }
+    .container-User:hover .userImg {
+    }
+
+  .container-User  .btnExit {
+        position: absolute;
+        top: 4.2rem;
+        left: 10rem;
+        width: 30%;
+        padding: 0 20px;
+        border: none;
+        font-weight: 900;
+        font-size: 1.4rem;
+        color: #fdfbfb;
+        border-radius: 0 0 8px 8px;
+        text-transform: uppercase;
+        opacity: 0;
+        justify-content: center;
+        background: none;
+
+    }
 
 
-    .btnExit {
-    position: absolute;
-    top: 4.5rem;
-    width: 30%;
-    padding: 0 20px;
-    border: none;
-    font-weight: 900;
-    font-size: 1.4rem;
-    color: #fdfbfb;
-    border-radius: 0 0 8px 8px;
-    text-transform: uppercase;
-    opacity: 0;
-    justify-content: center;
-    background: none;
-}
 
+    .styleSidebar .container-User .btnExit {
+        opacity: 0;
+    }
 
-
-.styleSidebar .container-User .btnExit{
-    opacity: 0;
-}
-
-.styleSidebar .container-User:hover .btnExit {
-    opacity: 1;
-    color: #afafaf;
-}
+    .styleSidebar .container-User:hover .btnExit {
+        opacity: 1;
+        color: #afafaf;
+    }
 
     .styleSidebar .container-User:hover .btnExit {
         background: none;
@@ -581,7 +603,7 @@ aside:not(.styleSidebar) .menu--secao:hover {
         width: 50px;
         height: 50px;
         border-radius: 8px;
-        
+
         overflow: hidden;
         transition: all 0.5s ease;
     }
@@ -649,12 +671,12 @@ aside:not(.styleSidebar) .menu--secao:hover {
         transition: all 0.3s ease-in;
     }
 
-    .button-prop:hover{
-        -webkit-tap-highlight-color:transparent;
+    .button-prop:hover {
+        -webkit-tap-highlight-color: transparent;
     }
 
-    .button-prop:active{
-        
+    .button-prop:active {
+
         background-color: #4947475b;
     }
 
@@ -690,7 +712,7 @@ aside:not(.styleSidebar) .menu--secao:hover {
     position: relative;
     border: 2px solid #1c1c1c;
     background-color: #000;
-   
+
 }
 
 .conteiner--slider {
@@ -1034,7 +1056,7 @@ aside:not(.styleSidebar) .menu--secao:hover {
         text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.5);
     }
 
-    .produto--item p{
+    .produto--item p {
         padding: 0 1.7rem;
     }
 

@@ -41,8 +41,8 @@ $(function () {
             nome = $(`<p></p>`).addClass('textName').text(data.name);
             email = $(`<p></p>`).addClass('textEmail').text(data.email);
             btnExit = $('<button></button>').addClass('btnExit').text('sair')
-            grup = $('<div></div>').addClass('userGrup').append(image, nome)
-            containerUser = $('<div></div>').addClass('container-User').append(grup, email, btnExit)
+            grup = $('<div></div>').addClass('userGrup').append(image, nome,email)
+            containerUser = $('<div></div>').addClass('container-User').append(grup, btnExit)
             $('#btn-login').append(containerUser)
 
             btnExit[0].addEventListener('click', function () {
