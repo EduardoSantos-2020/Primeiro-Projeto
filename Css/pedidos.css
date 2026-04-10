@@ -70,44 +70,41 @@ body {
 
 .container-User .textName {
     font-size: 1.3rem;
-    font-weight: bold;
+    letter-spacing: .2rem;
     display: inline-block;
     white-space: nowrap;
-    overflow: hidden;
+    margin-left: .4rem;
+    font-weight: bold;
+
 }
 
-.container-User .userGrup .textEmail {
+.container-User .textEmail {
     top: 2.5rem;
     left: 4rem;
-    width: 20.5em;
+    width: 25.5em;
     position: absolute;
     display: inline-block;
     white-space: nowrap;
-    font-size: 1.3rem;
+    font-size: .56rem;
+    white-space: nowrap;
     font-weight: bold;
     overflow: hidden;
-
-    font-size: .56rem;
-    text-align: start;
     line-height: .7rem;
-    overflow: hidden;
-    letter-spacing: .1rem;
-    margin: 0;
+    letter-spacing: .2rem;
     transition: .3s ease-in;
+
 }
 
+.container-User:hover .textEmail {
+    width: .5em;
+    transition: .3s ease-in;
+}
 
 .userGrup {
     position: relative;
     display: inline-flex;
     align-items: center;
     padding-left: 1.5rem;
-}
-
-.userGrup p {
-    letter-spacing: .2rem;
-    margin-left: .4rem;
-    overflow: hidden;
 }
 
 
@@ -160,10 +157,6 @@ body {
     transition: .7s ease-in;
 }
 
-.container-User .userGrup:hover .textEmail {
-    width: .5em;
-    transition: .3s ease-in;
-}
 
 .sidebar .container-User:hover .userGrup {
     width: 30%;
@@ -356,12 +349,14 @@ body {
     }
 
     .container-User .textName {
-        font-size: 1.3rem;
-        overflow: hidden;
+        font-size: 1.5rem;
+        margin: 0 0 0 1rem;
+        font-weight: bold;
+        white-space: nowrap;
     }
 
-    .container-User .userGrup .textEmail {
-        font-size: .9rem;
+
+    .container-User .textEmail {
         color: #fff;
         overflow: hidden;
     }
@@ -378,15 +373,6 @@ body {
 
     }
 
-    .userGrup p {
-        margin: 0 0 0 1rem;
-    }
-
-    .container-User .userGrup p {
-        font-size: 1.5rem;
-        font-weight: bold;
-        white-space: nowrap;
-    }
 
     .styleSidebar .container-User:hover .userGrup {
 

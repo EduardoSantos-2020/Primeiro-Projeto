@@ -91,11 +91,11 @@ $(function () {
                $('#btn-login').css('width', '100%')
                $('#btn-login').removeAttr('href')
                image = $('<div></div>').addClass('userImg').append($('<img>').attr('src', data.picture).attr('loading', 'lazy').attr('priority', 'high'));
-               nome = $(`<p></p>`).text(data.name);
+               nome = $(`<p></p>`).addClass('textName').text(data.name);
                email = $(`<p></p>`).addClass('textEmail').text(data.email);
                btnExit = $('<button></button>').addClass('btnExit').text('sair')
-               grup = $('<div></div>').addClass('userGrup').append(image, nome, email)
-               containerUser = $('<div></div>').addClass('container-User').append(grup, btnExit)
+               grup = $('<div></div>').addClass('userGrup').append(image,nome,email)
+               containerUser = $('<div></div>').addClass('container-User').append(grup,btnExit)
                $('#btn-login').append(containerUser)
 
                btnExit[0].addEventListener('click', function () {
