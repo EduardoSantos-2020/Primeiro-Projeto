@@ -72,12 +72,12 @@ $(function () {
                   $(userBtn).on('click', UserButton)
 
                      if($(btn.currentTarget).width() <= '94.797') {
-                        $(btn.currentTarget).css({'width': '70%','transition':'.7s ease-in'});
-                        $(btnExit).css({'opacity':'0','transition':'opacity .7s ease-in'})
+                        $(btn.currentTarget).css({'width': '70%'});
+                        $(btnExit).css({'opacity':'0'})
 
                      }else{
-                        $(btn.currentTarget).css({'width': '12%','transition':'.7s ease-in'});
-                        $(btnExit).css({'opacity':'1','transition':'opacity .7s ease-in'});
+                        $(btn.currentTarget).css({'width': '12%'});
+                        $(btnExit).css({'opacity':'1'});
                         }
                         
                         // setInterval(() => {
@@ -191,12 +191,12 @@ $(function () {
                   $(userBtn).on('click', UserButton)
 
                      if($(btn.currentTarget).width() <= '94.797') {
-                        $(btn.currentTarget).css({'width': '70%','transition':'.7s ease-in'});
-                        $(btnExit).css({'opacity':'0','transition':'opacity .7s ease-in'})
+                        $(btn.currentTarget).css({'width': '70%'});
+                        $(btnExit).css({'opacity':'0'})
 
                      }else{
-                        $(btn.currentTarget).css({'width': '12%','transition':'.7s ease-in'});
-                        $(btnExit).css({'opacity':'1','transition':'opacity .7s ease-in'});
+                        $(btn.currentTarget).css({'width': '12%'});
+                        $(btnExit).css({'opacity':'1'});
                         }
                         
                         // setInterval(() => {
