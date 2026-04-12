@@ -69,8 +69,6 @@ $(function () {
                    if ($(window).width()<=992) {
                   userBtn.width('70%')
 
-                  $(userBtn).on('click', UserButton)
-
                      if($(btn.currentTarget).width() <= '94.797') {
                         $(btn.currentTarget).css({'width': '70%'});
                         $(btnExit).css({'opacity':'0'})
@@ -187,8 +185,6 @@ $(function () {
 
                if ($(window).width()<=992) {
                   userBtn.width('70%')
-
-                  $(userBtn).on('click', UserButton)
 
                      if($(btn.currentTarget).width() <= '94.797') {
                         $(btn.currentTarget).css({'width': '70%'});
