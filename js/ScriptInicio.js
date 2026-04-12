@@ -203,25 +203,25 @@ $(function () {
                   userBtn.width('95%')
                   
                   if($(btn.currentTarget).width() <= '36.75') {
-                     $(btn.currentTarget).css({'width': '95%','transition':'.7s ease-in'});
-                     $(btnExit).css({'opacity':'0','transition':'opacity .7s ease-in'})
+                     $(btn.currentTarget).css({'width': '95%'});
+                     $(btnExit).css({'opacity':'0'})
    
                   }else{
-                     $(btn.currentTarget).css({'width': '12%','transition':'.7s ease-in'});
-                      $(btnExit).css({'opacity':'1','transition':'opacity .7s ease-in'});
+                     $(btn.currentTarget).css({'width': '12%'});
+                      $(btnExit).css({'opacity':'1'});
                      }
                      
                      setInterval(() => {
-                        $(btn.currentTarget).css({'width': '95%','transition':'.7s ease-in'});
-                        $(btnExit).css({'opacity':'0','transition':'opacity .7s ease-in'})
+                        $(btn.currentTarget).css({'width': '95%'});
+                        $(btnExit).css({'opacity':'0'})
                      }, 8000);     
                   }
                }
                
                $(window).on( "scroll", function(e) {    
                   if ($(e.currentTarget).scrollTop()>0) {
-                     $('.userGrup').css({'width': '95%','transition':'.7s ease-in'});
-                     $(btnExit).css({'opacity':'0','transition':'opacity .7s ease-in'})
+                     $('.userGrup').css({'width': '95%'});
+                     $(btnExit).css({'opacity':'0'})
                   }
                })
             }
