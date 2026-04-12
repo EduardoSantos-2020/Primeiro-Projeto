@@ -53,7 +53,8 @@ $(window).ready(() => {
          nome = $(`<p></p>`).addClass('textName').text(data.name);
          email = $(`<p></p>`).addClass('textEmail').text(data.email);
          btnExit = $('<button></button>').addClass('btnExit').text('sair')
-         grup = $('<div></div>').addClass('userGrup').append(image,nome, email)
+         div = $('<div></div>').addClass('contNameEmail').append(nome, email)
+         grup = $('<div></div>').addClass('userGrup').append(image, div)
          containerUser = $('<div></div>').addClass('container-User').append(grup, btnExit)
          $('#btn-login').append(containerUser)
 
@@ -82,6 +83,25 @@ $(window).ready(() => {
                window.location.href = '/index.html';
             }
          })
+
+         userBtn = $(grup)
+         userBtn.width('95%')
+
+         $(userBtn).on('click', UserButton)
+
+         function UserButton(btn) {
+            console.log($(btn.currentTarget).width());
+
+
+            if ($(btn.currentTarget).width() <= '36.75') {
+               $(btn.currentTarget).css({ 'width': '95%', 'transition': '.7s ease-in' });
+               $(btnExit).css({ 'opacity': '0', 'transition': 'opacity .7s ease-in' })
+
+            } else {
+               $(btn.currentTarget).css({ 'width': '12%', 'transition': '.7s ease-in' });
+               $(btnExit).css({ 'opacity': '1', 'transition': 'opacity .7s ease-in' })
+            }
+         }
       }
    }
 

@@ -70,41 +70,47 @@ body {
 
 .container-User .textName {
     font-size: 1.3rem;
+    z-index: 0;
     letter-spacing: .2rem;
-    display: inline-block;
-    white-space: nowrap;
     margin-left: .4rem;
     font-weight: bold;
-
+    line-height: 1.1rem;
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 .container-User .textEmail {
-    top: 2.5rem;
-    left: 4rem;
     width: 25.5em;
-    position: absolute;
     display: inline-block;
     white-space: nowrap;
     font-size: .56rem;
     white-space: nowrap;
     font-weight: bold;
-    overflow: hidden;
     line-height: .7rem;
+    overflow: hidden;
     letter-spacing: .2rem;
-    transition: .3s ease-in;
-
 }
 
-.container-User:hover .textEmail {
+/* .container-User:hover .textEmail {
     width: .5em;
     transition: .3s ease-in;
-}
+} */
+
 
 .userGrup {
     position: relative;
-    display: inline-flex;
+    display: flex;
     align-items: center;
-    padding-left: 1.5rem;
+    z-index: 1;
+    /* padding-left: 1.5rem; */
+}
+
+.contNameEmail {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
 }
 
 
@@ -135,10 +141,10 @@ body {
 }
 
 
-.sidebar .container-User:hover .btnExit {
+/* .sidebar .container-User:hover .btnExit {
     color: #3f3c3c;
     opacity: 1;
-}
+} */
 
 .sidebar .container-User:hover .userGrup p {
     color: #13121228;
@@ -152,28 +158,28 @@ body {
     color: #afafaf;
 }
 
-.sidebar .container-User .userGrup {
+/* .sidebar .container-User .userGrup {
     width: 100%;
     transition: .7s ease-in;
-}
+} */
 
 
-.sidebar .container-User:hover .userGrup {
+/* .sidebar .container-User:hover .userGrup {
     width: 30%;
     transition: .7s ease-out;
-}
+} */
 
-.sidebar .container-User .userGrup:hover p {
+/* .sidebar .container-User .userGrup:hover p {
     position: absolute;
     opacity: 0;
 
-}
+} */
 
-.sidebar .container-User:hover p {
+/* .sidebar .container-User:hover p {
     position: absolute;
     opacity: 0;
 
-}
+} */
 
 .sidebar .container-User:hover .userImg::after,
 .styleSidebar .container-User:hover .userImg .userImg::after {
@@ -189,7 +195,7 @@ body {
     border: none;
     font-weight: 900;
     font-size: 1.2rem;
-    color: #fdfbfb;
+    color: #000;
     border-radius: 0 0 8px 8px;
     text-transform: uppercase;
     opacity: 0;
@@ -198,7 +204,7 @@ body {
 }
 
 .btnExit:hover {
-    color: #3f3c3c;
+    color: #afafaf91;
 
 }
 

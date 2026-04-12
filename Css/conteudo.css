@@ -90,19 +90,18 @@ a {
 
 .container-User .textName {
     font-size: 1.3rem;
+    z-index: 0;
     letter-spacing: .2rem;
     margin-left: .4rem;
     font-weight: bold;
+    line-height: 1.1rem;
     display: inline-block;
     white-space: nowrap;
     overflow: hidden;
 }
 
 .container-User .textEmail {
-    top: 2.5rem;
-    left: 4rem;
     width: 25.5em;
-    position: absolute;
     display: inline-block;
     white-space: nowrap;
     font-size: .56rem;
@@ -110,8 +109,8 @@ a {
     font-weight: bold;
     line-height: .7rem;
     overflow: hidden;
+    z-index: 0;
     letter-spacing: .2rem;
-    transition: .3s ease-in;
 }
 
 .sidebar .container-User .textName,
@@ -119,16 +118,36 @@ a {
     color: #000;
 }
 
+.sidebar .container-User :hover .textName,
+.sidebar .container-User :hover .textEmail {
+    color: #afafaf;
+}
+
+
+
 .styleSidebar .container-User .textName,
 .styleSidebar .container-User .textEmail {
     color: #fff;
 }
 
+.styleSidebar .container-User :hover .textName,
+.styleSidebar .container-User :hover .textEmail {
+    color: #afafaf;
+}
+
 .userGrup {
     position: relative;
-    display: inline-flex;
+    display: flex;
     align-items: center;
-    padding-left: 1.5rem;
+    z-index: 1;
+    /* padding-left: 1.5rem; */
+}
+
+.contNameEmail {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
 }
 
 .userImg {
@@ -162,32 +181,52 @@ a {
     color: rgb(70, 68, 68);
 } */
 
-.sidebar .container-User .btnExit {
+/* .sidebar .container-User .btnExit {
     opacity: 0;
+} */
+ .sidebar .container-User .btnExit {
+color: #000;
 }
 
-.sidebar .container-User:hover .btnExit {
-    color: #3f3c3c;
+.sidebar .container-User:hover  .btnExit{
+color: #000; 
 }
 
-.sidebar .container-User .btnExit:hover {
+/* .sidebar .container-User:hover .btnExit {
+    color: #afafaf;
+} */
+
+.styleSidebar .container-User:hover .btnExit {
     color: #afafaf;
 }
 
-.sidebar .container-User .userGrup {
-    width: 100%;
-    transition: .7s ease-in;
+.sidebar .container-User:hover .btnExit {
+    color: #afafaf;
 }
 
-.container-User .userGrup:hover .textEmail {
-    width: .5em;
-    transition: .3s ease-in;
+
+.sidebar .container-User:hover {
+    color: #afafaf;
+}
+.sidebar .container-User .btnExit:hover {
+    color: #000;
+}
+
+/* .sidebar .container-User .userGrup {
+    width: 100%;
+    transition: .7s ease-in;
 }
 
 .sidebar .container-User:hover .userGrup {
     width: 30%;
     transition: .7s ease-out;
+} */
+
+/* .container-User .userGrup:hover .textEmail {
+    width: .5em;
+    transition: .3s ease-in;
 }
+
 
 .sidebar .container-User .userGrup:hover p {
     position: absolute;
@@ -202,13 +241,13 @@ a {
 .sidebar .container-User:hover .btnExit {
     opacity: 1;
     color: #afafaf;
-}
+} */
 
-.sidebar .container-User .btnExit:hover {
+/* .sidebar .container-User .btnExit:hover {
     opacity: 1;
     color: #000;
 
-}
+} */
 
 .sidebar .container-User:hover .userImg::after,
 .styleSidebar .container-User:hover .userImg .userImg::after {
@@ -232,21 +271,18 @@ a {
 }
 
 .styleSidebar .container-User .btnExit {
-    opacity: 0;
+    color:#fff;
 }
 
 .styleSidebar .container-User:hover .btnExit {
-    opacity: 1;
-    color: #afafaf;
+    color: #fff;
 }
 
 .styleSidebar .container-User .btnExit:hover {
-    opacity: 1;
-    color: #fff;
-
+    color: #afafaf91;
 }
 
-.styleSidebar .container-User .userGrup {
+/* .styleSidebar .container-User .userGrup {
     width: 100%;
     transition: .7s ease-in;
 }
@@ -254,16 +290,16 @@ a {
 .styleSidebar .container-User:hover .userGrup {
     width: 30%;
     transition: .7s ease-out;
-}
+} */
 
 .styleSidebar .container-User .userGrup:hover p {
-    position: absolute;
-    opacity: 0;
+    /* position: absolute; */
+    /* opacity: 0; */
 }
 
 .styleSidebar .container-User:hover p {
-    position: absolute;
-    opacity: 0;
+    /* position: absolute; */
+    /* opacity: 0; */
 }
 
 .menu--secao {
@@ -381,14 +417,13 @@ aside:not(.styleSidebar) .menu--secao:hover {
     #btn-login {
         display: flex;
         justify-content: center;
-
         transition: width 1.5s ease-in;
-    } 
-    
+    }
+
     .sidebar .container-User .textName,
-.sidebar .container-User .textEmail {
-    color: #fff;
-}
+    .sidebar .container-User .textEmail {
+        color: #fff;
+    }
 
     .container-User {
         position: relative;
@@ -403,10 +438,10 @@ aside:not(.styleSidebar) .menu--secao:hover {
         border-radius: 8px 8px 0 0;
     }
 
-    .styleSidebar .container-User:hover,
+    /* .styleSidebar .container-User:hover,
     .sidebar .container-User:hover {
         background: none;
-    }
+    } */
 
     .sidebar .container-User .userGrup,
     .styleSidebar .container-User .userGrup {
@@ -420,9 +455,9 @@ aside:not(.styleSidebar) .menu--secao:hover {
         z-index: 1;
     }
 
-    .container-User .userGrup:hover .textEmail {
+    /* .container-User .userGrup:hover .textEmail {
         transition: none;
-    }
+    } */
 
     .userGrup {
         display: flex;
@@ -432,29 +467,38 @@ aside:not(.styleSidebar) .menu--secao:hover {
 
     }
 
+    .contNameEmail{
+        width: 100%;
+    }
+
 
     .container-User .textName {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
         margin: 0 0 0 1rem;
         font-weight: bold;
         overflow: hidden;
         white-space: nowrap;
     }
 
-       .container-User .textEmail {
-        font-size: .8rem;
+    .container-User .textEmail {
+        width: 100%;
+        font-size: .6rem;
         color: #fff;
+        margin-left: .5rem;
         overflow: hidden;
     }
 
-    .styleSidebar .container-User:hover .userGrup {
+   
+
+    /* .styleSidebar .container-User:hover .userGrup {
+        width: 10%;
         transition: .7s ease-out;
     }
 
     .sidebar .container-User:hover .userGrup {
         width: 10%;
         transition: .7s ease-out;
-    }
+    } */
 
     .userImg {
         padding: 0;
@@ -497,18 +541,18 @@ aside:not(.styleSidebar) .menu--secao:hover {
 
 
 
-    .styleSidebar .container-User .btnExit {
+    /* .styleSidebar .container-User .btnExit {
         opacity: 0;
     }
 
     .styleSidebar .container-User:hover .btnExit {
         opacity: 1;
         color: #afafaf;
-    }
+    } */
 
-    .styleSidebar .container-User:hover .btnExit {
+    /* .styleSidebar .container-User:hover .btnExit {
         background: none;
-    }
+    } */
 
     .login {
         width: 100px;

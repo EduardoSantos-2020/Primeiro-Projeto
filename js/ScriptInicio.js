@@ -6,7 +6,6 @@ $(function () {
    })
 
    $(window).ready(function () {
-
       if (window.location.hash.includes("access_token")) {
 
          const hash = window.location.hash.substring(1);
@@ -28,10 +27,10 @@ $(function () {
 
 
       } else {
-
          if (!sessionStorage.getItem('data')) {
             $(btnLogin).css('display', 'block')
-         } else {
+         }
+         else {
             data = JSON.parse(sessionStorage.getItem("data"))
 
             $(btnLogin).css('display', 'none')
@@ -41,10 +40,75 @@ $(function () {
             nome = $(`<p></p>`).addClass('textName').text(data.name);
             email = $(`<p></p>`).addClass('textEmail').text(data.email);
             btnExit = $('<button></button>').addClass('btnExit').text('sair')
-            grup = $('<div></div>').addClass('userGrup').append(image, nome,email)
+            div=$('<div></div>').addClass('contNameEmail').append(nome, email)
+            grup = $('<div></div>').addClass('userGrup').append(image,div)
             containerUser = $('<div></div>').addClass('container-User').append(grup, btnExit)
-            $('#btn-login').append(containerUser)
+            $('#btn-login').append(containerUser);
+            const userBtn=$(grup)
+            
+               btnExit[0].addEventListener('click', function () {
+                  sessionStorage.removeItem('access_token')
+                  sessionStorage.removeItem("data");
+                  sessionStorage.removeItem("page");
+                  $('#btn-login').css('width', '0')
 
+                  if (location.protocol == 'https:') {
+
+                     if (window.location.host.includes('.app')) {
+                        window.location.href = '/index.html';
+                     } else {
+                        window.location.href = '/Primeiro-Projeto/' + 'index.html';
+                     }
+                  } else if (location.protocol == 'http:') {
+                     window.location.href = '/index.html';
+                  }
+               })
+               $(userBtn).on('click', UserButton)
+
+               function UserButton(btn) {
+                   if ($(window).width()<=992) {
+                  userBtn.width('70%')
+
+                  $(userBtn).on('click', UserButton)
+
+                     if($(btn.currentTarget).width() <= '94.797') {
+                        $(btn.currentTarget).css({'width': '70%','transition':'.7s ease-in'});
+                        $(btnExit).css({'opacity':'0','transition':'opacity .7s ease-in'})
+
+                     }else{
+                        $(btn.currentTarget).css({'width': '12%','transition':'.7s ease-in'});
+                        $(btnExit).css({'opacity':'1','transition':'opacity .7s ease-in'});
+                        }
+                        
+                        // setInterval(() => {
+                        //    $(btn.currentTarget).css({'width': '95%','transition':'.7s ease-in'});
+                        //    $(btnExit).css({'opacity':'0','transition':'opacity .7s ease-in'})
+                        // }, 8000); 
+               }else{
+                  userBtn.width('95%')
+                  if($(btn.currentTarget).width() <= '36.75') {
+                     $(btn.currentTarget).css({'width': '95%','transition':'.7s ease-in'});
+                     $(btnExit).css({'opacity':'0','transition':'opacity .7s ease-in'})
+   
+                  }else{
+                     $(btn.currentTarget).css({'width': '12%','transition':'.7s ease-in'});
+                      $(btnExit).css({'opacity':'1','transition':'opacity .7s ease-in'});
+                     }
+                     
+                     setInterval(() => {
+                        $(btn.currentTarget).css({'width': '95%','transition':'.7s ease-in'});
+                        $(btnExit).css({'opacity':'0','transition':'opacity .7s ease-in'})
+                     }, 8000);     
+                  }
+               }
+               
+               $(window).on( "scroll", function(e) {    
+                  if ($(e.currentTarget).scrollTop()>0) {
+                     $('.userGrup').css({'width': '95%','transition':'.7s ease-in'});
+                     $(btnExit).css({'opacity':'0','transition':'opacity .7s ease-in'})
+                  }
+               })
+         
             btnExit[0].addEventListener('click', function () {
                sessionStorage.removeItem('access_token')
                sessionStorage.removeItem("data");
@@ -70,8 +134,8 @@ $(function () {
 
             })
          }
-
       }
+
    })
 
    function fetchUserInfo(accessToken) {
@@ -83,7 +147,6 @@ $(function () {
             'Authorization': `Bearer ${accessToken}`
          },
          success: function (response) {
-
             sessionStorage.setItem("data", JSON.stringify(response));
             const data = JSON.parse(sessionStorage.getItem("data"));
 
@@ -94,10 +157,12 @@ $(function () {
                nome = $(`<p></p>`).addClass('textName').text(data.name);
                email = $(`<p></p>`).addClass('textEmail').text(data.email);
                btnExit = $('<button></button>').addClass('btnExit').text('sair')
-               grup = $('<div></div>').addClass('userGrup').append(image,nome,email)
-               containerUser = $('<div></div>').addClass('container-User').append(grup,btnExit)
+               div=$('<div></div>').addClass('contNameEmail').append(nome, email)
+               grup = $('<div></div>').addClass('userGrup').append(image,div)
+               containerUser = $('<div></div>').addClass('container-User').append(grup, btnExit)
                $('#btn-login').append(containerUser)
-
+               const userBtn=$(grup)
+         
                btnExit[0].addEventListener('click', function () {
                   sessionStorage.removeItem('access_token')
                   sessionStorage.removeItem("data");
@@ -111,24 +176,67 @@ $(function () {
                      } else {
                         window.location.href = '/Primeiro-Projeto/' + 'index.html';
                      }
-
-
                   } else if (location.protocol == 'http:') {
-
                      window.location.href = '/index.html';
+                  }
+               })
+             
+               $(userBtn).on('click', UserButton)
 
+                function UserButton(btn) {
+
+               if ($(window).width()<=992) {
+                  userBtn.width('70%')
+
+                  $(userBtn).on('click', UserButton)
+
+                     if($(btn.currentTarget).width() <= '94.797') {
+                        $(btn.currentTarget).css({'width': '70%','transition':'.7s ease-in'});
+                        $(btnExit).css({'opacity':'0','transition':'opacity .7s ease-in'})
+
+                     }else{
+                        $(btn.currentTarget).css({'width': '12%','transition':'.7s ease-in'});
+                        $(btnExit).css({'opacity':'1','transition':'opacity .7s ease-in'});
+                        }
+                        
+                        // setInterval(() => {
+                        //    $(btn.currentTarget).css({'width': '95%','transition':'.7s ease-in'});
+                        //    $(btnExit).css({'opacity':'0','transition':'opacity .7s ease-in'})
+                        // }, 8000); 
+               }else{
+                  userBtn.width('95%')
+                  
+                  if($(btn.currentTarget).width() <= '36.75') {
+                     $(btn.currentTarget).css({'width': '95%','transition':'.7s ease-in'});
+                     $(btnExit).css({'opacity':'0','transition':'opacity .7s ease-in'})
+   
+                  }else{
+                     $(btn.currentTarget).css({'width': '12%','transition':'.7s ease-in'});
+                      $(btnExit).css({'opacity':'1','transition':'opacity .7s ease-in'});
+                     }
+                     
+                     setInterval(() => {
+                        $(btn.currentTarget).css({'width': '95%','transition':'.7s ease-in'});
+                        $(btnExit).css({'opacity':'0','transition':'opacity .7s ease-in'})
+                     }, 8000);     
+                  }
+               }
+               
+               $(window).on( "scroll", function(e) {    
+                  if ($(e.currentTarget).scrollTop()>0) {
+                     $('.userGrup').css({'width': '95%','transition':'.7s ease-in'});
+                     $(btnExit).css({'opacity':'0','transition':'opacity .7s ease-in'})
                   }
                })
             }
+            
          },
          error: function (error) {
             alert('Erro:', error);
          }
       });
    }
-
 })
-
 $.getJSON('js/ApiProduts.json', function (arrayProdutos) {
 
    arrayProdutos.map((produts, i) => {
@@ -139,6 +247,7 @@ $.getJSON('js/ApiProduts.json', function (arrayProdutos) {
       $('.produtos--items').append(objCard.append(img, p, button));
 
       btnCard = objCard.children('.btn-card')[0];
+      userBtn=$('.container-User > .userGrup')[0]
 
       $(btnCard).each((i, obj) => {
          $(obj).click(() => {
@@ -159,7 +268,6 @@ $.getJSON('js/ApiProduts.json', function (arrayProdutos) {
             }
          })
       });
-
    })
 
    $('.produtos--items').slick({
@@ -193,11 +301,10 @@ $.getJSON('js/ApiProduts.json', function (arrayProdutos) {
          }
       ]
    });
-
-
    sideBar = $(".sidebar");
    nameLogo = $('.logo--name');
    menu = $('.menu-btn .line');
+
    correntSlider = 0;
 
    $('.button-prop').on('click', mobileEvent)
@@ -222,6 +329,8 @@ $.getJSON('js/ApiProduts.json', function (arrayProdutos) {
          }
       }
    }
+
+
 
    function showSlider() {
       totalSlider = $(".slider--item");
@@ -284,6 +393,11 @@ $.getJSON('js/ApiProduts.json', function (arrayProdutos) {
 
    setInterval(showSlider, 15000);
 })
+
+
+
+
+
 
 
 
