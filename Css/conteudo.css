@@ -447,7 +447,7 @@ aside:not(.styleSidebar) .menu--secao:hover {
     .styleSidebar .container-User .userGrup {
         width: 70%;
         padding-left: 0;
-        transition: .7s ease-in;
+        transition: none;
     }
 
 
@@ -829,7 +829,7 @@ aside:not(.styleSidebar) .menu--secao:hover {
         transition: opacity 5s linear;
     }
 }
-
+    
 @media screen and (max-width:580px) {
     .container-principal {
         border: none;

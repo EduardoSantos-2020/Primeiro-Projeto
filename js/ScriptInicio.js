@@ -67,9 +67,12 @@ $(function () {
 
                function UserButton(btn) {
                    if ($(window).width()<=992) {
-                  userBtn.width('70%')
-
-                     if($(btn.currentTarget).width() <= '94.797') {
+            
+      
+                 widthReal=$(btn.currentTarget).attr('style').match(/width:\s*([^;]+)/)[1]
+                 console.log(widthReal)
+                 
+                     if(widthReal<= '12%') {
                         $(btn.currentTarget).css({'width': '70%'});
                         $(btnExit).css({'opacity':'0'})
 
@@ -184,21 +187,24 @@ $(function () {
                 function UserButton(btn) {
 
                if ($(window).width()<=992) {
-                  userBtn.width('70%')
+         
 
-                     if($(btn.currentTarget).width() <= '94.797') {
-                        $(btn.currentTarget).css({'width': '70%'});
-                        $(btnExit).css({'opacity':'0'})
+widthReal = $(btn.currentTarget).attr('style').match(/width:\s*([^;]+)/)[1]
+console.log(widthReal)
 
-                     }else{
-                        $(btn.currentTarget).css({'width': '12%'});
-                        $(btnExit).css({'opacity':'1'});
-                        }
-                        
-                        // setInterval(() => {
-                        //    $(btn.currentTarget).css({'width': '95%','transition':'.7s ease-in'});
-                        //    $(btnExit).css({'opacity':'0','transition':'opacity .7s ease-in'})
-                        // }, 8000); 
+if (widthReal <= '12%') {
+   $(btn.currentTarget).css({ 'width': '70%' });
+   $(btnExit).css({ 'opacity': '0' })
+   
+} else {
+   $(btn.currentTarget).css({ 'width': '12%' });
+   $(btnExit).css({ 'opacity': '1' });
+}
+
+// setInterval(() => {
+//    $(btn.currentTarget).css({'width': '95%','transition':'.7s ease-in'});
+//    $(btnExit).css({'opacity':'0','transition':'opacity .7s ease-in'})
+// }, 8000); 
                }else{
                   userBtn.width('95%')
                   
