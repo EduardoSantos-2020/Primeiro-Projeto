@@ -40,76 +40,79 @@ $(function () {
             nome = $(`<p></p>`).addClass('textName').text(data.name);
             email = $(`<p></p>`).addClass('textEmail').text(data.email);
             btnExit = $('<button></button>').addClass('btnExit').text('sair')
-            div=$('<div></div>').addClass('contNameEmail').append(nome, email)
-            grup = $('<div></div>').addClass('userGrup').append(image,div)
+            div = $('<div></div>').addClass('contNameEmail').append(nome, email)
+            grup = $('<div></div>').addClass('userGrup').append(image, div)
             containerUser = $('<div></div>').addClass('container-User').append(grup, btnExit)
             $('#btn-login').append(containerUser);
-            const userBtn=$(grup)
-            
-               btnExit[0].addEventListener('click', function () {
-                  sessionStorage.removeItem('access_token')
-                  sessionStorage.removeItem("data");
-                  sessionStorage.removeItem("page");
-                  $('#btn-login').css('width', '0')
+            userBtn = $('.userGrup')[0]
+            $(userBtn).css('width', '12%')
 
-                  if (location.protocol == 'https:') {
+            btnExit[0].addEventListener('click', function () {
+               sessionStorage.removeItem('access_token')
+               sessionStorage.removeItem("data");
+               sessionStorage.removeItem("page");
+               $('#btn-login').css('width', '0')
 
-                     if (window.location.host.includes('.app')) {
-                        window.location.href = '/index.html';
-                     } else {
-                        window.location.href = '/Primeiro-Projeto/' + 'index.html';
-                     }
-                  } else if (location.protocol == 'http:') {
+               if (location.protocol == 'https:') {
+
+                  if (window.location.host.includes('.app')) {
                      window.location.href = '/index.html';
+                  } else {
+                     window.location.href = '/Primeiro-Projeto/' + 'index.html';
                   }
-               })
-               $(userBtn).on('click', UserButton)
-
-               function UserButton(btn) {
-                   if ($(window).width()<=992) {
-            
-      
-                 widthReal=$(btn.currentTarget).attr('style').match(/width:\s*([^;]+)/)[1]
-                 console.log(widthReal)
-                 
-                     if(widthReal<= '12%') {
-                        $(btn.currentTarget).css({'width': '70%'});
-                        $(btnExit).css({'opacity':'0'})
-
-                     }else{
-                        $(btn.currentTarget).css({'width': '12%'});
-                        $(btnExit).css({'opacity':'1'});
-                        }
-                        
-                        // setInterval(() => {
-                        //    $(btn.currentTarget).css({'width': '95%','transition':'.7s ease-in'});
-                        //    $(btnExit).css({'opacity':'0','transition':'opacity .7s ease-in'})
-                        // }, 8000); 
-               }else{
-                  userBtn.width('95%')
-                  if($(btn.currentTarget).width() <= '36.75') {
-                     $(btn.currentTarget).css({'width': '95%','transition':'.7s ease-in'});
-                     $(btnExit).css({'opacity':'0','transition':'opacity .7s ease-in'})
-   
-                  }else{
-                     $(btn.currentTarget).css({'width': '12%','transition':'.7s ease-in'});
-                      $(btnExit).css({'opacity':'1','transition':'opacity .7s ease-in'});
-                     }
-                     
-                     setInterval(() => {
-                        $(btn.currentTarget).css({'width': '95%','transition':'.7s ease-in'});
-                        $(btnExit).css({'opacity':'0','transition':'opacity .7s ease-in'})
-                     }, 8000);     
-                  }
+               } else if (location.protocol == 'http:') {
+                  window.location.href = '/index.html';
                }
-               
-               $(window).on( "scroll", function(e) {    
-                  if ($(e.currentTarget).scrollTop()>0) {
-                     $('.userGrup').css({'width': '95%','transition':'.7s ease-in'});
-                     $(btnExit).css({'opacity':'0','transition':'opacity .7s ease-in'})
+            })
+
+            function UserButton(btn) {
+               $('.userGrup').toggleClass('exitUser')
+
+               if ($(window).width() <= 992) {
+
+                  if ($('.userGrup').hasClass('exitUser')) {
+                     $(btn.currentTarget).css({ 'width': '12%' });
+                     $(btnExit).css({ 'opacity': '1' });
+
+                  } else {
+                     $(btn.currentTarget).css({ 'width': '70%' });
+                     $(btnExit).css({ 'opacity': '0' })
+                  }
+                  // setInterval(() => {
+                  //    $(btn.currentTarget).css({'width': '95%','transition':'.7s ease-in'});
+                  //    $(btnExit).css({'opacity':'0','transition':'opacity .7s ease-in'})
+                  // }, 8000); 
+
+
+
+               } else {
+                  if ($('.userGrup').hasClass('exitUser')) {
+                     $(btn.currentTarget).css({ 'width': '12%' });
+                     $(btnExit).css({ 'opacity': '1' });
+
+                  } else {
+                     $(btn.currentTarget).css({ 'width': '95%' });
+                     $(btnExit).css({ 'opacity': '0' })
+                  }
+
+                  // setInterval(() => {
+                  //    $(btn.currentTarget).css({'width': '95%'});
+                  //    $(btnExit).css({'opacity':'0'})
+                  // }, 8000);   
+               }
+            }
+
+            $(userBtn).on('click', UserButton)
+
+            if ($(window).width() > 992) {
+               $(window).on("scroll", function (e) {
+                  if ($(e.currentTarget).scrollTop() > 0) {
+                     $('.userGrup').css({ 'width': '95%' });
+                     $(btnExit).css({ 'opacity': '0' })
                   }
                })
-         
+            }
+
             btnExit[0].addEventListener('click', function () {
                sessionStorage.removeItem('access_token')
                sessionStorage.removeItem("data");
@@ -158,12 +161,12 @@ $(function () {
                nome = $(`<p></p>`).addClass('textName').text(data.name);
                email = $(`<p></p>`).addClass('textEmail').text(data.email);
                btnExit = $('<button></button>').addClass('btnExit').text('sair')
-               div=$('<div></div>').addClass('contNameEmail').append(nome, email)
-               grup = $('<div></div>').addClass('userGrup').append(image,div)
+               div = $('<div></div>').addClass('contNameEmail').append(nome, email)
+               grup = $('<div></div>').addClass('userGrup').append(image, div)
                containerUser = $('<div></div>').addClass('container-User').append(grup, btnExit)
                $('#btn-login').append(containerUser)
-               const userBtn=$(grup)
-         
+               userBtn = $('.userGrup')[0]
+
                btnExit[0].addEventListener('click', function () {
                   sessionStorage.removeItem('access_token')
                   sessionStorage.removeItem("data");
@@ -181,57 +184,62 @@ $(function () {
                      window.location.href = '/index.html';
                   }
                })
-             
-               $(userBtn).on('click', UserButton)
 
-                function UserButton(btn) {
+               function UserButton(btn) {
+                  $('.userGrup').toggleClass('exitUser')
 
-               if ($(window).width()<=992) {
-         
+                  if ($(window).width() <= 992) {
 
-widthReal = $(btn.currentTarget).attr('style').match(/width:\s*([^;]+)/)[1]
-console.log(widthReal)
+                     if ($('.userGrup').hasClass('exitUser')) {
+                        $(btn.currentTarget).css({ 'width': '12%' });
+                        $(btnExit).css({ 'opacity': '1' });
 
-if (widthReal <= '12%') {
-   $(btn.currentTarget).css({ 'width': '70%' });
-   $(btnExit).css({ 'opacity': '0' })
-   
-} else {
-   $(btn.currentTarget).css({ 'width': '12%' });
-   $(btnExit).css({ 'opacity': '1' });
-}
-
-// setInterval(() => {
-//    $(btn.currentTarget).css({'width': '95%','transition':'.7s ease-in'});
-//    $(btnExit).css({'opacity':'0','transition':'opacity .7s ease-in'})
-// }, 8000); 
-               }else{
-                  userBtn.width('95%')
-                  
-                  if($(btn.currentTarget).width() <= '36.75') {
-                     $(btn.currentTarget).css({'width': '95%'});
-                     $(btnExit).css({'opacity':'0'})
-   
-                  }else{
-                     $(btn.currentTarget).css({'width': '12%'});
-                      $(btnExit).css({'opacity':'1'});
+                     } else {
+                        $(btn.currentTarget).css({ 'width': '70%' });
+                        $(btnExit).css({ 'opacity': '0' })
                      }
-                     
-                     setInterval(() => {
-                        $(btn.currentTarget).css({'width': '95%'});
-                        $(btnExit).css({'opacity':'0'})
-                     }, 8000);     
+                     // setInterval(() => {
+                     //    $(btn.currentTarget).css({'width': '95%','transition':'.7s ease-in'});
+                     //    $(btnExit).css({'opacity':'0','transition':'opacity .7s ease-in'})
+                     // }, 8000); 
+
+
+
+                  } else {
+                     if ($('.userGrup').hasClass('exitUser')) {
+                        $(btn.currentTarget).css({ 'width': '12%' });
+                        $(btnExit).css({ 'opacity': '1' });
+
+                     } else {
+                        $(btn.currentTarget).css({ 'width': '95%' });
+                        $(btnExit).css({ 'opacity': '0' })
+                     }
+
+                     // setInterval(() => {
+                     //    $(btn.currentTarget).css({'width': '95%'});
+                     //    $(btnExit).css({'opacity':'0'})
+                     // }, 8000);   
                   }
                }
-               
-               $(window).on( "scroll", function(e) {    
-                  if ($(e.currentTarget).scrollTop()>0) {
-                     $('.userGrup').css({'width': '95%'});
-                     $(btnExit).css({'opacity':'0'})
-                  }
-               })
+
+               $(userBtn).on('click', UserButton)
+
+               if ($(window).width() > 992) {
+
+                  $(window).on("scroll", function (e) {
+                     if ($(e.currentTarget).scrollTop() > 0) {
+                        if ($('.userGrup').hasClass('exitUser')) {
+                           $(btn.currentTarget).css({ 'width': '12%' });
+                           $(btnExit).css({ 'opacity': '1' });
+                        } else {
+                           $(btn.currentTarget).css({ 'width': '95%' });
+                           $(btnExit).css({ 'opacity': '0' })
+                        }
+                     }
+                  })
+               }
             }
-            
+
          },
          error: function (error) {
             alert('Erro:', error);
@@ -249,8 +257,6 @@ $.getJSON('js/ApiProduts.json', function (arrayProdutos) {
       $('.produtos--items').append(objCard.append(img, p, button));
 
       btnCard = objCard.children('.btn-card')[0];
-      userBtn=$('.container-User > .userGrup')[0]
-
       $(btnCard).each((i, obj) => {
          $(obj).click(() => {
             sessionStorage.setItem('produts', JSON.stringify(produts));
@@ -331,8 +337,6 @@ $.getJSON('js/ApiProduts.json', function (arrayProdutos) {
          }
       }
    }
-
-
 
    function showSlider() {
       totalSlider = $(".slider--item");
