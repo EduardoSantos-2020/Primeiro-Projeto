@@ -177,7 +177,6 @@ a {
     width: 2.3rem;
     height: 2.3rem;
     display: block;
-    background-color: transparent;
     border-radius: 50%;
 }
 
@@ -186,83 +185,42 @@ a {
     transition: .7s ease-in;
 }
 
-/* aside:not(.styleSidebar) .container-User:hover .userGrup p {
-    color: rgb(70, 68, 68);
-} */
-
-/* .sidebar .container-User .btnExit {
-    opacity: 0;
-} */
-.sidebar .container-User .btnExit {
+.sidebar .exitUser .btnExit {
     color: #000;
 }
 
-.sidebar .container-User:hover .btnExit {
+.sidebar .exitUser:hover .btnExit {
     color: #000;
 }
 
-/* .sidebar .container-User:hover .btnExit {
-    color: #afafaf;
-} */
-
-.styleSidebar .container-User:hover .btnExit {
+.styleSidebar .exitUser:hover .btnExit {
     color: #afafaf;
     opacity: 1;
 }
 
-.sidebar .container-User:hover .btnExit {
+.sidebar .userGrup:hover .btnExit {
     color: #afafaf;
     opacity: 1;
 }
 
-
-.sidebar .container-User:hover {
+.sidebar .exitUser:hover .btnExit {
     color: #afafaf;
-}
-
-.sidebar .container-User .btnExit:hover {
-    color: #000;
-}
-
-/* .sidebar .container-User .userGrup {
-    width: 100%;
-    transition: .7s ease-in;
-}
-
-.sidebar .container-User:hover .userGrup {
-    width: 30%;
-    transition: .7s ease-out;
-} */
-
-/* .container-User .userGrup:hover .textEmail {
-    width: .5em;
-    transition: .3s ease-in;
-}
-
-
-.sidebar .container-User .userGrup:hover p {
-    position: absolute;
     opacity: 0;
 }
 
-.sidebar .container-User:hover p {
-    position: absolute;
-    opacity: 0;
+
+.sidebar .container-User .exitUser:hover {
+    color: #afafaf;
 }
 
-.sidebar .container-User:hover .btnExit {
-    opacity: 1;
-    color: #afafaf;
-} */
+.sidebar .container-User .userImg::after,
+.styleSidebar .container-User .userImg::after {
+    background: transparent;
+}
 
-/* .sidebar .container-User .btnExit:hover {
-    opacity: 1;
-    color: #000;
-
-} */
 
 .sidebar .container-User:hover .userImg::after,
-.styleSidebar .container-User:hover .userImg .userImg::after {
+.styleSidebar .container-User:hover .userImg::after {
     background-color: #31313186;
 }
 
@@ -277,41 +235,63 @@ a {
     color: #fdfbfb;
     border-radius: 0 0 8px 8px;
     text-transform: uppercase;
-    opacity: 0;
     justify-content: center;
     background: none;
 }
 
-.styleSidebar .container-User .btnExit {
+
+.styleSidebar .container-User .exitUser~.btnExit {
     color: #fff;
+    opacity: 0;
 }
 
-.styleSidebar .container-User:hover .btnExit {
+.sidebar .exitUser~.btnExit {
+    color: #000;
+    opacity: 0;
+}
+
+.styleSidebar .userGrup~.btnExit {
+    opacity: 0;
+}
+
+.sidebar .userGrup~.btnExit {
+    opacity: 0;
+}
+
+.sidebar .userGrup~.btnExit:hover {
+
+    opacity: 0;
+}
+
+.styleSidebar .exitUser:hover~.btnExit {
+    color: #000;
+    opacity: 1;
+}
+
+.styleSidebar .userGrup:hover~.btnExit {
+    color: #000;
+    opacity: 0;
+}
+
+
+.styleSidebar .exitUser~.btnExit {
     color: #fff;
+    opacity: 0;
 }
 
-.styleSidebar .container-User .btnExit:hover {
-    color: #afafaf91;
+.styleSidebar .exitUser:hover~.btnExit {
+    color: #afafaf;
+    opacity: 1;
 }
 
-/* .styleSidebar .container-User .userGrup {
-    width: 100%;
-    transition: .7s ease-in;
+.sidebar .exitUser:hover~.btnExit {
+    color: #afafaf;
+    opacity: 1;
 }
 
-.styleSidebar .container-User:hover .userGrup {
-    width: 30%;
-    transition: .7s ease-out;
-} */
-
-.styleSidebar .container-User .userGrup:hover p {
-    /* position: absolute; */
-    /* opacity: 0; */
-}
-
-.styleSidebar .container-User:hover p {
-    /* position: absolute; */
-    /* opacity: 0; */
+.styleSidebar .exitUser~.btnExit:hover {
+    color: #fff;
+    opacity: 1;
 }
 
 .menu--secao {
@@ -361,7 +341,6 @@ aside:not(.styleSidebar) .menu--secao:hover {
 .menu--secao:hover {
     color: rgb(116, 114, 114);
 }
-
 
 .active .menu--secao::after {
     width: 100%;
@@ -432,10 +411,6 @@ aside:not(.styleSidebar) .menu--secao:hover {
         transition: width 1.5s ease-in;
     }
 
-    .sidebar .container-User .textName,
-    .sidebar .container-User .textEmail {
-        color: #fff;
-    }
 
     .container-User {
         position: relative;
@@ -450,18 +425,9 @@ aside:not(.styleSidebar) .menu--secao:hover {
         border-radius: 8px 8px 0 0;
     }
 
-    /* .styleSidebar .container-User:hover,
-    .sidebar .container-User:hover {
-        background: none;
-    } */
-
     .container-User:hover .userGrup img {
         z-index: 1;
     }
-
-    /* .container-User .userGrup:hover .textEmail {
-        transition: none;
-    } */
 
     .userGrup {
         display: flex;
@@ -472,17 +438,15 @@ aside:not(.styleSidebar) .menu--secao:hover {
         transition: none;
     }
 
-
-
     .contNameEmail {
         width: 100%;
     }
-
 
     .container-User .textName {
         font-size: 1.4rem;
         margin: 0 0 0 1rem;
         font-weight: bold;
+        color: #fff;
         overflow: hidden;
         white-space: nowrap;
     }
@@ -494,30 +458,30 @@ aside:not(.styleSidebar) .menu--secao:hover {
         margin-left: .5rem;
         overflow: hidden;
     }
-    .styleSidebar.container-User .textName:active,
-    .styleSidebar .container-User .textEmail:active {
-     color: #afafaf91;
- }
- 
-    .sidebar.container-User .textName:active,
-    .sidebar .container-User .textEmail:active {
-     color: #afafaf91;
- }
- 
-  .container-User .exitUser .textEmail,  
-  .container-User .exitUser .textName{
-      opacity: 0;
-  }
 
-    /* .styleSidebar .container-User:hover .userGrup {
-        width: 10%;
-        transition: .7s ease-out;
+
+    .styleSidebar .container-User :hover .textName,
+    .styleSidebar .container-User :hover .textEmail,
+    .sidebar .container-User :hover .textName,
+    .sidebar .container-User :hover .textEmail {
+        color: #fff;
+    }
+    .styleSidebar .container-User  .textName,
+    .styleSidebar .container-User  .textEmail,
+    .sidebar .container-User .textName,
+    .sidebar .container-User .textEmail {
+        color: #fff;
     }
 
-    .sidebar .container-User:hover .userGrup {
-        width: 10%;
-        transition: .7s ease-out;
-    } */
+    .sidebar .container-User :active .textName,
+    .sidebar .container-User :active .textEmail {
+        color: #afafaf;
+    }
+
+    .container-User .exitUser .textEmail,
+    .container-User .exitUser .textName {
+        opacity: 0;
+    }
 
     .userImg {
         padding: 0;
@@ -538,11 +502,22 @@ aside:not(.styleSidebar) .menu--secao:hover {
     }
 
     .sidebar .container-User:hover .userImg::after,
-    .styleSidebar .container-User:hover .userImg .userImg::after {
-        background-color: transparent;
+    .styleSidebar .container-User:hover .userImg::after {
+        background: transparent;
     }
 
-    .container-User:hover .userImg {}
+    .sidebar .container-User .userImg::after,
+    .styleSidebar .container-User .userImg::after {
+        background: transparent;
+
+    }
+
+    .sidebar .container-User:active .userImg::after,
+    .styleSidebar .container-User:active .userImg::after {
+        background-color: #31313186;
+    }
+
+    /* .container-User:hover .userImg {} */
 
     .container-User .btnExit {
         position: absolute;
@@ -564,29 +539,35 @@ aside:not(.styleSidebar) .menu--secao:hover {
     }
 
 
-    .container-User .btnExit:active {
-        color: #afafaf;
-    }
-
-
-    .sidebar .container-User .btnExit {
+    .styleSidebar .exitUser:hover~.btnExit {
         color: #fff;
+        opacity: 1;
     }
 
-
-
-    /* .styleSidebar .container-User .btnExit {
+    .sidebar .userGrup ~ .btnExit { 
+        opacity: 0;
+    }
+    .styleSidebar .userGrup ~ .btnExit {
         opacity: 0;
     }
 
-    .styleSidebar .container-User:hover .btnExit {
+    .sidebar .exitUser:hover~.btnExit {
+        color: #fff;
         opacity: 1;
-        color: #afafaf;
-    } */
+    }
 
-    /* .styleSidebar .container-User:hover .btnExit {
-        background: none;
-    } */
+    .sidebar .exitUser~.btnExit:active {
+        color: #afafaf;
+    }
+
+    .styleSidebar .exitUser~.btnExit:active {
+        color: #afafaf;
+    }
+
+
+    .sidebar .exitUser .btnExit {
+        color: #fff;
+    }
 
     .login {
         width: 100px;
