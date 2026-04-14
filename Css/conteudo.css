@@ -108,6 +108,7 @@ a {
     white-space: nowrap;
     font-weight: bold;
     line-height: .7rem;
+    margin-left: .3rem;
     overflow: hidden;
     z-index: 0;
     letter-spacing: .2rem;
@@ -206,10 +207,12 @@ a {
 
 .styleSidebar .container-User:hover .btnExit {
     color: #afafaf;
+    opacity: 1;
 }
 
 .sidebar .container-User:hover .btnExit {
     color: #afafaf;
+    opacity: 1;
 }
 
 
@@ -520,7 +523,11 @@ aside:not(.styleSidebar) .menu--secao:hover {
         left: 0;
         width: 3rem;
         height: 3rem;
+    }
 
+    .sidebar .container-User:hover .userImg::after,
+    .styleSidebar .container-User:hover .userImg .userImg::after {
+        background-color: transparent;
     }
 
     .container-User:hover .userImg {}
@@ -529,7 +536,7 @@ aside:not(.styleSidebar) .menu--secao:hover {
         position: absolute;
         top: 4.2rem;
         left: 45%;
-        transform: translate( -45%);
+        transform: translate(-45%);
         width: 12%;
         padding: 0 20px;
         border: none;
@@ -542,6 +549,11 @@ aside:not(.styleSidebar) .menu--secao:hover {
         justify-content: center;
         background: none;
 
+    }
+
+
+    .container-User .btnExit:active {
+        color: #afafaf;
     }
 
 

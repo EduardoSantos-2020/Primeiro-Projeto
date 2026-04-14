@@ -229,7 +229,8 @@ $(function () {
 
                   $(window).on("scroll", function (e) {
                      if ($(e.currentTarget).scrollTop() > 0) {
-                        
+                        $(btnExit).css({ 'opacity': '0' })
+
                         if ($('.userGrup').hasClass('exitUser')) {
                            $(btn.currentTarget).css({ 'width': '12%' });
                            $(btnExit).css({ 'opacity': '1' });
