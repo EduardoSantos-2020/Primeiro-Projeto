@@ -45,7 +45,7 @@ $(function () {
             containerUser = $('<div></div>').addClass('container-User').append(grup, btnExit)
             $('#btn-login').append(containerUser);
             userBtn = $('.userGrup')[0]
-            $(userBtn).css('width', '12%')
+            $(userBtn).addClass('exitUser')
 
             btnExit[0].addEventListener('click', function () {
                sessionStorage.removeItem('access_token')
@@ -107,7 +107,7 @@ $(function () {
             if ($(window).width() > 992) {
                $(window).on("scroll", function (e) {
                   if ($(e.currentTarget).scrollTop() > 0) {
-                     $('.userGrup').css({ 'width': '95%' });
+                     $('.userGrup').css({ 'width': '12%' });
                      $(btnExit).css({ 'opacity': '0' })
                   }
                })
@@ -166,6 +166,7 @@ $(function () {
                containerUser = $('<div></div>').addClass('container-User').append(grup, btnExit)
                $('#btn-login').append(containerUser)
                userBtn = $('.userGrup')[0]
+               $(userBtn).addClass('exitUser')
 
                btnExit[0].addEventListener('click', function () {
                   sessionStorage.removeItem('access_token')
@@ -228,6 +229,7 @@ $(function () {
 
                   $(window).on("scroll", function (e) {
                      if ($(e.currentTarget).scrollTop() > 0) {
+                        
                         if ($('.userGrup').hasClass('exitUser')) {
                            $(btn.currentTarget).css({ 'width': '12%' });
                            $(btnExit).css({ 'opacity': '1' });
