@@ -494,8 +494,20 @@ aside:not(.styleSidebar) .menu--secao:hover {
         margin-left: .5rem;
         overflow: hidden;
     }
-
-
+    .styleSidebar.container-User .textName:active,
+    .styleSidebar .container-User .textEmail:active {
+     color: #afafaf91;
+ }
+ 
+    .sidebar.container-User .textName:active,
+    .sidebar .container-User .textEmail:active {
+     color: #afafaf91;
+ }
+ 
+  .container-User .exitUser .textEmail,  
+  .container-User .exitUser .textName{
+      opacity: 0;
+  }
 
     /* .styleSidebar .container-User:hover .userGrup {
         width: 10%;
