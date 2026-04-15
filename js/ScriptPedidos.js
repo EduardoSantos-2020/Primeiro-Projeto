@@ -4,6 +4,7 @@ $(window).ready(() => {
    sideBar = $(".sidebar");
    nameLogo = $('.logo--name');
 
+
    $('.button-prop').on('click', mobileEvent)
 
    function mobileEvent() {
@@ -87,25 +88,30 @@ $(window).ready(() => {
          userBtn = $('.userGrup')[0]
          $(userBtn).addClass('exitUser')
 
-          function UserButton(btn) {
-               $('.userGrup').toggleClass('exitUser')
-               
-               if ($(window).width() <= 992) {
-                  if ($('.userGrup').hasClass('exitUser')) {
-                     $(btn.currentTarget).css({ 'width': '12%' });
-                  } else {
-                     $(btn.currentTarget).css({ 'width': '70%' });
-                  }
+         function UserButton(btn) {
+            $('.userGrup').toggleClass('exitUser')
+
+            if ($(window).width() <= 992) {
+               if ($('.userGrup').hasClass('exitUser')) {
+                   $(btn.currentTarget).css({ 'width': '12%' });
                } else {
-                  if ($('.userGrup').hasClass('exitUser')) {
-                     $(btn.currentTarget).css({ 'width': '12%' });
-                  } else {
-                     $(btn.currentTarget).css({ 'width': '95%' });   
-                  }   
+                   $(btn.currentTarget).css({ 'width': '70%' });
                }
-            }  
-            
-            $(userBtn).on('click', UserButton)
+            } else {
+               if ($('.userGrup').hasClass('exitUser')) {
+                  $(btn.currentTarget).css({ 'width': '12%' });
+               } else {
+                  $(btn.currentTarget).css({ 'width': '95%' });
+               }
+            }
+         }
+
+         $(userBtn).on('click', UserButton)
+         $('.button-prop').on('click',function () {
+              if (!$('.menu-btn').hasClass('btn-active')) {
+                     $(userBtn).css({ 'width': '12%' });
+                  }
+         })
       }
    }
 
@@ -150,8 +156,7 @@ $(window).ready(() => {
                grup = $('<div></div>').addClass('userGrup').append(image, nome)
                containerUser = $('<div></div>').addClass('container-User').append(grup, email, btnExit)
                $('#btn-login').append(containerUser)
-                userBtn = $('.userGrup')[0]
-               $(userBtn).addClass('exitUser')
+               userBtn = $('.userGrup')[0]
 
                btnExit[0].addEventListener('click', function () {
                   sessionStorage.removeItem('access_token')
@@ -172,7 +177,8 @@ $(window).ready(() => {
                      window.location.href = '/index.html';
 
                   }
-               $(userBtn).on('click', UserButton)
+                  $(userBtn).on('click', UserButton)
+
                })
             }
          },
