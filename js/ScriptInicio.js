@@ -84,7 +84,11 @@ $(function () {
                   }   
                }
             }
-
+            $('.button-prop').on('click',function () {
+              if (!$('.menu-btn').hasClass('btn-active')) {
+                     $(userBtn).css({ 'width': '12%' });
+                  }
+         })
             $(userBtn).on('click', UserButton)
 
             if ($(window).width() > 992) {
@@ -204,6 +208,12 @@ $(function () {
                      }   
                   }
                }
+               
+                 $('.button-prop').on('click',function () {
+                     if (!$('.menu-btn').hasClass('btn-active')) {
+                     $(userBtn).css({ 'width': '12%' });
+                  }
+         })
 
                $(userBtn).on('click', UserButton)
 
