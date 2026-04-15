@@ -65,7 +65,7 @@ body {
     flex-direction: column;
     transform: translateY(5%);
     border-radius: 8px 8px 0 0;
-
+    user-select: none;
 }
 
 .container-User .textName {
@@ -344,7 +344,7 @@ body {
         z-index: 1;
     }
 
-     .userGrup {
+    .userGrup {
         display: flex;
         align-items: center;
         width: 12%;
@@ -355,12 +355,15 @@ body {
 
     .contNameEmail {
         width: 100%;
+        height: 100%;
+        justify-content: center;
     }
 
     .container-User .textName {
-        font-size: 1.4rem;
+        font-size: 2rem;
         margin: 0 0 0 1rem;
         font-weight: bold;
+        line-height: 1.8rem;
         color: #fff;
         overflow: hidden;
         white-space: nowrap;
@@ -368,7 +371,7 @@ body {
 
     .container-User .textEmail {
         width: 100%;
-        font-size: .6rem;
+        font-size: .8rem;
         color: #fff;
         margin-left: .5rem;
         overflow: hidden;
@@ -388,6 +391,7 @@ body {
     .sidebar .container-User :active .textEmail {
         color: #afafaf;
     }
+
     .container-User .exitUser .textEmail,
     .container-User .exitUser .textName {
         opacity: 0;
@@ -398,8 +402,8 @@ body {
     }
 
     .userImg img {
-        width: 3rem;
-        height: 3rem;
+        width: 4rem;
+        height: 4rem;
         object-fit: cover;
         border-radius: 50%;
 
@@ -408,8 +412,8 @@ body {
     .userImg::after {
         top: 0;
         left: 0;
-        width: 3rem;
-        height: 3rem;
+        width: 4rem;
+        height: 4rem;
     }
 
     .sidebar .container-User:hover .userImg::after {
@@ -426,19 +430,18 @@ body {
         position: absolute;
         top: 4.2rem;
         left: 45%;
-        transform: translate(-33%);
+        transform: translate(-25%);
         width: 25%;
         padding: 0 20px;
         border: none;
         font-weight: 900;
-        font-size: 1.4rem;
+        font-size: 1.8rem;
         color: #fff;
         border-radius: 0 0 8px 8px;
         text-transform: uppercase;
         opacity: 1;
         justify-content: center;
         background: none;
-
     }
 
     /* .sidebar .container-User .btnExit {
@@ -453,9 +456,9 @@ body {
 
     .sidebar .exitUser~.btnExit:hover {
 
-    opacity: 1;
-    color: #fff;
-}
+        opacity: 1;
+        color: #fff;
+    }
 
     .sidebar .exitUser:hover~.btnExit {
         color: #fff;
@@ -766,6 +769,11 @@ body {
     text-decoration: none;
 }
 
+.navegação--menu .containerbuttons .logMark,
+.navegação--menu .containerbuttons .contatos-container {
+    display: none;
+}
+
 
 .container-section {
     margin: 0 .6rem;
@@ -872,6 +880,53 @@ span.buttonText {
         transition: width 1.5s ease-in;
     }
 
+    .itemDecontato>i {
+        font-size: 1.7em;
+        text-shadow: 2px 3px #000;
+        bottom: 0;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        padding: 10px;
+
+    }
+
+
+    .inform-site>p {
+        font-size: .8rem;
+        text-shadow: 2px 2px #000;
+        margin: 0;
+        padding: 0;
+        font-weight: bolder;
+        color: #fff;
+    }
+
+    .logo-img {
+        width: 4em;
+        object-fit: cover;
+    }
+
+    .navegação--menu .containerbuttons .logMark {
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+
+    .navegação--menu .containerbuttons .contatos-container {
+        width: 75%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        margin-top: 40%;
+        padding: 1rem 0;
+    }
+    
+    .navegação--menu .containerbuttons .contatos-container .itemDecontato {
+        border-radius: 1rem;
+        background-color: #333232;
+    }
 
     .container {
         width: 100%;

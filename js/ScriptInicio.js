@@ -45,8 +45,6 @@ $(function () {
             containerUser = $('<div></div>').addClass('container-User').append(grup, btnExit)
             $('#btn-login').append(containerUser);
             userBtn = $('.userGrup')[0]
-            $(userBtn).addClass('exitUser')
-            
 
             btnExit[0].addEventListener('click', function () {
                sessionStorage.removeItem('access_token')
@@ -68,20 +66,20 @@ $(function () {
 
             function UserButton(btn) {
                $('.userGrup').toggleClass('exitUser')
-                
+
 
                if ($(window).width() <= 992) {
                   if ($('.userGrup').hasClass('exitUser')) {
                      $(btn.currentTarget).css({ 'width': '12%' });
                   } else {
-                     $(btn.currentTarget).css({ 'width': '70%' });
+                     $(btn.currentTarget).css({ 'width': '85%' });
                   }
                } else {
                   if ($('.userGrup').hasClass('exitUser')) {
                      $(btn.currentTarget).css({ 'width': '12%' });
                   } else {
-                     $(btn.currentTarget).css({ 'width': '95%' });   
-                  }   
+                     $(btn.currentTarget).css({ 'width': '95%' });
+                  }
                }
             }
             $('.button-prop').on('click',function () {
@@ -90,24 +88,29 @@ $(function () {
                   }
          })
             $(userBtn).on('click', UserButton)
+               $('.button-prop').on('click', function () {
+                  if (!$('.menu-btn').hasClass('btn-active')) {
+                     $(userBtn).css({ 'width': '12%' });
+                  }
+               })
 
             if ($(window).width() > 992) {
                $(window).on("scroll", function (e) {
-                    if ($(e.currentTarget).scrollTop() > 0) {
-                        //$(btnExit).css({ 'opacity': '0' })
-                        $(userBtn).addClass('exitUser')
-                        if ($('.userGrup').hasClass('exitUser')) {
-                           $(userBtn).css({ 'width': '12%' });
-                           //$(btnExit).css({ 'opacity': '1' });
+                  if ($(e.currentTarget).scrollTop() > 0) {
+                     //$(btnExit).css({ 'opacity': '0' })
+                     $(userBtn).addClass('exitUser')
+                     if ($('.userGrup').hasClass('exitUser')) {
+                        $(userBtn).css({ 'width': '12%' });
+                        //$(btnExit).css({ 'opacity': '1' });
 
-                           // setInterval(() => {
-                           //     $(btnExit).css({ 'opacity': '0' });
-                           // }, 3000);
-                        } else {
-                           $(userBtn).css({ 'width': '12%' });
-                           //$(btnExit).css({ 'opacity': '0' })
-                        }
+                        // setInterval(() => {
+                        //     $(btnExit).css({ 'opacity': '0' });
+                        // }, 3000);
+                     } else {
+                        $(userBtn).css({ 'width': '12%' });
+                        //$(btnExit).css({ 'opacity': '0' })
                      }
+                  }
                })
             }
 
@@ -164,7 +167,6 @@ $(function () {
                containerUser = $('<div></div>').addClass('container-User').append(grup, btnExit)
                $('#btn-login').append(containerUser)
                userBtn = $('.userGrup')[0]
-               $(userBtn).addClass('exitUser')
 
                btnExit[0].addEventListener('click', function () {
                   sessionStorage.removeItem('access_token')
@@ -192,34 +194,33 @@ $(function () {
                      if ($('.userGrup').hasClass('exitUser')) {
                         $(btn.currentTarget).css({ 'width': '12%' });
                      } else {
-                        $(btn.currentTarget).css({ 'width': '70%' });
+                        $(btn.currentTarget).css({ 'width': '85%' });
                      }
                   } else {
                      if ($('.userGrup').hasClass('exitUser')) {
                         $(btn.currentTarget).css({ 'width': '12%' });
                         $(btnExit).css({ 'opacity': '1' });
 
-                           setInterval(() => {
-                               $(btnExit).css({ 'opacity': '0' });
-                           }, 3000);
+                        setInterval(() => {
+                           $(btnExit).css({ 'opacity': '0' });
+                        }, 3000);
                      } else {
                         $(btn.currentTarget).css({ 'width': '95%' });
                         $(btnExit).css({ 'opacity': '0' })
-                     }   
+                     }
                   }
                }
-               
-                 $('.button-prop').on('click',function () {
-                     if (!$('.menu-btn').hasClass('btn-active')) {
-                     $(userBtn).css({ 'width': '12%' });
-                  }
-         })
 
                $(userBtn).on('click', UserButton)
+               $('.button-prop').on('click', function () {
+                  if (!$('.menu-btn').hasClass('btn-active')) {
+                     $(userBtn).css({ 'width': '12%' });
+                  }
+               })
 
                if ($(window).width() > 992) {
-               $(window).on("scroll", function (e) {
-                    if ($(e.currentTarget).scrollTop() > 0) {
+                  $(window).on("scroll", function (e) {
+                     if ($(e.currentTarget).scrollTop() > 0) {
                         //$(btnExit).css({ 'opacity': '0' })
                         $(userBtn).addClass('exitUser')
                         if ($('.userGrup').hasClass('exitUser')) {
@@ -234,8 +235,8 @@ $(function () {
                            //$(btnExit).css({ 'opacity': '0' })
                         }
                      }
-               })
-            }
+                  })
+               }
             }
 
          },

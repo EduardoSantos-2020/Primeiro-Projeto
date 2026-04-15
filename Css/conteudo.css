@@ -47,6 +47,10 @@ a {
     color: #fff;
 }
 
+.container--nav .nav--menu .logMark {
+    display: none;
+}
+
 @media screen and (max-width:992px) {
 
     .container--nav {
@@ -83,6 +87,7 @@ a {
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    user-select: none;
     transform: translateY(5%);
     border-radius: 8px 8px 0 0;
 
@@ -440,12 +445,15 @@ aside:not(.styleSidebar) .menu--secao:hover {
 
     .contNameEmail {
         width: 100%;
+        height: 100%;
+        justify-content: center;
     }
 
     .container-User .textName {
-        font-size: 1.4rem;
+        font-size: 2rem;
         margin: 0 0 0 1rem;
         font-weight: bold;
+        line-height: 1.8rem;
         color: #fff;
         overflow: hidden;
         white-space: nowrap;
@@ -453,7 +461,7 @@ aside:not(.styleSidebar) .menu--secao:hover {
 
     .container-User .textEmail {
         width: 100%;
-        font-size: .6rem;
+        font-size: .8rem;
         color: #fff;
         margin-left: .5rem;
         overflow: hidden;
@@ -466,8 +474,9 @@ aside:not(.styleSidebar) .menu--secao:hover {
     .sidebar .container-User :hover .textEmail {
         color: #fff;
     }
-    .styleSidebar .container-User  .textName,
-    .styleSidebar .container-User  .textEmail,
+
+    .styleSidebar .container-User .textName,
+    .styleSidebar .container-User .textEmail,
     .sidebar .container-User .textName,
     .sidebar .container-User .textEmail {
         color: #fff;
@@ -485,11 +494,12 @@ aside:not(.styleSidebar) .menu--secao:hover {
 
     .userImg {
         padding: 0;
+
     }
 
     .userImg img {
-        width: 3rem;
-        height: 3rem;
+        width: 4rem;
+        height: 4rem;
         object-fit: cover;
         border-radius: 50%;
     }
@@ -497,8 +507,8 @@ aside:not(.styleSidebar) .menu--secao:hover {
     .userImg::after {
         top: 0;
         left: 0;
-        width: 3rem;
-        height: 3rem;
+        width: 4rem;
+        height: 4rem;
     }
 
     .sidebar .container-User:hover .userImg::after,
@@ -523,12 +533,12 @@ aside:not(.styleSidebar) .menu--secao:hover {
         position: absolute;
         top: 4.2rem;
         left: 45%;
-        transform: translate(-33%);
+        transform: translate(-25%);
         width: 25%;
         padding: 0 20px;
         border: none;
         font-weight: 900;
-        font-size: 1.4rem;
+        font-size: 1.8rem;
         color: #fff;
         border-radius: 0 0 8px 8px;
         text-transform: uppercase;
@@ -544,10 +554,11 @@ aside:not(.styleSidebar) .menu--secao:hover {
         opacity: 1;
     }
 
-    .sidebar .userGrup ~ .btnExit { 
+    .sidebar .userGrup~.btnExit {
         opacity: 0;
     }
-    .styleSidebar .userGrup ~ .btnExit {
+
+    .styleSidebar .userGrup~.btnExit {
         opacity: 0;
     }
 
@@ -689,6 +700,10 @@ aside:not(.styleSidebar) .menu--secao:hover {
     .mobile-btn {
         left: -100%;
         transition: all 0.3s ease-in;
+    }
+
+    .mobile-btn .container--nav .logMark {
+        display: flex;
     }
 
     .button-prop:hover {
@@ -1799,24 +1814,29 @@ textarea:focus {
     font-weight: 700;
 }
 
-.logMark {
+footer .logMark {
     display: flex;
     align-items: center;
     flex-direction: column;
 }
 
-.logMark .logo-img {
+footer .logMark .logo-img {
     object-fit: cover;
 }
 
-.logMark p:nth-child(2) {
+footer .logMark p:nth-child(2) {
     font-weight: 800;
     font-size: 1.2em;
 }
 
-.logMark p:nth-child(3) {
+footer .logMark p:nth-child(3) {
     font-size: .8em;
     font-weight: 600;
+}
+
+.navegação--menu .nav--menu .logMark,
+.navegação--menu .nav--menu .contatos-container {
+    display: none;
 }
 
 .itemDecontato>p {
@@ -2042,6 +2062,7 @@ textarea:focus {
 
     .logo-img {
         width: 4em;
+        object-fit: cover;
     }
 
     .logMark {
@@ -2059,7 +2080,24 @@ textarea:focus {
         font-weight: 600;
     }
 
+    .navegação--menu .nav--menu .logMark {
 
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navegação--menu .nav--menu .contatos-container {
+        width: 75%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        padding: 10% 0;
+    }
+
+    .navegação--menu .nav--menu .contatos-container .itemDecontato {
+        background-color: #333232;
+    }
 
 }
 

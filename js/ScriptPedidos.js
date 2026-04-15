@@ -86,8 +86,6 @@ $(window).ready(() => {
          })
 
          userBtn = $('.userGrup')[0]
-         $(userBtn).addClass('exitUser')
-
          function UserButton(btn) {
             $('.userGrup').toggleClass('exitUser')
 
@@ -95,7 +93,7 @@ $(window).ready(() => {
                if ($('.userGrup').hasClass('exitUser')) {
                    $(btn.currentTarget).css({ 'width': '12%' });
                } else {
-                   $(btn.currentTarget).css({ 'width': '70%' });
+                   $(btn.currentTarget).css({ 'width': '85%' });
                }
             } else {
                if ($('.userGrup').hasClass('exitUser')) {
@@ -109,8 +107,8 @@ $(window).ready(() => {
          $(userBtn).on('click', UserButton)
          $('.button-prop').on('click',function () {
               if (!$('.menu-btn').hasClass('btn-active')) {
-                     $(userBtn).css({ 'width': '12%' });
-                  }
+                  $(userBtn).css({ 'width': '12%' });
+               }
          })
       }
    }
