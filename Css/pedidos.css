@@ -687,8 +687,8 @@ body {
 }
 
 
-.campo--caracteristicas::-webkit-scrollbar,
-.campo--descricao::-webkit-scrollbar {}
+/* .campo--caracteristicas::-webkit-scrollbar,
+.campo--descricao::-webkit-scrollbar {} */
 
 .parcePag {
     width: 100%;
