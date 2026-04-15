@@ -63,7 +63,7 @@ body {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    transform: translateY(-10%);
+    transform: translateY(5%);
     border-radius: 8px 8px 0 0;
 
 }
@@ -92,10 +92,15 @@ body {
     letter-spacing: .2rem;
 }
 
-/* .container-User:hover .textEmail {
-    width: .5em;
-    transition: .3s ease-in;
-} */
+.sidebar .container-User .textName,
+.sidebar .container-User .textEmail {
+    color: #000;
+}
+
+.sidebar .container-User :hover .textName,
+.sidebar .container-User :hover .textEmail {
+    color: #afafaf;
+}
 
 
 .userGrup {
@@ -140,51 +145,26 @@ body {
     border-radius: 50%;
 }
 
-
-/* .sidebar .container-User:hover .btnExit {
-    color: #3f3c3c;
-    opacity: 1;
-} */
-
-.sidebar .container-User:hover .userGrup p {
-    color: #13121228;
+.userGrup {
+    width: 12%;
+    transition: .7s ease-in;
 }
 
-.sidebar .container-User:hover {
-    color: #13121228;
+
+.sidebar .exitUser .btnExit {
+    color: #000;
+}
+
+.sidebar .exitUser:hover .btnExit {
+    color: #000;
 }
 
 .sidebar .container-User .btnExit:hover {
     color: #afafaf;
 }
 
-/* .sidebar .container-User .userGrup {
-    width: 100%;
-    transition: .7s ease-in;
-} */
-
-
-/* .sidebar .container-User:hover .userGrup {
-    width: 30%;
-    transition: .7s ease-out;
-} */
-
-/* .sidebar .container-User .userGrup:hover p {
-    position: absolute;
-    opacity: 0;
-
-} */
-
-/* .sidebar .container-User:hover p {
-    position: absolute;
-    opacity: 0;
-
-} */
-
-.sidebar .container-User:hover .userImg::after,
-.styleSidebar .container-User:hover .userImg .userImg::after {
+.sidebar .container-User:hover .userImg::after {
     background-color: #31313186;
-
 }
 
 .btnExit {
@@ -203,9 +183,30 @@ body {
     background: none;
 }
 
-.btnExit:hover {
-    color: #afafaf91;
+.sidebar .exitUser~.btnExit {
+    color: #000;
+    opacity: 0;
+}
 
+.sidebar .userGrup~.btnExit {
+    opacity: 0;
+}
+
+.sidebar .userGrup~.btnExit:hover {
+
+    opacity: 0;
+    color: #000;
+}
+
+.sidebar .exitUser~.btnExit:hover {
+
+    opacity: 1;
+    color: #000;
+}
+
+.sidebar .exitUser:hover~.btnExit {
+    color: #afafaf;
+    opacity: 1;
 }
 
 .login {
@@ -335,62 +336,62 @@ body {
         display: flex;
         align-items: center;
         padding: 0;
-        transform: none;
+        transition: none;
         border-radius: 8px 8px 0 0;
-    }
-
-    .sidebar .container-User:hover {
-        background: none;
-    }
-
-    .sidebar .container-User .userGrup,
-    .styleSidebar .container-User .userGrup {
-        width: 70%;
-        padding-left: 0;
-        transition: .7s ease-in;
     }
 
     .container-User:hover .userGrup img {
         z-index: 1;
     }
 
-    .container-User .textName {
-        font-size: 1.5rem;
-        margin: 0 0 0 1rem;
-        font-weight: bold;
-        white-space: nowrap;
-    }
-
-
-    .container-User .textEmail {
-        font-size: .8rem;
-        color: #fff;
-        overflow: hidden;
-    }
-
-    .container-User .userGrup:hover .textEmail {
+     .userGrup {
+        display: flex;
+        align-items: center;
+        width: 12%;
+        padding-left: 0;
+        padding: 0 auto;
         transition: none;
     }
 
-    .userGrup {
-        display: flex;
-        align-items: center;
-        padding: 0 auto;
-        background: none;
-
+    .contNameEmail {
+        width: 100%;
     }
 
-
-    .styleSidebar .container-User:hover .userGrup {
-
-        transition: .7s ease-out;
+    .container-User .textName {
+        font-size: 1.4rem;
+        margin: 0 0 0 1rem;
+        font-weight: bold;
+        color: #fff;
+        overflow: hidden;
+        white-space: nowrap;
     }
 
-    .sidebar .container-User:hover .userGrup {
-        width: 10%;
-        transition: .7s ease-out;
+    .container-User .textEmail {
+        width: 100%;
+        font-size: .6rem;
+        color: #fff;
+        margin-left: .5rem;
+        overflow: hidden;
     }
 
+    .sidebar .container-User .textName,
+    .sidebar .container-User .textEmail {
+        color: #fff;
+    }
+
+    .sidebar .container-User :hover .textName,
+    .sidebar .container-User :hover .textEmail {
+        color: #fff;
+    }
+
+    .sidebar .container-User :active .textName,
+    .sidebar .container-User :active .textEmail {
+        color: #afafaf;
+    }
+    .container-User .exitUser .textEmail,
+    .container-User .exitUser .textName {
+        opacity: 0;
+    }
 
     .userImg {
         padding: 0
@@ -411,33 +412,64 @@ body {
         height: 3rem;
     }
 
-    .container-User:hover .userImg {}
+    .sidebar .container-User:hover .userImg::after {
+        background: transparent;
+    }
+
+    .sidebar .container-User:active .userImg::after {
+        background-color: #31313186;
+    }
+
+    /* .container-User:hover .userImg {} */
 
     .container-User .btnExit {
         position: absolute;
         top: 4.2rem;
-        left: 35%;
-        width: 30%;
+        left: 45%;
+        transform: translate(-33%);
+        width: 25%;
         padding: 0 20px;
         border: none;
         font-weight: 900;
         font-size: 1.4rem;
-        color: #fdfbfb;
+        color: #fff;
         border-radius: 0 0 8px 8px;
         text-transform: uppercase;
-        opacity: 0;
+        opacity: 1;
         justify-content: center;
         background: none;
+
     }
 
-    .sidebar .container-User .btnExit {
+    /* .sidebar .container-User .btnExit {
         opacity: 0;
-    }
+    } */
 
-    .sidebar .container-User:hover .btnExit {
+
+    /* .sidebar .container-User:hover .btnExit {
         opacity: 1;
         color: #afafaf;
+    } */
+
+    .sidebar .exitUser~.btnExit:hover {
+
+    opacity: 1;
+    color: #fff;
+}
+
+    .sidebar .exitUser:hover~.btnExit {
+        color: #fff;
+        opacity: 1;
     }
+
+    .sidebar .exitUser~.btnExit:active {
+        color: #afafaf;
+    }
+
+    .sidebar .exitUser .btnExit {
+        color: #fff;
+    }
+
 
     .login {
         width: 100px;

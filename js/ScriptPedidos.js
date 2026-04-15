@@ -84,24 +84,28 @@ $(window).ready(() => {
             }
          })
 
-         userBtn = $(grup)
-         userBtn.width('95%')
+         userBtn = $('.userGrup')[0]
+         $(userBtn).addClass('exitUser')
 
-         $(userBtn).on('click', UserButton)
-
-         function UserButton(btn) {
-            console.log($(btn.currentTarget).width());
-
-
-            if ($(btn.currentTarget).width() <= '36.75') {
-               $(btn.currentTarget).css({ 'width': '95%', 'transition': '.7s ease-in' });
-               $(btnExit).css({ 'opacity': '0', 'transition': 'opacity .7s ease-in' })
-
-            } else {
-               $(btn.currentTarget).css({ 'width': '12%', 'transition': '.7s ease-in' });
-               $(btnExit).css({ 'opacity': '1', 'transition': 'opacity .7s ease-in' })
-            }
-         }
+          function UserButton(btn) {
+               $('.userGrup').toggleClass('exitUser')
+               
+               if ($(window).width() <= 992) {
+                  if ($('.userGrup').hasClass('exitUser')) {
+                     $(btn.currentTarget).css({ 'width': '12%' });
+                  } else {
+                     $(btn.currentTarget).css({ 'width': '70%' });
+                  }
+               } else {
+                  if ($('.userGrup').hasClass('exitUser')) {
+                     $(btn.currentTarget).css({ 'width': '12%' });
+                  } else {
+                     $(btn.currentTarget).css({ 'width': '95%' });   
+                  }   
+               }
+            }  
+            
+            $(userBtn).on('click', UserButton)
       }
    }
 
@@ -146,6 +150,8 @@ $(window).ready(() => {
                grup = $('<div></div>').addClass('userGrup').append(image, nome)
                containerUser = $('<div></div>').addClass('container-User').append(grup, email, btnExit)
                $('#btn-login').append(containerUser)
+                userBtn = $('.userGrup')[0]
+               $(userBtn).addClass('exitUser')
 
                btnExit[0].addEventListener('click', function () {
                   sessionStorage.removeItem('access_token')
@@ -166,6 +172,7 @@ $(window).ready(() => {
                      window.location.href = '/index.html';
 
                   }
+               $(userBtn).on('click', UserButton)
                })
             }
          },

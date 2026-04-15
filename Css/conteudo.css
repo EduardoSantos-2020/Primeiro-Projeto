@@ -213,11 +213,6 @@ a {
     color: #afafaf;
 }
 
-.sidebar .container-User .userImg::after,
-.styleSidebar .container-User .userImg::after {
-    background: transparent;
-}
-
 
 .sidebar .container-User:hover .userImg::after,
 .styleSidebar .container-User:hover .userImg::after {
@@ -261,6 +256,11 @@ a {
 .sidebar .userGrup~.btnExit:hover {
 
     opacity: 0;
+}
+
+.sidebar .exitUser~.btnExit:hover {
+
+    opacity: 1;
 }
 
 .styleSidebar .exitUser:hover~.btnExit {
@@ -523,8 +523,8 @@ aside:not(.styleSidebar) .menu--secao:hover {
         position: absolute;
         top: 4.2rem;
         left: 45%;
-        transform: translate(-45%);
-        width: 12%;
+        transform: translate(-33%);
+        width: 25%;
         padding: 0 20px;
         border: none;
         font-weight: 900;
