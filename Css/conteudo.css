@@ -2094,6 +2094,9 @@ footer .logMark p:nth-child(3) {
         align-items: center;
         padding: 10% 0;
     }
+     .navegação--menu .nav--menu .logMark img{
+         width: 3em;
+     }
 
     .navegação--menu .nav--menu .contatos-container .itemDecontato {
         background-color: #333232;

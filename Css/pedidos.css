@@ -774,6 +774,14 @@ body {
     display: none;
 }
 
+.itemDecontato>p {
+    font-size: 1.1em;
+    text-shadow: 2px 3px #000;
+    text-transform: lowercase;
+    font-weight: 600;
+    bottom: 0;
+}
+
 
 .container-section {
     margin: 0 .6rem;
@@ -890,6 +898,11 @@ span.buttonText {
         padding: 10px;
 
     }
+    
+       .logMark p {
+        font-size: .8em;
+        font-weight: 600;
+    }
 
 
     .inform-site>p {
@@ -902,7 +915,7 @@ span.buttonText {
     }
 
     .logo-img {
-        width: 4em;
+        width: 3em;
         object-fit: cover;
     }
 
