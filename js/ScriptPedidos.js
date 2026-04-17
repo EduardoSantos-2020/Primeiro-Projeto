@@ -58,6 +58,7 @@ $(window).ready(() => {
          grup = $('<div></div>').addClass('userGrup').append(image, div)
          containerUser = $('<div></div>').addClass('container-User').append(grup, btnExit)
          $('#btn-login').append(containerUser)
+         userBtn = $('.userGrup')[0];
 
          btnExit[0].addEventListener('click', function () {
             sessionStorage.removeItem('access_token')
@@ -85,15 +86,13 @@ $(window).ready(() => {
             }
          })
 
-         userBtn = $('.userGrup')[0]
          function UserButton(btn) {
-            $('.userGrup').toggleClass('exitUser')
-
+            $(btn.currentTarget).toggleClass('exitUser')
             if ($(window).width() <= 992) {
                if ($('.userGrup').hasClass('exitUser')) {
-                   $(btn.currentTarget).css({ 'width': '12%' });
+                  $(btn.currentTarget).css({ 'width': '12%' });
                } else {
-                   $(btn.currentTarget).css({ 'width': '85%' });
+                  $(btn.currentTarget).css({ 'width': '85%' });
                }
             } else {
                if ($('.userGrup').hasClass('exitUser')) {
@@ -104,11 +103,18 @@ $(window).ready(() => {
             }
          }
 
+         if ($('.menu-btn').hasClass('btn-active')) {
+            $(userBtn).addClass('exitUser')
+            $(userBtn).css({ 'width': '12%' });
+         } else {
+            $(userBtn).removeClass('exitUser')
+         }
+
          $(userBtn).on('click', UserButton)
-         $('.button-prop').on('click',function () {
-              if (!$('.menu-btn').hasClass('btn-active')) {
-                  $(userBtn).css({ 'width': '12%' });
-               }
+         $('.button-prop').on('click', function () {
+            if (!$('.menu-btn').hasClass('btn-active')) {
+               $(userBtn).css({ 'width': '12%' });
+            }
          })
       }
    }
@@ -117,21 +123,16 @@ $(window).ready(() => {
       // Limpa a URL (remove token e params)
       if (accessToken) {
          if (location.protocol == 'https:') {
-
             if (window.location.host.includes('.app')) {
                window.history.replaceState({}, document.title, '/pedidos.html');
             } else {
                window.history.replaceState({}, document.title, '/Primeiro-Projeto/pedidos.html');
             }
          }
-
          if (location.protocol == 'http:') {
             window.history.replaceState({}, document.title, 'pedidos.html');
          }
-
       }
-
-
       $.ajax({
          url: "https://www.googleapis.com/oauth2/v3/userinfo",
          type: 'GET',
@@ -151,11 +152,11 @@ $(window).ready(() => {
                nome = $(`<p></p>`).addClass('textName').text(data.name);
                email = $(`<p></p>`).addClass('textEmail').text(data.email);
                btnExit = $('<button></button>').addClass('btnExit').text('sair')
-               grup = $('<div></div>').addClass('userGrup').append(image, nome,email,)
-               containerUser = $('<div></div>').addClass('container-User').append(grup,btnExit)
+               div = $('<div></div>').addClass('contNameEmail').append(nome, email)
+               grup = $('<div></div>').addClass('userGrup').append(image, div)
+               containerUser = $('<div></div>').addClass('container-User').append(grup, btnExit)
                $('#btn-login').append(containerUser)
                userBtn = $('.userGrup')[0]
-               $(userBtn).addClass('exitUser')
 
                btnExit[0].addEventListener('click', function () {
                   sessionStorage.removeItem('access_token')
@@ -172,13 +173,35 @@ $(window).ready(() => {
                      }
 
                   } else if (location.protocol == 'http:') {
-
                      window.location.href = '/index.html';
-
                   }
-                  $(userBtn).on('click', UserButton)
-
                })
+
+               function UserButton(btn) {
+                  $('.userGrup').toggleClass('exitUser')
+                  if ($(window).width() <= 992) {
+                     if ($('.userGrup').hasClass('exitUser')) {
+                        $(btn.currentTarget).css({ 'width': '12%' });
+                     } else {
+                        $(btn.currentTarget).css({ 'width': '85%' });
+                     }
+                  } else {
+                     if ($('.userGrup').hasClass('exitUser')) {
+                        $(btn.currentTarget).css({ 'width': '12%' });
+                     } else {
+                        $(btn.currentTarget).css({ 'width': '95%' });
+                     }
+                  }
+               }
+
+               $(userBtn).on('click', UserButton)
+
+               if ($('.menu-btn').hasClass('btn-active')) {
+                  $(userBtn).addClass('exitUser')
+                  $(userBtn).css({ 'width': '12%' });
+               } else {
+                  $(userBtn).removeClass('exitUser')
+               }
             }
          },
          error: function (error) {
@@ -220,22 +243,18 @@ $(window).ready(() => {
    let precoProd = $('.preco-produto');
 
    $(objeto).map((i, obj) => {
-
       $('title').html(obj.name);
       $(precoProd).html('R$:' + obj.price);
       $(titleProd).html(obj.name);
       $(imgSrc).attr('src', obj.image);
 
-      $(obj.descricao).map((i, event) => {
-
-         let Texto1 = obj.caracteristics[i].p;
-         let Texto2 = obj.descricao[i].p;
-
-         let caract = $('<p></p>').addClass('caracter--produto')
-         $(caracterProd).append(caract.text(Texto1));
-
+      $(obj.caracteristics).map((i, obj) => {
+         let descri = $('<p></p>').addClass('caracter--produto')
+         $(caracterProd).append(descri.html(obj.p))
+      })
+      $(obj.descricao).map((i, obj) => {
          let descri = $('<p></p>').addClass('descricao--produto')
-         $(desProd).append(descri.html(Texto2))
+         $(desProd).append(descri.html(obj.p))
       })
    })
 })

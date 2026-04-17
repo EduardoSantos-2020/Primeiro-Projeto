@@ -348,7 +348,7 @@ body {
         display: flex;
         align-items: center;
         width: 12%;
-        padding-left: 0;
+        
         padding: 0 auto;
         transition: none;
     }
@@ -360,7 +360,7 @@ body {
     }
 
     .container-User .textName {
-        font-size: 2rem;
+        font-size: 1.7rem;
         margin: 0 0 0 1rem;
         font-weight: bold;
         line-height: 1.8rem;
@@ -375,6 +375,10 @@ body {
         color: #fff;
         margin-left: .5rem;
         overflow: hidden;
+    }
+
+    .exitUser {
+        width: 12%; 
     }
 
     .sidebar .container-User .textName,
@@ -454,7 +458,7 @@ body {
         color: #afafaf;
     } */
 
-    .sidebar .exitUser~.btnExit:hover {
+    .sidebar .exitUser ~ .btnExit:hover {
 
         opacity: 1;
         color: #fff;
@@ -469,7 +473,7 @@ body {
         color: #afafaf;
     }
 
-    .sidebar .exitUser .btnExit {
+    .sidebar .exitUser ~ .btnExit {
         color: #fff;
     }
 

@@ -66,8 +66,6 @@ $(function () {
 
             function UserButton(btn) {
                $('.userGrup').toggleClass('exitUser')
-
-
                if ($(window).width() <= 992) {
                   if ($('.userGrup').hasClass('exitUser')) {
                      $(btn.currentTarget).css({ 'width': '12%' });
@@ -82,33 +80,29 @@ $(function () {
                   }
                }
             }
-            $('.button-prop').on('click',function () {
-              if (!$('.menu-btn').hasClass('btn-active')) {
-                     $(userBtn).css({ 'width': '12%' });
-                  }
-         })
+
+            if ($('.menu-btn').hasClass('btn-active')) {
+               $(userBtn).addClass('exitUser')
+               $(userBtn).css({ 'width': '12%' });
+            } else {
+               $(userBtn).removeClass('exitUser')
+            }
+
             $(userBtn).on('click', UserButton)
-               $('.button-prop').on('click', function () {
-                  if (!$('.menu-btn').hasClass('btn-active')) {
-                     $(userBtn).css({ 'width': '12%' });
-                  }
-               })
+            $('.button-prop').on('click', function () {
+               if (!$('.menu-btn').hasClass('btn-active')) {
+                  $(userBtn).css({ 'width': '12%' });
+               }
+            })
 
             if ($(window).width() > 992) {
                $(window).on("scroll", function (e) {
                   if ($(e.currentTarget).scrollTop() > 0) {
-                     //$(btnExit).css({ 'opacity': '0' })
                      $(userBtn).addClass('exitUser')
                      if ($('.userGrup').hasClass('exitUser')) {
                         $(userBtn).css({ 'width': '12%' });
-                        //$(btnExit).css({ 'opacity': '1' });
-
-                        // setInterval(() => {
-                        //     $(btnExit).css({ 'opacity': '0' });
-                        // }, 3000);
                      } else {
                         $(userBtn).css({ 'width': '12%' });
-                        //$(btnExit).css({ 'opacity': '0' })
                      }
                   }
                })
@@ -188,9 +182,7 @@ $(function () {
 
                function UserButton(btn) {
                   $('.userGrup').toggleClass('exitUser')
-
                   if ($(window).width() <= 992) {
-
                      if ($('.userGrup').hasClass('exitUser')) {
                         $(btn.currentTarget).css({ 'width': '12%' });
                      } else {
@@ -199,40 +191,29 @@ $(function () {
                   } else {
                      if ($('.userGrup').hasClass('exitUser')) {
                         $(btn.currentTarget).css({ 'width': '12%' });
-                        $(btnExit).css({ 'opacity': '1' });
-
-                        setInterval(() => {
-                           $(btnExit).css({ 'opacity': '0' });
-                        }, 3000);
                      } else {
                         $(btn.currentTarget).css({ 'width': '95%' });
-                        $(btnExit).css({ 'opacity': '0' })
                      }
                   }
                }
 
                $(userBtn).on('click', UserButton)
-               $('.button-prop').on('click', function () {
-                  if (!$('.menu-btn').hasClass('btn-active')) {
-                     $(userBtn).css({ 'width': '12%' });
-                  }
-               })
+
+               if (!$('.menu-btn').hasClass('btn-active')) {
+                  $(userBtn).addClass('exitUser')
+                  $(userBtn).css({ 'width': '12%' });
+               } else {
+                  $(userBtn).removeClass('exitUser')
+               }
 
                if ($(window).width() > 992) {
                   $(window).on("scroll", function (e) {
                      if ($(e.currentTarget).scrollTop() > 0) {
-                        //$(btnExit).css({ 'opacity': '0' })
                         $(userBtn).addClass('exitUser')
                         if ($('.userGrup').hasClass('exitUser')) {
                            $(userBtn).css({ 'width': '12%' });
-                           //$(btnExit).css({ 'opacity': '1' });
-
-                           // setInterval(() => {
-                           //     $(btnExit).css({ 'opacity': '0' });
-                           // }, 3000);
                         } else {
                            $(userBtn).css({ 'width': '12%' });
-                           //$(btnExit).css({ 'opacity': '0' })
                         }
                      }
                   })
