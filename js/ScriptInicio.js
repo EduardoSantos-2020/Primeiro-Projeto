@@ -83,9 +83,9 @@ $(function () {
 
             if ($('.menu-btn').hasClass('btn-active')) {
                $(userBtn).addClass('exitUser')
-               $(userBtn).css({ 'width': '12%' });
+                           $(userBtn).css({ 'width': '12%' });
             } else {
-               $(userBtn).removeClass('exitUser')
+                  $(userBtn).removeClass('exitUser')
             }
 
             $(userBtn).on('click', UserButton)
@@ -198,6 +198,12 @@ $(function () {
                }
 
                $(userBtn).on('click', UserButton)
+               
+                $('.button-prop').on('click', function () {
+                  if (!$('.menu-btn').hasClass('btn-active')) {
+                  $(userBtn).css({ 'width': '12%' });
+                  }
+               })
 
                if (!$('.menu-btn').hasClass('btn-active')) {
                   $(userBtn).addClass('exitUser')
