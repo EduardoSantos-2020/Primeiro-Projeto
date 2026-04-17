@@ -249,12 +249,12 @@ $(window).ready(() => {
       $(imgSrc).attr('src', obj.image);
 
       $(obj.caracteristics).map((i, obj) => {
-         let descri = $('<p></p>').addClass('caracter--produto')
-         $(caracterProd).append(descri.html(obj.p))
+         let element = $('<p></p>').addClass('caracter--produto')
+         $(caracterProd).append(element.html(obj.p))
       })
       $(obj.descricao).map((i, obj) => {
-         let descri = $('<p></p>').addClass('descricao--produto')
-         $(desProd).append(descri.html(obj.p))
+         let element = $('<p></p>').addClass('descricao--produto')
+         $(desProd).append(element.html(obj.p))
       })
    })
 })
