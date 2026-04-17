@@ -313,6 +313,8 @@ $.getJSON('js/ApiProduts.json', function (arrayProdutos) {
          sideBar.css('background-color', '#141414')
          nameLogo.css('color', '#fff');
          menu.css('background-color', '#fff');
+         $('.userGrup').css({ 'width': '12%' });
+         $('.userGrup').removeClass('exitUser')
       } else {
          if (window.scrollY == 0) {
             sideBar.css('background', 'transparent')
