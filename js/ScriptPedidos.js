@@ -18,6 +18,8 @@ $(window).ready(() => {
          sideBar.css('background-color', '#141414')
          nameLogo.css('color', '#fff');
          menu.css('background-color', '#fff');
+         $('.userGrup').css({ 'width': '12%' });
+         $('.userGrup').removeClass('exitUser')
       } else {
 
          sideBar.css('background', '#e9e8e8f8')

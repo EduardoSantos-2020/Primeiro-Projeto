@@ -83,7 +83,7 @@ $(function () {
 
             if ($('.menu-btn').hasClass('btn-active')) {
                $(userBtn).addClass('exitUser')
-                           $(userBtn).css({ 'width': '12%' });
+               $(userBtn).css({ 'width': '12%' });
             } else {
                   $(userBtn).removeClass('exitUser')
             }
