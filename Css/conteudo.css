@@ -49,7 +49,7 @@ a {
     color: #fff;
 }
 
-.container--nav .nav--menu .logMark {
+.navegação--menu .nav--menu .logMark {
     display: none;
     pointer-events: none;
     user-select: none;
