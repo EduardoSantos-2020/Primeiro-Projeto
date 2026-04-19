@@ -30,6 +30,8 @@ a {
     object-fit: cover;
     background-size: cover;
     margin-right: .4rem;
+    pointer-events: none;
+    user-select: none;
 }
 
 .container--nav .logo--name {
@@ -49,6 +51,8 @@ a {
 
 .container--nav .nav--menu .logMark {
     display: none;
+    pointer-events: none;
+    user-select: none;
 }
 
 @media screen and (max-width:992px) {
@@ -164,14 +168,15 @@ a {
     object-fit: cover;
     padding: .4rem 0;
     border-radius: 8px 8px 0 0;
-
+    pointer-events: none;
+    user-select: none;
 }
 
 .userImg img {
     width: 2.3rem;
     height: 2.3rem;
     border-radius: 50%;
-
+    
 }
 
 .userImg::after {
@@ -984,7 +989,8 @@ aside:not(.styleSidebar) .menu--secao:hover {
     align-items: center;
     justify-content: center;
     object-fit: cover;
-
+    pointer-events: none;
+    user-select: none;
 }
 
 .produto--item img {
@@ -1334,6 +1340,11 @@ aside:not(.styleSidebar) .menu--secao:hover {
         color: #fff;
 
     }
+    
+    .services .servicosPrestados img{
+        pointer-events: none;
+        user-select: none;
+    }
 
     .img-service-mobile {
         display: block;
@@ -1452,7 +1463,8 @@ aside:not(.styleSidebar) .menu--secao:hover {
 
 .localizacao-itens .container--imglocal img {
     width: 100%;
-
+    pointer-events: none;
+    user-select: none;
 }
 
 .localizacao-itens p {
@@ -1822,6 +1834,8 @@ footer .logMark {
 
 footer .logMark .logo-img {
     object-fit: cover;
+    pointer-events: none;
+    user-select: none;
 }
 
 footer .logMark p:nth-child(2) {
@@ -1874,6 +1888,8 @@ footer .logMark p:nth-child(3) {
     align-items: end;
     object-fit: cover;
     margin: 0;
+    pointer-events: none;
+    user-select: none;
 }
 
 @media screen and (max-width:540px) {

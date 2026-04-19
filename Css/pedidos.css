@@ -30,6 +30,10 @@ body {
     align-items: center;
 }
 
+ .containerbuttons .logMark img {
+    pointer-events: none;
+    user-select: none;
+}
 
 .container--nav {
     width: 30%;
@@ -44,6 +48,8 @@ body {
     object-fit: cover;
     background-size: cover;
     margin-right: .4rem;
+    pointer-events: none;
+    user-select: none;
 }
 
 .container--nav .logo--name {
@@ -131,6 +137,8 @@ body {
     width: 2.3rem;
     height: 2.3rem;
     border-radius: 50%;
+    pointer-events: none;
+    user-select: none;
 }
 
 .userImg::after {
@@ -410,7 +418,6 @@ body {
         height: 4rem;
         object-fit: cover;
         border-radius: 50%;
-
     }
 
     .userImg::after {
@@ -562,6 +569,8 @@ body {
 
 .img--produto {
     width: 100%;
+    pointer-events: none;
+    user-select: none;
 }
 
 .navegação--menu {
@@ -793,7 +802,8 @@ body {
 
 .campoBack img {
     width: 1.3rem;
-
+    pointer-events: none;
+    user-select: none;
 }
 
 .campoFavorito i {
