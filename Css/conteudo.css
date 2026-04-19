@@ -13,7 +13,6 @@ a {
     width: 100%;
     display: flex;
     justify-content: space-around;
-    align-items: center;
     margin: 20px 0;
 }
 
@@ -84,15 +83,22 @@ a {
     align-items: center;
 }
 
+.container--login{
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
 .container-User {
     position: relative;
     width: 17.5em;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     user-select: none;
-    transform: translateY(5%);
+    transform: translateY(-5%);
     border-radius: 8px 8px 0 0;
 
 }
@@ -147,11 +153,11 @@ a {
 
 .userGrup {
     width: 95%;
+    height: 100%;
     position: relative;
     display: flex;
     align-items: center;
     z-index: 1;
-    /* padding-left: 1.5rem; */
 }
 
 
@@ -159,14 +165,15 @@ a {
 .contNameEmail {
     width: 100%;
     display: flex;
+    justify-content: center;
     flex-direction: column;
     overflow: hidden;
 }
 
 .userImg {
     position: relative;
+    display: flex;
     object-fit: cover;
-    padding: .4rem 0;
     border-radius: 8px 8px 0 0;
     pointer-events: none;
     user-select: none;
@@ -176,12 +183,12 @@ a {
     width: 2.3rem;
     height: 2.3rem;
     border-radius: 50%;
-    
+    margin: .1rem 0;
 }
 
 .userImg::after {
     position: absolute;
-    top: .4rem;
+    top:.1rem;
     left: 0;
     content: '';
     width: 2.3rem;
@@ -364,6 +371,9 @@ aside:not(.styleSidebar) .menu--secao:hover {
 
 #btn-login {
     text-decoration: none;
+    display: flex;
+    height: 100%;
+    align-items: center;
 }
 
 .login {
