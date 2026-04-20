@@ -85,7 +85,7 @@ $(function () {
                $(userBtn).addClass('exitUser')
                $(userBtn).css({ 'width': '12%' });
             } else {
-                  $(userBtn).removeClass('exitUser')
+               $(userBtn).removeClass('exitUser')
             }
 
             $(userBtn).on('click', UserButton)
@@ -198,10 +198,10 @@ $(function () {
                }
 
                $(userBtn).on('click', UserButton)
-               
-                $('.button-prop').on('click', function () {
+
+               $('.button-prop').on('click', function () {
                   if (!$('.menu-btn').hasClass('btn-active')) {
-                  $(userBtn).css({ 'width': '12%' });
+                     $(userBtn).css({ 'width': '12%' });
                   }
                })
 
@@ -311,20 +311,25 @@ $.getJSON('js/ApiProduts.json', function (arrayProdutos) {
 
       if ($('.menu-btn').hasClass('btn-active')) {
          sideBar.css('background-color', '#141414')
+
          nameLogo.css('color', '#fff');
          menu.css('background-color', '#fff');
          $('.userGrup').css({ 'width': '12%' });
-         $('.userGrup').removeClass('exitUser')
+         $('.userGrup').removeClass('exitUser');
+
       } else {
          if (window.scrollY == 0) {
             sideBar.css('background', 'transparent')
          } else {
             sideBar.css('background', '#e9e8e8f8')
             nameLogo.css('color', '#000');
-            menu.css('background-color', '#000');
+            menu.css('background-color', '#fff');
          }
       }
+
+
    }
+
 
    function showSlider() {
       totalSlider = $(".slider--item");
@@ -357,7 +362,7 @@ $.getJSON('js/ApiProduts.json', function (arrayProdutos) {
          nameLogo.css('color', '#000');
          menu.css('background-color', '#000');
 
-      } else {
+      } else if (pos == 0) {
          sideBar.addClass('styleSidebar');
          sideBar.css('background', 'transparent')
 

@@ -83,7 +83,7 @@ a {
     align-items: center;
 }
 
-.container--login{
+.container--login {
     display: flex;
     align-items: center;
     height: 100%;
@@ -188,7 +188,7 @@ a {
 
 .userImg::after {
     position: absolute;
-    top:.1rem;
+    top: .1rem;
     left: 0;
     content: '';
     width: 2.3rem;
@@ -423,10 +423,12 @@ aside:not(.styleSidebar) .menu--secao:hover {
         display: flex;
         justify-content: center;
         margin: 1rem 0;
+        height: 8%;
     }
 
     #btn-login {
         display: flex;
+        height: 45%;
         justify-content: center;
         transition: width 1.5s ease-in;
     }
@@ -1350,8 +1352,8 @@ aside:not(.styleSidebar) .menu--secao:hover {
         color: #fff;
 
     }
-    
-    .services .servicosPrestados img{
+
+    .services .servicosPrestados img {
         pointer-events: none;
         user-select: none;
     }
@@ -2120,9 +2122,10 @@ footer .logMark p:nth-child(3) {
         align-items: center;
         padding: 10% 0;
     }
-     .navegação--menu .nav--menu .logMark img{
-         width: 3em;
-     }
+
+    .navegação--menu .nav--menu .logMark img {
+        width: 3em;
+    }
 
     .navegação--menu .nav--menu .contatos-container .itemDecontato {
         background-color: #333232;
