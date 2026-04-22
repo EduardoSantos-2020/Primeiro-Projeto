@@ -30,7 +30,7 @@ body {
     align-items: center;
 }
 
- .containerbuttons .logMark img {
+.containerbuttons .logMark img {
     pointer-events: none;
     user-select: none;
 }
@@ -96,6 +96,11 @@ body {
     line-height: .7rem;
     overflow: hidden;
     letter-spacing: .2rem;
+}
+
+.container-User .exitUser .textEmail,
+.container-User .exitUser .textName {
+    opacity: 0;
 }
 
 .sidebar .container-User .textName,
@@ -191,7 +196,7 @@ body {
     background: none;
 }
 
-.sidebar .exitUser ~ .btnExit {
+.sidebar .exitUser~.btnExit {
     color: #000;
     opacity: 0;
 }
@@ -201,7 +206,7 @@ body {
     color: #000;
 }
 
-.sidebar .exitUser:hover ~ .btnExit {
+.sidebar .exitUser:hover~.btnExit {
     opacity: 1;
     color: #afafaf;
 }
@@ -346,7 +351,7 @@ body {
         display: flex;
         align-items: center;
         width: 12%;
-        
+
         padding: 0 auto;
         transition: none;
     }
@@ -376,8 +381,10 @@ body {
     }
 
     .exitUser {
-        width: 12%; 
+        width: 12%;
     }
+
+
 
     .sidebar .container-User .textName,
     .sidebar .container-User .textEmail {
@@ -392,11 +399,6 @@ body {
     .sidebar .container-User :active .textName,
     .sidebar .container-User :active .textEmail {
         color: #afafaf;
-    }
-
-    .container-User .exitUser .textEmail,
-    .container-User .exitUser .textName {
-        opacity: 0;
     }
 
     .userImg {
@@ -455,7 +457,7 @@ body {
         color: #afafaf;
     } */
 
-    .sidebar .exitUser ~ .btnExit:hover {
+    .sidebar .exitUser~.btnExit:hover {
 
         opacity: 1;
         color: #fff;
@@ -470,7 +472,7 @@ body {
         color: #afafaf;
     }
 
-    .sidebar .exitUser ~ .btnExit {
+    .sidebar .exitUser~.btnExit {
         color: #fff;
     }
 
@@ -902,8 +904,8 @@ span.buttonText {
         padding: 10px;
 
     }
-    
-       .logMark p {
+
+    .logMark p {
         font-size: .8em;
         font-weight: 600;
     }
@@ -939,7 +941,7 @@ span.buttonText {
         margin-top: 40%;
         padding: 1rem 0;
     }
-    
+
     .navegação--menu .containerbuttons .contatos-container .itemDecontato {
         border-radius: 1rem;
         background-color: #333232;

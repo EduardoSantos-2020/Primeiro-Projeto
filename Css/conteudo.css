@@ -231,10 +231,12 @@ a {
     color: #afafaf;
 }
 
+@media (min-width: 992px) {
 
-.sidebar .container-User:hover .userImg::after,
-.styleSidebar .container-User:hover .userImg::after {
-    background-color: #31313186;
+    .sidebar .container-User:hover .userImg::after,
+    .styleSidebar .container-User:hover .userImg::after {
+        background-color: #31313186;
+    }
 }
 
 .btnExit {
@@ -266,7 +268,7 @@ a {
 
 .styleSidebar .userGrup~.btnExit {
     opacity: 0;
-    
+
 }
 
 .sidebar .userGrup~.btnExit {
@@ -276,7 +278,7 @@ a {
 .sidebar .userGrup~.btnExit:hover {
     opacity: 0;
     pointer-events: none;
-    
+
 }
 
 .sidebar .exitUser~.btnExit:hover {
@@ -284,35 +286,35 @@ a {
     pointer-events: all;
 }
 
-.styleSidebar .exitUser:hover ~ .btnExit {
+.styleSidebar .exitUser:hover~.btnExit {
     color: #fff;
     opacity: 1;
-    
+
 }
 
-.styleSidebar .userGrup:hover ~.btnExit {
+.styleSidebar .userGrup:hover~.btnExit {
     color: #000;
     opacity: 0;
     pointer-events: none;
 }
 
 
-.styleSidebar .exitUser ~ .btnExit {
-  opacity: 0;
+.styleSidebar .exitUser~.btnExit {
+    opacity: 0;
 }
 
-.styleSidebar .exitUser:hover ~.btnExit {
+.styleSidebar .exitUser:hover~.btnExit {
     color: #afafaf;
     opacity: 1;
 }
 
-.styleSidebar .exitUser ~.btnExit:hover {
+.styleSidebar .exitUser~.btnExit:hover {
     color: #fff;
     opacity: 1;
 }
 
 
-.sidebar .exitUser:hover ~.btnExit {
+.sidebar .exitUser:hover~.btnExit {
     color: #afafaf;
     opacity: 1;
 }
@@ -414,6 +416,7 @@ aside:not(.styleSidebar) .menu--secao:hover {
         display: flex;
         flex-direction: column;
         align-items: center;
+
         width: 100%;
         height: 100vh;
         margin: 0;
@@ -455,9 +458,6 @@ aside:not(.styleSidebar) .menu--secao:hover {
         border-radius: 8px 8px 0 0;
     }
 
-    .container-User:hover .userGrup img {
-        z-index: 1;
-    }
 
     .userGrup {
         display: flex;
@@ -518,8 +518,8 @@ aside:not(.styleSidebar) .menu--secao:hover {
     }
 
     .userImg {
+        position: relative;
         padding: 0;
-
     }
 
     .userImg img {
@@ -534,57 +534,49 @@ aside:not(.styleSidebar) .menu--secao:hover {
         left: 0;
         width: 4rem;
         height: 4rem;
-    }
 
-    .sidebar .container-User:hover .userImg::after,
-    .styleSidebar .container-User:hover .userImg::after {
-        background: transparent;
     }
 
     .sidebar .container-User .userImg::after,
     .styleSidebar .container-User .userImg::after {
-        background: transparent;
+        background-color: transparent;
 
     }
 
-    .sidebar .container-User:active .userImg::after,
-    .styleSidebar .container-User:active .userImg::after {
+    .sidebar .container-User :active .userImg::after,
+    .styleSidebar .container-User :active .userImg::after {
         background-color: #31313186;
     }
 
-    /* .container-User:hover .userImg {} */
 
     .container-User .btnExit {
         position: absolute;
-        top: 4.2rem;
-        left: 45%;
-        transform: translate(-25%);
+        top: 5rem;
+        left: 44%;
+        transform: translateX(-27%);
         width: 25%;
         padding: 0 20px;
         border: none;
         font-weight: 900;
         font-size: 1.8rem;
         color: #fff;
+        opacity: 1;
         border-radius: 0 0 8px 8px;
         text-transform: uppercase;
-        opacity: 1;
         justify-content: center;
         background: none;
 
     }
 
 
+
+    .sidebar .userGrup~.btnExit {}
+
+    .styleSidebar .userGrup~.btnExit {}
+
     .styleSidebar .exitUser:hover~.btnExit {
         color: #fff;
         opacity: 1;
-    }
-
-    .sidebar .userGrup~.btnExit {
-        opacity: 0;
-    }
-
-    .styleSidebar .userGrup~.btnExit {
-        opacity: 0;
     }
 
     .sidebar .exitUser:hover~.btnExit {
@@ -592,17 +584,25 @@ aside:not(.styleSidebar) .menu--secao:hover {
         opacity: 1;
     }
 
-    .sidebar .exitUser~.btnExit:active {
-        color: #afafaf;
+    .styleSidebar .exitUser~.btnExit {
+        opacity: 1;
+        color: #fff;
+        pointer-events: all;
     }
 
     .styleSidebar .exitUser~.btnExit:active {
         color: #afafaf;
+
     }
 
-
-    .sidebar .exitUser .btnExit {
+    .sidebar .exitUser~.btnExit {
+        opacity: 1;
         color: #fff;
+        pointer-events: all;
+    }
+
+    .sidebar .exitUser~.btnExit:active {
+        color: #afafaf;
     }
 
     .login {
@@ -2127,8 +2127,8 @@ footer .logMark p:nth-child(3) {
         width: 75%;
         display: flex;
         justify-content: space-evenly;
-        align-items: center;
-        padding: 10% 0;
+        align-items: flex-end;
+        margin: 17% 0;
     }
 
     .navegação--menu .nav--menu .logMark img {

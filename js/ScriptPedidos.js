@@ -18,7 +18,7 @@ $(window).ready(() => {
          sideBar.css('background-color', '#141414')
          nameLogo.css('color', '#fff');
          menu.css('background-color', '#fff');
-         $('.userGrup').css({ 'width': '12%' });
+         $('.userGrup').css({ 'width': '14%' });
          $('.userGrup').removeClass('exitUser')
       } else {
 
@@ -92,13 +92,13 @@ $(window).ready(() => {
             $(btn.currentTarget).toggleClass('exitUser')
             if ($(window).width() <= 992) {
                if ($('.userGrup').hasClass('exitUser')) {
-                  $(btn.currentTarget).css({ 'width': '12%' });
+                  $(btn.currentTarget).css({ 'width': '14%' });
                } else {
                   $(btn.currentTarget).css({ 'width': '85%' });
                }
             } else {
                if ($('.userGrup').hasClass('exitUser')) {
-                  $(btn.currentTarget).css({ 'width': '12%' });
+                  $(btn.currentTarget).css({ 'width': '14%' });
                } else {
                   $(btn.currentTarget).css({ 'width': '95%' });
                }
@@ -107,19 +107,19 @@ $(window).ready(() => {
 
          if ($('.menu-btn').hasClass('btn-active')) {
             $(userBtn).addClass('exitUser')
-            $(userBtn).css({ 'width': '12%' });
+            $(userBtn).css({ 'width': '14%' });
          } else {
             if ($(window).width() <= 992) {
                $(userBtn).removeClass('exitUser')
-            }else{
-                $(userBtn).addClass('exitUser')
+            } else {
+               $(userBtn).addClass('exitUser')
             }
          }
 
          $(userBtn).on('click', UserButton)
          $('.button-prop').on('click', function () {
             if (!$('.menu-btn').hasClass('btn-active')) {
-               $(userBtn).css({ 'width': '12%' });
+               $(userBtn).css({ 'width': '14%' });
             }
          })
       }
@@ -188,13 +188,13 @@ $(window).ready(() => {
                   $('.userGrup').toggleClass('exitUser')
                   if ($(window).width() <= 992) {
                      if ($('.userGrup').hasClass('exitUser')) {
-                        $(btn.currentTarget).css({ 'width': '12%' });
+                        $(btn.currentTarget).css({ 'width': '14%' });
                      } else {
                         $(btn.currentTarget).css({ 'width': '85%' });
                      }
                   } else {
                      if ($('.userGrup').hasClass('exitUser')) {
-                        $(btn.currentTarget).css({ 'width': '12%' });
+                        $(btn.currentTarget).css({ 'width': '14%' });
                      } else {
                         $(btn.currentTarget).css({ 'width': '95%' });
                      }
@@ -205,9 +205,13 @@ $(window).ready(() => {
 
                if ($('.menu-btn').hasClass('btn-active')) {
                   $(userBtn).addClass('exitUser')
-                  $(userBtn).css({ 'width': '12%' });
+                  $(userBtn).css({ 'width': '14%' });
                } else {
-                  $(userBtn).removeClass('exitUser')
+                  if ($(window).width() <= 992) {
+                     $(userBtn).removeClass('exitUser')
+                  } else {
+                     $(userBtn).addClass('exitUser')
+                  }
                }
             }
          },
