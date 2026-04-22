@@ -101,6 +101,7 @@ body {
 .container-User .exitUser .textEmail,
 .container-User .exitUser .textName {
     opacity: 0;
+   transition: .7s ease-in;
 }
 
 .sidebar .container-User .textName,
