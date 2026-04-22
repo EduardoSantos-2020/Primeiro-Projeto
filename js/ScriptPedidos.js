@@ -25,7 +25,6 @@ $(window).ready(() => {
          sideBar.css('background', '#e9e8e8f8')
          nameLogo.css('color', '#000');
          menu.css('background-color', '#000');
-
       }
 
    }
@@ -61,6 +60,7 @@ $(window).ready(() => {
          containerUser = $('<div></div>').addClass('container-User').append(grup, btnExit)
          $('#btn-login').append(containerUser)
          userBtn = $('.userGrup')[0];
+         $(userBtn).addClass('exitUser')
 
          btnExit[0].addEventListener('click', function () {
             sessionStorage.removeItem('access_token')
@@ -109,7 +109,11 @@ $(window).ready(() => {
             $(userBtn).addClass('exitUser')
             $(userBtn).css({ 'width': '12%' });
          } else {
-            $(userBtn).removeClass('exitUser')
+            if ($(window).width() <= 992) {
+               $(userBtn).removeClass('exitUser')
+            }else{
+                $(userBtn).addClass('exitUser')
+            }
          }
 
          $(userBtn).on('click', UserButton)
@@ -159,6 +163,7 @@ $(window).ready(() => {
                containerUser = $('<div></div>').addClass('container-User').append(grup, btnExit)
                $('#btn-login').append(containerUser)
                userBtn = $('.userGrup')[0]
+               $(userBtn).addClass('exitUser')
 
                btnExit[0].addEventListener('click', function () {
                   sessionStorage.removeItem('access_token')

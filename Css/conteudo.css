@@ -223,6 +223,7 @@ a {
 .sidebar .exitUser:hover .btnExit {
     color: #afafaf;
     opacity: 0;
+    pointer-events: none;
 }
 
 
@@ -251,11 +252,12 @@ a {
     background: none;
 }
 
-
+/* 
 .styleSidebar .container-User .exitUser~.btnExit {
     color: #fff;
     opacity: 0;
-}
+    
+} */
 
 .sidebar .exitUser~.btnExit {
     color: #000;
@@ -264,6 +266,7 @@ a {
 
 .styleSidebar .userGrup~.btnExit {
     opacity: 0;
+    
 }
 
 .sidebar .userGrup~.btnExit {
@@ -271,45 +274,50 @@ a {
 }
 
 .sidebar .userGrup~.btnExit:hover {
-
     opacity: 0;
+    pointer-events: none;
+    
 }
 
 .sidebar .exitUser~.btnExit:hover {
-
     opacity: 1;
+    pointer-events: all;
 }
 
-.styleSidebar .exitUser:hover~.btnExit {
-    color: #000;
-    opacity: 1;
-}
-
-.styleSidebar .userGrup:hover~.btnExit {
-    color: #000;
-    opacity: 0;
-}
-
-
-.styleSidebar .exitUser~.btnExit {
+.styleSidebar .exitUser:hover ~ .btnExit {
     color: #fff;
-    opacity: 0;
+    opacity: 1;
+    
 }
 
-.styleSidebar .exitUser:hover~.btnExit {
+.styleSidebar .userGrup:hover ~.btnExit {
+    color: #000;
+    opacity: 0;
+    pointer-events: none;
+}
+
+
+.styleSidebar .exitUser ~ .btnExit {
+  opacity: 0;
+}
+
+.styleSidebar .exitUser:hover ~.btnExit {
     color: #afafaf;
     opacity: 1;
 }
 
-.sidebar .exitUser:hover~.btnExit {
+.styleSidebar .exitUser ~.btnExit:hover {
+    color: #fff;
+    opacity: 1;
+}
+
+
+.sidebar .exitUser:hover ~.btnExit {
     color: #afafaf;
     opacity: 1;
 }
 
-.styleSidebar .exitUser~.btnExit:hover {
-    color: #fff;
-    opacity: 1;
-}
+
 
 .menu--secao {
     position: relative;

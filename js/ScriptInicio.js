@@ -45,6 +45,7 @@ $(function () {
             containerUser = $('<div></div>').addClass('container-User').append(grup, btnExit)
             $('#btn-login').append(containerUser);
             userBtn = $('.userGrup')[0]
+            $(userBtn).addClass('exitUser')
 
             btnExit[0].addEventListener('click', function () {
                sessionStorage.removeItem('access_token')
@@ -85,7 +86,11 @@ $(function () {
                $(userBtn).addClass('exitUser')
                $(userBtn).css({ 'width': '12%' });
             } else {
-               $(userBtn).removeClass('exitUser')
+               if ($(window).width() <= 992) {
+                  $(userBtn).removeClass('exitUser')
+               } else {
+                  $(userBtn).addClass('exitUser')
+               }
             }
 
             $(userBtn).on('click', UserButton)
@@ -161,6 +166,7 @@ $(function () {
                containerUser = $('<div></div>').addClass('container-User').append(grup, btnExit)
                $('#btn-login').append(containerUser)
                userBtn = $('.userGrup')[0]
+               $(userBtn).addClass('exitUser')
 
                btnExit[0].addEventListener('click', function () {
                   sessionStorage.removeItem('access_token')
@@ -181,18 +187,14 @@ $(function () {
                })
 
                function UserButton(btn) {
-                  $('.userGrup').toggleClass('exitUser')
-                  if ($(window).width() <= 992) {
-                     if ($('.userGrup').hasClass('exitUser')) {
-                        $(btn.currentTarget).css({ 'width': '12%' });
-                     } else {
-                        $(btn.currentTarget).css({ 'width': '85%' });
-                     }
+                  if ($('.menu-btn').hasClass('btn-active')) {
+                     $(userBtn).addClass('exitUser')
+                     $(userBtn).css({ 'width': '12%' });
                   } else {
-                     if ($('.userGrup').hasClass('exitUser')) {
-                        $(btn.currentTarget).css({ 'width': '12%' });
+                     if ($(window).width() <= 992) {
+                        $(userBtn).removeClass('exitUser')
                      } else {
-                        $(btn.currentTarget).css({ 'width': '95%' });
+                        $(userBtn).addClass('exitUser')
                      }
                   }
                }
