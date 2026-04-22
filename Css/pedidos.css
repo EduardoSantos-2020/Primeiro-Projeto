@@ -101,7 +101,7 @@ body {
 .container-User .exitUser .textEmail,
 .container-User .exitUser .textName {
     opacity: 0;
-   transition: .7s ease-in;
+    transition: .7s ease-in;
 }
 
 .sidebar .container-User .textName,
@@ -173,9 +173,6 @@ body {
     color: #000;
 }
 
-.sidebar .container-User .btnExit:hover {
-    color: #afafaf;
-}
 
 @media (min-width: 992px) {
     .sidebar .container-User:hover .userImg::after {
@@ -199,21 +196,32 @@ body {
     background: none;
 }
 
-.sidebar .exitUser~.btnExit {
-    color: #000;
-    opacity: 0;
-}
 
-.sidebar .userGrup~.btnExit:hover {
-    opacity: 1;
-    color: #000;
-}
+@media (min-width: 992px) {
+    .sidebar .container-User:hover .userImg::after {
+        background-color: #31313186;
+    }
 
-.sidebar .exitUser:hover~.btnExit {
-    opacity: 1;
+    .sidebar .exitUser~.btnExit {
+        color: #000;
+        opacity: 0;
+    }
+
+    .sidebar .userGrup~.btnExit:hover {
+        opacity: 1;
+        color: #000;
+    }
+
+    .sidebar .container-User .btnExit:hover {
     color: #afafaf;
 }
 
+    .sidebar .exitUser:hover~.btnExit {
+        opacity: 1;
+        color: #afafaf;
+    }
+
+}
 
 .login {
     width: 100px;
@@ -387,8 +395,6 @@ body {
         width: 12%;
     }
 
-
-
     .sidebar .container-User .textName,
     .sidebar .container-User .textEmail {
         color: #fff;
@@ -422,13 +428,17 @@ body {
         height: 4rem;
     }
 
-    .sidebar .container-User .userImg::after {
-        background: transparent;
+    .sidebar .userImg::after {
+        background-color: transparent;
     }
 
-    .sidebar .container-User:active .userImg::after {
+    .sidebar .exitUser:active .userImg::after {
         background-color: #31313186;
-    } 
+    }
+
+    .sidebar .userGrup:active .userImg::after {
+        background-color: #31313186;
+    }
 
     /* .container-User:hover .userImg {} */
 
@@ -452,13 +462,21 @@ body {
 
     .container-User .userGrup .btnExit {
         opacity: 0;
+        color: #fff;
     }
 
     .sidebar .exitUser~.btnExit:active {
+
         color: #afafaf;
     }
 
+    .sidebar .userGrup~.btnExit {
+        opacity: 0;
+        color: #fff;
+    }
+
     .sidebar .exitUser~.btnExit {
+        opacity: 1;
         color: #fff;
     }
 
