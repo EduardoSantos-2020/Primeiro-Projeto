@@ -213,7 +213,7 @@ body {
     }
 
     .sidebar .container-User .btnExit:hover {
-    color: #afafaf;
+    color: #000;
 }
 
     .sidebar .exitUser:hover~.btnExit {

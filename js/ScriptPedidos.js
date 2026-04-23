@@ -1,13 +1,75 @@
 $(window).ready(() => {
+   function createUser(data) {
+      $(btnLogin).css('display', 'none')
+      $('#btn-login').css('width', '100%')
+      $('#btn-login').removeAttr('href')
+      image = $('<div></div>').addClass('userImg').append($('<img>').attr('src', data.picture).attr('loading', 'lazy').attr('priority', 'high'));
+      nome = $(`<p></p>`).addClass('textName').text(data.name);
+      email = $(`<p></p>`).addClass('textEmail').text(data.email);
+      btnExit = $('<button></button>').addClass('btnExit').text('sair')
+      div = $('<div></div>').addClass('contNameEmail').append(nome, email)
+      grup = $('<div></div>').addClass('userGrup').append(image, div)
+      containerUser = $('<div></div>').addClass('container-User').append(grup, btnExit)
+      $('#btn-login').append(containerUser);
+      userBtn = $('.userGrup')[0]
+      $(userBtn).addClass('exitUser')
+   }
 
-   menu = $('.menu-btn .line');
-   sideBar = $(".sidebar");
-   nameLogo = $('.logo--name');
+   function logoutUser() {
+      sessionStorage.removeItem('access_token')
+      sessionStorage.removeItem("data");
+      sessionStorage.removeItem("page");
+      $('#btn-login').css('width', '0')
 
+      if (location.protocol == 'https:') {
 
-   $('.button-prop').on('click', mobileEvent)
+         if (window.location.host.includes('.app')) {
+            window.location.href = '/index.html';
+         } else {
+            window.location.href = '/Primeiro-Projeto/' + 'index.html';
+         }
+      } else if (location.protocol == 'http:') {
+         window.location.href = '/index.html';
+      }
+   }
 
-   function mobileEvent() {
+   function UserButton(btn) {
+      $(btn.currentTarget).toggleClass('exitUser')
+      if ($(window).width() <= 992) {
+         if ($('.userGrup').hasClass('exitUser')) {
+            $(btn.currentTarget).css({ 'width': '14%' });
+         } else {
+            $(btn.currentTarget).css({ 'width': '85%' });
+         }
+      } else {
+         if ($('.userGrup').hasClass('exitUser')) {
+            $(btn.currentTarget).css({ 'width': '14%' });
+         } else {
+            $(btn.currentTarget).css({ 'width': '95%' });
+         }
+      }
+   }
+
+   function styleMovebtnUser() {
+      if ($('.menu-btn').hasClass('btn-active')) {
+         $(userBtn).addClass('exitUser')
+         $(userBtn).css({ 'width': '14%' });
+      } else {
+         if ($(window).width() <= 992) {
+            $(userBtn).removeClass('exitUser')
+         } else {
+            $(userBtn).addClass('exitUser')
+         }
+      }
+   }
+
+   function btnMobileActive() {
+      if (!$('.menu-btn').hasClass('btn-active')) {
+         $(userBtn).css({ 'width': '14%' });
+      }
+   }
+
+    function mobileEvent() {
       $('.menu-btn').toggleClass('btn-active');
       $('.containerbuttons').toggleClass('mobile-btn');
 
@@ -29,99 +91,30 @@ $(window).ready(() => {
 
    }
 
+   menu = $('.menu-btn .line');
+   sideBar = $(".sidebar");
+   nameLogo = $('.logo--name');
+
+   $('.button-prop').on('click', mobileEvent)
+
    let btnLogin = $('#btn-login').find('.login')[0];
 
    if (window.location.hash.includes("access_token")) {
-
       const hash = window.location.hash.substring(1);
       const params = new URLSearchParams(hash);
       const accessToken = params.get("access_token");
-
       fetchUserInfo(accessToken);
-
    } else {
-
       if (!sessionStorage.getItem('data')) {
          $(btnLogin).css('display', 'block');
 
       } else {
-
          data = JSON.parse(sessionStorage.getItem("data"))
-
-         $(btnLogin).css('display', 'none')
-         $('#btn-login').css('width', '100%')
-         $('#btn-login').removeAttr('href')
-         image = $('<div></div>').addClass('userImg').append($('<img>').attr('src', data.picture).attr('loading', 'lazy').attr('priority', 'high'));
-         nome = $(`<p></p>`).addClass('textName').text(data.name);
-         email = $(`<p></p>`).addClass('textEmail').text(data.email);
-         btnExit = $('<button></button>').addClass('btnExit').text('sair')
-         div = $('<div></div>').addClass('contNameEmail').append(nome, email)
-         grup = $('<div></div>').addClass('userGrup').append(image, div)
-         containerUser = $('<div></div>').addClass('container-User').append(grup, btnExit)
-         $('#btn-login').append(containerUser)
-         userBtn = $('.userGrup')[0];
-         $(userBtn).addClass('exitUser')
-
-         btnExit[0].addEventListener('click', function () {
-            sessionStorage.removeItem('access_token')
-            sessionStorage.removeItem("data");
-            sessionStorage.removeItem("page");
-            $('#btn-login').css('width', '0');
-
-            if (location.protocol == 'https:') {
-
-
-               if (location.protocol == 'https:') {
-
-                  if (window.location.host.includes('.app')) {
-
-                     window.location.href = '/index.html';
-
-                  } else if (window.location.host.includes('github.io')) {
-
-                     window.location.href = '/Primeiro-Projeto/' + 'index.html';
-                  }
-               }
-
-            } else if (location.protocol == 'http:') {
-               window.location.href = '/index.html';
-            }
-         })
-
-         function UserButton(btn) {
-            $(btn.currentTarget).toggleClass('exitUser')
-            if ($(window).width() <= 992) {
-               if ($('.userGrup').hasClass('exitUser')) {
-                  $(btn.currentTarget).css({ 'width': '14%' });
-               } else {
-                  $(btn.currentTarget).css({ 'width': '85%' });
-               }
-            } else {
-               if ($('.userGrup').hasClass('exitUser')) {
-                  $(btn.currentTarget).css({ 'width': '14%' });
-               } else {
-                  $(btn.currentTarget).css({ 'width': '95%' });
-               }
-            }
-         }
-
-         if ($('.menu-btn').hasClass('btn-active')) {
-            $(userBtn).addClass('exitUser')
-            $(userBtn).css({ 'width': '14%' });
-         } else {
-            if ($(window).width() <= 992) {
-               $(userBtn).removeClass('exitUser')
-            } else {
-               $(userBtn).addClass('exitUser')
-            }
-         }
-
+         createUser(data)
+         btnExit[0].addEventListener('click', logoutUser)
+         styleMovebtnUser()
          $(userBtn).on('click', UserButton)
-         $('.button-prop').on('click', function () {
-            if (!$('.menu-btn').hasClass('btn-active')) {
-               $(userBtn).css({ 'width': '14%' });
-            }
-         })
+         $('.button-prop').on('click', btnMobileActive)
       }
    }
 
@@ -146,73 +139,14 @@ $(window).ready(() => {
             'Authorization': `Bearer ${accessToken}`
          },
          success: function (response) {
-
             sessionStorage.setItem("data", JSON.stringify(response));
             const data = JSON.parse(sessionStorage.getItem("data"));
 
             if (sessionStorage.getItem('data')) {
-               $('#btn-login').css('width', '100%')
-               $(btnLogin).css('display', 'none')
-               $('#btn-login').removeAttr('href')
-               image = $('<div></div>').addClass('userImg').append($('<img>').attr('src', data.picture).attr('loading', 'lazy').attr('priority', 'high'));
-               nome = $(`<p></p>`).addClass('textName').text(data.name);
-               email = $(`<p></p>`).addClass('textEmail').text(data.email);
-               btnExit = $('<button></button>').addClass('btnExit').text('sair')
-               div = $('<div></div>').addClass('contNameEmail').append(nome, email)
-               grup = $('<div></div>').addClass('userGrup').append(image, div)
-               containerUser = $('<div></div>').addClass('container-User').append(grup, btnExit)
-               $('#btn-login').append(containerUser)
-               userBtn = $('.userGrup')[0]
-               $(userBtn).addClass('exitUser')
-
-               btnExit[0].addEventListener('click', function () {
-                  sessionStorage.removeItem('access_token')
-                  sessionStorage.removeItem("data");
-                  sessionStorage.removeItem("page");
-                  $('#btn-login').css('width', '0')
-
-                  if (location.protocol == 'https:') {
-
-                     if (window.location.host.includes('.app')) {
-                        window.location.href = '/index.html';
-                     } else {
-                        window.location.href = '/Primeiro-Projeto/' + 'index.html';
-                     }
-
-                  } else if (location.protocol == 'http:') {
-                     window.location.href = '/index.html';
-                  }
-               })
-
-               function UserButton(btn) {
-                  $('.userGrup').toggleClass('exitUser')
-                  if ($(window).width() <= 992) {
-                     if ($('.userGrup').hasClass('exitUser')) {
-                        $(btn.currentTarget).css({ 'width': '14%' });
-                     } else {
-                        $(btn.currentTarget).css({ 'width': '85%' });
-                     }
-                  } else {
-                     if ($('.userGrup').hasClass('exitUser')) {
-                        $(btn.currentTarget).css({ 'width': '14%' });
-                     } else {
-                        $(btn.currentTarget).css({ 'width': '95%' });
-                     }
-                  }
-               }
-
-               $(userBtn).on('click', UserButton)
-
-               if ($('.menu-btn').hasClass('btn-active')) {
-                  $(userBtn).addClass('exitUser')
-                  $(userBtn).css({ 'width': '14%' });
-               } else {
-                  if ($(window).width() <= 992) {
-                     $(userBtn).removeClass('exitUser')
-                  } else {
-                     $(userBtn).addClass('exitUser')
-                  }
-               }
+               createUser(data)
+               btnExit[0].addEventListener('click', logoutUser)
+               $('.button-prop').on('click', UserButton)
+               styleMovebtnUser()
             }
          },
          error: function (error) {
@@ -222,17 +156,13 @@ $(window).ready(() => {
    }
 
    $('#btn-Back').click(() => {
-
       if (location.protocol == 'https:') {
-
          if (window.location.host.includes('.app')) {
             window.location.href = location.protocol + '//' + location.host + '/index.html';
          } else {
             window.location.href = location.protocol + '//' + location.host + '/Primeiro-Projeto/' + 'index.html';
          }
-
       }
-
       if (location.protocol == 'http:') {
          window.location.href = location.protocol + '//' + location.host + '/index.html';
       }
