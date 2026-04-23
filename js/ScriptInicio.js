@@ -1,4 +1,132 @@
 $(function () {
+   function createUser(data) {
+      $(btnLogin).css('display', 'none')
+      $('#btn-login').css('width', '100%')
+      $('#btn-login').removeAttr('href')
+      image = $('<div></div>').addClass('userImg').append($('<img>').attr('src', data.picture).attr('loading', 'lazy').attr('priority', 'high'));
+      nome = $(`<p></p>`).addClass('textName').text(data.name);
+      email = $(`<p></p>`).addClass('textEmail').text(data.email);
+      btnExit = $('<button></button>').addClass('btnExit').text('sair')
+      div = $('<div></div>').addClass('contNameEmail').append(nome, email)
+      grup = $('<div></div>').addClass('userGrup').append(image, div)
+      containerUser = $('<div></div>').addClass('container-User').append(grup, btnExit)
+      $('#btn-login').append(containerUser);
+      userBtn = $('.userGrup')[0]
+      $(userBtn).addClass('exitUser')
+   }
+
+   function logoutUser() {
+      sessionStorage.removeItem('access_token')
+      sessionStorage.removeItem("data");
+      sessionStorage.removeItem("page");
+      $('#btn-login').css('width', '0')
+
+      if (location.protocol == 'https:') {
+
+         if (window.location.host.includes('.app')) {
+            window.location.href = '/index.html';
+         } else {
+            window.location.href = '/Primeiro-Projeto/' + 'index.html';
+         }
+      } else if (location.protocol == 'http:') {
+         window.location.href = '/index.html';
+      }
+   }
+
+   function UserButton(btn) {
+      $('.userGrup').toggleClass('exitUser')
+      if ($(window).width() <= 992) {
+         if ($('.userGrup').hasClass('exitUser')) {
+            $(btn.currentTarget).css({ 'width': '14%' });
+         } else {
+            $(btn.currentTarget).css({ 'width': '85%' });
+         }
+      } else {
+         if ($('.userGrup').hasClass('exitUser')) {
+            $(btn.currentTarget).css({ 'width': '14%' });
+         } else {
+            $(btn.currentTarget).css({ 'width': '95%' });
+         }
+      }
+   }
+
+   function btnMobileActive() {
+      if (!$('.menu-btn').hasClass('btn-active')) {
+         $(userBtn).css({ 'width': '14%' });
+      }
+   }
+
+   function btnUserClose(e) {
+      userBtn = $('.userGrup')[0]
+
+      if ($(window).width() > 992) {
+         if ($(e.currentTarget).scrollTop() > 0) {
+            $(userBtn).addClass('exitUser')
+            if ($('.userGrup').hasClass('exitUser')) {
+               $(userBtn).css({ 'width': '14%' });
+            } else {
+               $(userBtn).css({ 'width': '14%' });
+            }
+         }
+      }
+   }
+
+   function showSlider() {
+      totalSlider = $(".slider--item");
+
+      max = totalSlider.length;
+
+      $(totalSlider[correntSlider]).css('opacity', '0');
+
+      correntSlider++
+
+      $(totalSlider[correntSlider]).css('opacity', '.5');
+
+      if (correntSlider >= max) {
+         correntSlider = 0;
+         $(totalSlider[correntSlider]).css('opacity', '.5');
+      }
+   }
+
+   function mobileEvent() {
+      $('.menu-btn').toggleClass('btn-active');
+      $('.nav--menu').toggleClass('mobile-btn');
+
+      !$('.nav--menu').hasClass('mobile-btn') && $('body').width() < 992 ? $('body').css('overflow', 'hidden') : $('body').css('overflow', 'visible');
+
+      if ($('.menu-btn').hasClass('btn-active')) {
+         sideBar.css('background-color', '#141414')
+
+         nameLogo.css('color', '#fff');
+         menu.css('background-color', '#fff');
+         $('.userGrup').css({ 'width': '14%' });
+         $('.userGrup').removeClass('exitUser');
+
+      } else {
+         if (window.scrollY == 0) {
+            sideBar.css('background', 'transparent')
+            menu.css('background-color', '#fff');
+         } else {
+            sideBar.css('background', '#e9e8e8f8')
+            nameLogo.css('color', '#000');
+             menu.css('background-color', '#000');
+         }
+      }
+   }
+
+   function styleMovebtnUser() {
+      if ($('.menu-btn').hasClass('btn-active')) {
+         $(userBtn).addClass('exitUser')
+         $(userBtn).css({ 'width': '14%' });
+      } else {
+         if ($(window).width() <= 992) {
+            $(userBtn).removeClass('exitUser')
+         } else {
+            $(userBtn).addClass('exitUser')
+         }
+      }
+   }
+
    btnLogin = $('#btn-login').find('.login')[0];
 
    $(btnLogin).on('click', function () {
@@ -6,6 +134,7 @@ $(function () {
    })
 
    $(window).ready(function () {
+
       if (window.location.hash.includes("access_token")) {
 
          const hash = window.location.hash.substring(1);
@@ -31,112 +160,18 @@ $(function () {
             $(btnLogin).css('display', 'block')
          }
          else {
+
             data = JSON.parse(sessionStorage.getItem("data"))
 
-            $(btnLogin).css('display', 'none')
-            $('#btn-login').css('width', '100%')
-            $('#btn-login').removeAttr('href')
-            image = $('<div></div>').addClass('userImg').append($('<img>').attr('src', data.picture).attr('loading', 'lazy').attr('priority', 'high'));
-            nome = $(`<p></p>`).addClass('textName').text(data.name);
-            email = $(`<p></p>`).addClass('textEmail').text(data.email);
-            btnExit = $('<button></button>').addClass('btnExit').text('sair')
-            div = $('<div></div>').addClass('contNameEmail').append(nome, email)
-            grup = $('<div></div>').addClass('userGrup').append(image, div)
-            containerUser = $('<div></div>').addClass('container-User').append(grup, btnExit)
-            $('#btn-login').append(containerUser);
-            userBtn = $('.userGrup')[0]
-            $(userBtn).addClass('exitUser')
+            createUser(data)
 
-            btnExit[0].addEventListener('click', function () {
-               sessionStorage.removeItem('access_token')
-               sessionStorage.removeItem("data");
-               sessionStorage.removeItem("page");
-               $('#btn-login').css('width', '0')
-
-               if (location.protocol == 'https:') {
-
-                  if (window.location.host.includes('.app')) {
-                     window.location.href = '/index.html';
-                  } else {
-                     window.location.href = '/Primeiro-Projeto/' + 'index.html';
-                  }
-               } else if (location.protocol == 'http:') {
-                  window.location.href = '/index.html';
-               }
-            })
-
-            function UserButton(btn) {
-               $('.userGrup').toggleClass('exitUser')
-               if ($(window).width() <= 992) {
-                  if ($('.userGrup').hasClass('exitUser')) {
-                     $(btn.currentTarget).css({ 'width': '14%' });
-                  } else {
-                     $(btn.currentTarget).css({ 'width': '85%' });
-                  }
-               } else {
-                  if ($('.userGrup').hasClass('exitUser')) {
-                     $(btn.currentTarget).css({ 'width': '14%' });
-                  } else {
-                     $(btn.currentTarget).css({ 'width': '95%' });
-                  }
-               }
-            }
-
-            if ($('.menu-btn').hasClass('btn-active')) {
-               $(userBtn).addClass('exitUser')
-               $(userBtn).css({ 'width': '14%' });
-            } else {
-               if ($(window).width() <= 992) {
-                  $(userBtn).removeClass('exitUser')
-               } else {
-                  $(userBtn).addClass('exitUser')
-               }
-            }
-
+            btnExit[0].addEventListener('click', logoutUser)
+            styleMovebtnUser()
             $(userBtn).on('click', UserButton)
-            $('.button-prop').on('click', function () {
-               if (!$('.menu-btn').hasClass('btn-active')) {
-                  $(userBtn).css({ 'width': '14%' });
-               }
-            })
 
-            if ($(window).width() > 992) {
-               $(window).on("scroll", function (e) {
-                  if ($(e.currentTarget).scrollTop() > 0) {
-                     $(userBtn).addClass('exitUser')
-                     if ($('.userGrup').hasClass('exitUser')) {
-                        $(userBtn).css({ 'width': '14%' });
-                     } else {
-                        $(userBtn).css({ 'width': '14%' });
-                     }
-                  }
-               })
-            }
+            $('.button-prop').on('click', btnMobileActive)
 
-            btnExit[0].addEventListener('click', function () {
-               sessionStorage.removeItem('access_token')
-               sessionStorage.removeItem("data");
-               sessionStorage.removeItem("page");
-               $('#btn-login').css('width', '0')
-
-               if (location.protocol == 'https:') {
-
-                  if (window.location.host.includes('.app')) {
-
-                     window.location.href = '/index.html';
-
-                  } else {
-                     window.location.href = '/Primeiro-Projeto/' + 'index.html';
-                  }
-
-
-               } else if (location.protocol == 'http:') {
-
-                  window.location.href = '/index.html';
-
-               }
-
-            })
+            $(window).on("scroll", btnUserClose)
          }
       }
 
@@ -155,252 +190,137 @@ $(function () {
             const data = JSON.parse(sessionStorage.getItem("data"));
 
             if (sessionStorage.getItem('data')) {
-               $('#btn-login').css('width', '100%')
-               $('#btn-login').removeAttr('href')
-               image = $('<div></div>').addClass('userImg').append($('<img>').attr('src', data.picture).attr('loading', 'lazy').attr('priority', 'high'));
-               nome = $(`<p></p>`).addClass('textName').text(data.name);
-               email = $(`<p></p>`).addClass('textEmail').text(data.email);
-               btnExit = $('<button></button>').addClass('btnExit').text('sair')
-               div = $('<div></div>').addClass('contNameEmail').append(nome, email)
-               grup = $('<div></div>').addClass('userGrup').append(image, div)
-               containerUser = $('<div></div>').addClass('container-User').append(grup, btnExit)
-               $('#btn-login').append(containerUser)
-               userBtn = $('.userGrup')[0]
-               $(userBtn).addClass('exitUser')
-
-               btnExit[0].addEventListener('click', function () {
-                  sessionStorage.removeItem('access_token')
-                  sessionStorage.removeItem("data");
-                  sessionStorage.removeItem("page");
-                  $('#btn-login').css('width', '0')
-
-                  if (location.protocol == 'https:') {
-
-                     if (window.location.host.includes('.app')) {
-                        window.location.href = '/index.html';
-                     } else {
-                        window.location.href = '/Primeiro-Projeto/' + 'index.html';
-                     }
-                  } else if (location.protocol == 'http:') {
-                     window.location.href = '/index.html';
-                  }
-               })
-
-               function UserButton(btn) {
-                  $('.userGrup').toggleClass('exitUser')
-                  if ($(window).width() <= 992) {
-                     if ($('.userGrup').hasClass('exitUser')) {
-                        $(btn.currentTarget).css({ 'width': '14%' });
-                     } else {
-                        $(btn.currentTarget).css({ 'width': '85%' });
-                     }
-                  } else {
-                     if ($('.userGrup').hasClass('exitUser')) {
-                        $(btn.currentTarget).css({ 'width': '14%' });
-                     } else {
-                        $(btn.currentTarget).css({ 'width': '95%' });
-                     }
-                  }
-               }
-
+               createUser(data)
+               btnExit[0].addEventListener('click', logoutUser)
                $(userBtn).on('click', UserButton)
-
-               $('.button-prop').on('click', function () {
-                  if (!$('.menu-btn').hasClass('btn-active')) {
-                     $(userBtn).css({ 'width': '14%' });
-                  }
-               })
-
-               if ($('.menu-btn').hasClass('btn-active')) {
-                  $(userBtn).addClass('exitUser')
-                  $(userBtn).css({ 'width': '14%' });
-               } else {
-                  if ($(window).width() <= 992) {
-                     $(userBtn).removeClass('exitUser')
-                  } else {
-                     $(userBtn).addClass('exitUser')
-                  }
-               }
-
-               if ($(window).width() > 992) {
-                  $(window).on("scroll", function (e) {
-                     if ($(e.currentTarget).scrollTop() > 0) {
-                        $(userBtn).addClass('exitUser')
-                        if ($('.userGrup').hasClass('exitUser')) {
-                           $(userBtn).css({ 'width': '14%' });
-                        } else {
-                           $(userBtn).css({ 'width': '14%' });
-                        }
-                     }
-                  })
-               }
+               $('.button-prop').on('click', btnMobileActive)
+               styleMovebtnUser()
             }
-
          },
          error: function (error) {
             alert('Erro:', error);
          }
       });
    }
-})
-$.getJSON('js/ApiProduts.json', function (arrayProdutos) {
 
-   arrayProdutos.map((produts, i) => {
-      objCard = $('<div></div>').addClass('produto--item');
-      img = $('<div></div>').addClass('produto--img').append($('<img>').attr('src', produts.image));
-      p = $(`<p></p>`).attr('title', produts.name).text(produts.name);
-      button = $('<button></button>').addClass('btn-card').attr('data-indice', i).text('Detalhes')
-      $('.produtos--items').append(objCard.append(img, p, button));
+   $.getJSON('js/ApiProduts.json', function (arrayProdutos) {
+      sideBar = $(".sidebar");
+      nameLogo = $('.logo--name');
+      menu = $('.menu-btn .line');
 
-      btnCard = objCard.children('.btn-card')[0];
-      $(btnCard).each((i, obj) => {
-         $(obj).click(() => {
-            sessionStorage.setItem('produts', JSON.stringify(produts));
-            if (location.protocol == 'https:') {
+      correntSlider = 0;
 
-               if (window.location.host.includes('.app')) {
+      arrayProdutos.map((produts, i) => {
+         objCard = $('<div></div>').addClass('produto--item');
+         img = $('<div></div>').addClass('produto--img').append($('<img>').attr('src', produts.image));
+         p = $(`<p></p>`).attr('title', produts.name).text(produts.name);
+         button = $('<button></button>').addClass('btn-card').attr('data-indice', i).text('Detalhes')
+         $('.produtos--items').append(objCard.append(img, p, button));
+
+         btnCard = objCard.children('.btn-card')[0];
+         $(btnCard).each((i, obj) => {
+            $(obj).click(() => {
+               sessionStorage.setItem('produts', JSON.stringify(produts));
+               if (location.protocol == 'https:') {
+
+                  if (window.location.host.includes('.app')) {
+                     window.location.href = location.protocol + '//' + location.host + '/pedidos.html';
+                  } else {
+                     window.location.href = location.protocol + '//' + location.host + '/Primeiro-Projeto/' + 'pedidos.html';
+                  }
+
+
+               } else if (location.protocol == 'http:') {
+
                   window.location.href = location.protocol + '//' + location.host + '/pedidos.html';
-               } else {
-                  window.location.href = location.protocol + '//' + location.host + '/Primeiro-Projeto/' + 'pedidos.html';
+
                }
-
-
-            } else if (location.protocol == 'http:') {
-
-               window.location.href = location.protocol + '//' + location.host + '/pedidos.html';
-
-            }
-         })
-      });
-   })
-
-   $('.produtos--items').slick({
-      dots: false,
-      infinite: false,
-      speed: 1300,
-      slidesToShow: 3,
-      slidesToScroll: 3,
-      arrows: true,
-      responsive: [
-         {
-            breakpoint: 1024,
-            settings: {
-               slidesToShow: 2,
-               slidesToScroll: 2,
-               infinite: false,
-               speed: 800,
-               dots: false,
-               arrows: true,
-            }
-         },
-         {
-            breakpoint: 600,
-            settings: {
-               slidesToShow: 1,
-               infinite: false,
-               speed: 800,
-               slidesToScroll: 1,
-               arrows: true,
-            }
-         }
-      ]
-   });
-   sideBar = $(".sidebar");
-   nameLogo = $('.logo--name');
-   menu = $('.menu-btn .line');
-
-   correntSlider = 0;
-
-   $('.button-prop').on('click', mobileEvent)
-
-   function mobileEvent() {
-      $('.menu-btn').toggleClass('btn-active');
-      $('.nav--menu').toggleClass('mobile-btn');
-
-      !$('.nav--menu').hasClass('mobile-btn') && $('body').width() < 992 ? $('body').css('overflow', 'hidden') : $('body').css('overflow', 'visible');
-
-      if ($('.menu-btn').hasClass('btn-active')) {
-         sideBar.css('background-color', '#141414')
-
-         nameLogo.css('color', '#fff');
-         menu.css('background-color', '#fff');
-         $('.userGrup').css({ 'width': '14%' });
-         $('.userGrup').removeClass('exitUser');
-
-      } else {
-         if (window.scrollY == 0) {
-            sideBar.css('background', 'transparent')
-         } else {
-            sideBar.css('background', '#e9e8e8f8')
-            nameLogo.css('color', '#000');
-            menu.css('background-color', '#fff');
-         }
-      }
-
-
-   }
-
-
-   function showSlider() {
-      totalSlider = $(".slider--item");
-
-      max = totalSlider.length;
-
-      $(totalSlider[correntSlider]).css('opacity', '0');
-
-      correntSlider++
-
-      $(totalSlider[correntSlider]).css('opacity', '.5');
-
-      if (correntSlider >= max) {
-         correntSlider = 0;
-         $(totalSlider[correntSlider]).css('opacity', '.5');
-      }
-   }
-
-   $(window).scroll((elem) => {
-      let pos = $(elem.currentTarget).scrollTop();
-      pos ? sideBar.addClass('styleSidebar') : sideBar.removeClass('styleSidebar');
-
-      sect = $(elem.currentTarget).scrollTop();
-
-      sectionHeight = $('section').height()
-
-      if (sect > 0) {
-         sideBar.removeClass('styleSidebar');
-         sideBar.css('background-color', '#e9e8e8f8')
-         nameLogo.css('color', '#000');
-         menu.css('background-color', '#000');
-
-      } else if (pos == 0) {
-         sideBar.addClass('styleSidebar');
-         sideBar.css('background', 'transparent')
-
-         nameLogo.css('color', '#fff')
-         menu.css('background-color', '#fff')
-      }
-
-      $('section').each(function () {
-         let target = $(this).offset().top;
-         let id = $(this).attr('id');
-
-         if (sect > target - sectionHeight) {
-            $('.nav--menu > a').removeClass('active');
-            $('.nav--menu > a[href=\\#' + id + ']').addClass('active');
-         }
-      });
-
-   })
-
-   $('.menu--secao').each(function (i, section) {
-      $(section).click((e) => {
-         if (e.type == 'click') {
-            mobileEvent()
-         };
+            })
+         });
       })
-   })
 
-   setInterval(showSlider, 15000);
+      $('.produtos--items').slick({
+         dots: false,
+         infinite: false,
+         speed: 1300,
+         slidesToShow: 3,
+         slidesToScroll: 3,
+         arrows: true,
+         responsive: [
+            {
+               breakpoint: 1024,
+               settings: {
+                  slidesToShow: 2,
+                  slidesToScroll: 2,
+                  infinite: false,
+                  speed: 800,
+                  dots: false,
+                  arrows: true,
+               }
+            },
+            {
+               breakpoint: 600,
+               settings: {
+                  slidesToShow: 1,
+                  infinite: false,
+                  speed: 800,
+                  slidesToScroll: 1,
+                  arrows: true,
+               }
+            }
+         ]
+      });
+
+      $('.button-prop').on('click', mobileEvent)
+
+      $(window).scroll((elem) => {
+         let pos = $(elem.currentTarget).scrollTop();
+         pos ? sideBar.addClass('styleSidebar') : sideBar.removeClass('styleSidebar');
+
+         sect = $(elem.currentTarget).scrollTop();
+
+         sectionHeight = $('section').height()
+
+         if ($(window).width() > 992) {
+            btnUserClose(elem)
+         }
+
+         if (sect > 0) {
+            sideBar.removeClass('styleSidebar');
+            sideBar.css('background-color', '#e9e8e8f8')
+            nameLogo.css('color', '#000');
+            menu.css('background-color', '#000');
+
+         } else if (pos == 0) {
+            sideBar.addClass('styleSidebar');
+            sideBar.css('background', 'transparent')
+
+            nameLogo.css('color', '#fff')
+            menu.css('background-color', '#fff')
+         }
+
+         $('section').each(function () {
+            let target = $(this).offset().top;
+            let id = $(this).attr('id');
+
+            if (sect > target - sectionHeight) {
+               $('.nav--menu > a').removeClass('active');
+               $('.nav--menu > a[href=\\#' + id + ']').addClass('active');
+            }
+         });
+
+      })
+
+      $('.menu--secao').each(function (i, section) {
+         $(section).click((e) => {
+            if (e.type == 'click') {
+               mobileEvent()
+            };
+         })
+      })
+
+      setInterval(showSlider, 15000);
+   })
 })
 
 
