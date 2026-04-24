@@ -69,7 +69,7 @@ $(window).ready(() => {
       }
    }
 
-    function mobileEvent() {
+   function mobileEvent() {
       $('.menu-btn').toggleClass('btn-active');
       $('.containerbuttons').toggleClass('mobile-btn');
 
@@ -89,33 +89,6 @@ $(window).ready(() => {
          menu.css('background-color', '#000');
       }
 
-   }
-
-   menu = $('.menu-btn .line');
-   sideBar = $(".sidebar");
-   nameLogo = $('.logo--name');
-
-   $('.button-prop').on('click', mobileEvent)
-
-   let btnLogin = $('#btn-login').find('.login')[0];
-
-   if (window.location.hash.includes("access_token")) {
-      const hash = window.location.hash.substring(1);
-      const params = new URLSearchParams(hash);
-      const accessToken = params.get("access_token");
-      fetchUserInfo(accessToken);
-   } else {
-      if (!sessionStorage.getItem('data')) {
-         $(btnLogin).css('display', 'block');
-
-      } else {
-         data = JSON.parse(sessionStorage.getItem("data"))
-         createUser(data)
-         btnExit[0].addEventListener('click', logoutUser)
-         styleMovebtnUser()
-         $(userBtn).on('click', UserButton)
-         $('.button-prop').on('click', btnMobileActive)
-      }
    }
 
    function fetchUserInfo(accessToken) {
@@ -154,6 +127,34 @@ $(window).ready(() => {
          }
       });
    }
+
+   menu = $('.menu-btn .line');
+   sideBar = $(".sidebar");
+   nameLogo = $('.logo--name');
+
+   $('.button-prop').on('click', mobileEvent)
+
+   let btnLogin = $('#btn-login').find('.login')[0];
+
+   if (window.location.hash.includes("access_token")) {
+      const hash = window.location.hash.substring(1);
+      const params = new URLSearchParams(hash);
+      const accessToken = params.get("access_token");
+      fetchUserInfo(accessToken);
+   } else {
+      if (!sessionStorage.getItem('data')) {
+         $(btnLogin).css('display', 'block');
+
+      } else {
+         data = JSON.parse(sessionStorage.getItem("data"))
+         createUser(data)
+         btnExit[0].addEventListener('click', logoutUser)
+         styleMovebtnUser()
+         $(userBtn).on('click', UserButton)
+         $('.button-prop').on('click', btnMobileActive)
+      }
+   }
+
 
    $('#btn-Back').click(() => {
       if (location.protocol == 'https:') {

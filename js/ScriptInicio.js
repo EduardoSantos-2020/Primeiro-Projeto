@@ -109,7 +109,7 @@ $(function () {
          } else {
             sideBar.css('background', '#e9e8e8f8')
             nameLogo.css('color', '#000');
-             menu.css('background-color', '#000');
+            menu.css('background-color', '#000');
          }
       }
    }
@@ -126,6 +126,34 @@ $(function () {
          }
       }
    }
+
+   function fetchUserInfo(accessToken) {
+
+      $.ajax({
+         url: "https://www.googleapis.com/oauth2/v3/userinfo",
+         type: 'GET',
+         headers: {
+            'Authorization': `Bearer ${accessToken}`
+         },
+         success: function (response) {
+            sessionStorage.setItem("data", JSON.stringify(response));
+            const data = JSON.parse(sessionStorage.getItem("data"));
+
+            if (sessionStorage.getItem('data')) {
+               createUser(data)
+               btnExit[0].addEventListener('click', logoutUser)
+               $(userBtn).on('click', UserButton)
+               $('.button-prop').on('click', btnMobileActive)
+               styleMovebtnUser()
+            }
+         },
+         error: function (error) {
+            alert('Erro:', error);
+         }
+      });
+   }
+
+
 
    btnLogin = $('#btn-login').find('.login')[0];
 
@@ -176,32 +204,6 @@ $(function () {
       }
 
    })
-
-   function fetchUserInfo(accessToken) {
-
-      $.ajax({
-         url: "https://www.googleapis.com/oauth2/v3/userinfo",
-         type: 'GET',
-         headers: {
-            'Authorization': `Bearer ${accessToken}`
-         },
-         success: function (response) {
-            sessionStorage.setItem("data", JSON.stringify(response));
-            const data = JSON.parse(sessionStorage.getItem("data"));
-
-            if (sessionStorage.getItem('data')) {
-               createUser(data)
-               btnExit[0].addEventListener('click', logoutUser)
-               $(userBtn).on('click', UserButton)
-               $('.button-prop').on('click', btnMobileActive)
-               styleMovebtnUser()
-            }
-         },
-         error: function (error) {
-            alert('Erro:', error);
-         }
-      });
-   }
 
    $.getJSON('js/ApiProduts.json', function (arrayProdutos) {
       sideBar = $(".sidebar");
