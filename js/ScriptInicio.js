@@ -153,12 +153,10 @@ $(function () {
       });
    }
 
-
-
    btnLogin = $('#btn-login').find('.login')[0];
 
    $(btnLogin).on('click', function () {
-      sessionStorage.setItem('page', 'index.html')
+      sessionStorage.setItem('page', 'index.html');
    })
 
    $(window).ready(function () {
@@ -185,21 +183,21 @@ $(function () {
 
       } else {
          if (!sessionStorage.getItem('data')) {
-            $(btnLogin).css('display', 'block')
+            $(btnLogin).css('display', 'block');
          }
          else {
 
-            data = JSON.parse(sessionStorage.getItem("data"))
+            data = JSON.parse(sessionStorage.getItem("data"));
 
-            createUser(data)
+            createUser(data);
 
             btnExit[0].addEventListener('click', logoutUser)
-            styleMovebtnUser()
-            $(userBtn).on('click', UserButton)
+            styleMovebtnUser();
+            $(userBtn).on('click', UserButton);
 
-            $('.button-prop').on('click', btnMobileActive)
+            $('.button-prop').on('click', btnMobileActive);
 
-            $(window).on("scroll", btnUserClose)
+            $(window).on("scroll", btnUserClose);
          }
       }
 
@@ -273,7 +271,7 @@ $(function () {
          ]
       });
 
-      $('.button-prop').on('click', mobileEvent)
+      $('.button-prop').on('click', mobileEvent);
 
       $(window).scroll((elem) => {
          let pos = $(elem.currentTarget).scrollTop();
@@ -281,15 +279,15 @@ $(function () {
 
          sect = $(elem.currentTarget).scrollTop();
 
-         sectionHeight = $('section').height()
+         sectionHeight = $('section').height();
 
          if ($(window).width() > 992) {
-            btnUserClose(elem)
+            btnUserClose(elem);
          }
 
          if (sect > 0) {
             sideBar.removeClass('styleSidebar');
-            sideBar.css('background-color', '#e9e8e8f8')
+            sideBar.css('background-color', '#e9e8e8f8');
             nameLogo.css('color', '#000');
             menu.css('background-color', '#000');
 
@@ -297,8 +295,8 @@ $(function () {
             sideBar.addClass('styleSidebar');
             sideBar.css('background', 'transparent')
 
-            nameLogo.css('color', '#fff')
-            menu.css('background-color', '#fff')
+            nameLogo.css('color', '#fff');
+            menu.css('background-color', '#fff');
          }
 
          $('section').each(function () {

@@ -1,19 +1,19 @@
 $(window).ready(() => {
    function createUser(data) {
-      $(btnLogin).css('display', 'none')
-      $('#btn-login').css('width', '100%')
-      $('#btn-login').removeAttr('href')
+      $(btnLogin).css('display', 'none');
+      $('#btn-login').css('width', '100%');
+      $('#btn-login').removeAttr('href');
       image = $('<div></div>').addClass('userImg').append($('<img>').attr('src', data.picture).attr('loading', 'lazy').attr('priority', 'high'));
       nome = $(`<p></p>`).addClass('textName').text(data.name);
       email = $(`<p></p>`).addClass('textEmail').text(data.email);
-      btnExit = $('<button></button>').addClass('btnExit').text('sair')
-      div = $('<div></div>').addClass('contNameEmail').append(nome, email)
-      grup = $('<div></div>').addClass('userGrup').append(image, div)
-      containerUser = $('<div></div>').addClass('container-User').append(grup, btnExit)
+      btnExit = $('<button></button>').addClass('btnExit').text('sair');
+      div = $('<div></div>').addClass('contNameEmail').append(nome, email);
+      grup = $('<div></div>').addClass('userGrup').append(image, div);
+      containerUser = $('<div></div>').addClass('container-User').append(grup, btnExit);
       $('#btn-login').append(containerUser);
-      userBtn = $('.userGrup')[0]
-      $(userBtn).addClass('exitUser')
-   }
+      userBtn = $('.userGrup')[0];
+      $(userBtn).addClass('exitUser');
+   };
 
    function logoutUser() {
       sessionStorage.removeItem('access_token')
@@ -31,7 +31,7 @@ $(window).ready(() => {
       } else if (location.protocol == 'http:') {
          window.location.href = '/index.html';
       }
-   }
+   };
 
    function UserButton(btn) {
       $(btn.currentTarget).toggleClass('exitUser')
@@ -48,26 +48,26 @@ $(window).ready(() => {
             $(btn.currentTarget).css({ 'width': '95%' });
          }
       }
-   }
+   };
 
    function styleMovebtnUser() {
       if ($('.menu-btn').hasClass('btn-active')) {
-         $(userBtn).addClass('exitUser')
+         $(userBtn).addClass('exitUser');
          $(userBtn).css({ 'width': '14%' });
       } else {
          if ($(window).width() <= 992) {
-            $(userBtn).removeClass('exitUser')
+            $(userBtn).removeClass('exitUser');
          } else {
-            $(userBtn).addClass('exitUser')
+            $(userBtn).addClass('exitUser');
          }
       }
-   }
+   };
 
    function btnMobileActive() {
       if (!$('.menu-btn').hasClass('btn-active')) {
          $(userBtn).css({ 'width': '14%' });
       }
-   }
+   };
 
    function mobileEvent() {
       $('.menu-btn').toggleClass('btn-active');
@@ -77,34 +77,21 @@ $(window).ready(() => {
 
 
       if ($('.menu-btn').hasClass('btn-active')) {
-         sideBar.css('background-color', '#141414')
+         sideBar.css('background-color', '#141414');
          nameLogo.css('color', '#fff');
          menu.css('background-color', '#fff');
          $('.userGrup').css({ 'width': '14%' });
-         $('.userGrup').removeClass('exitUser')
+         $('.userGrup').removeClass('exitUser');
       } else {
 
-         sideBar.css('background', '#e9e8e8f8')
+         sideBar.css('background', '#e9e8e8f8');
          nameLogo.css('color', '#000');
          menu.css('background-color', '#000');
       }
 
-   }
+   };
 
    function fetchUserInfo(accessToken) {
-      // Limpa a URL (remove token e params)
-      if (accessToken) {
-         if (location.protocol == 'https:') {
-            if (window.location.host.includes('.app')) {
-               window.history.replaceState({}, document.title, '/pedidos.html');
-            } else {
-               window.history.replaceState({}, document.title, '/Primeiro-Projeto/pedidos.html');
-            }
-         }
-         if (location.protocol == 'http:') {
-            window.history.replaceState({}, document.title, 'pedidos.html');
-         }
-      }
       $.ajax({
          url: "https://www.googleapis.com/oauth2/v3/userinfo",
          type: 'GET',
@@ -116,23 +103,22 @@ $(window).ready(() => {
             const data = JSON.parse(sessionStorage.getItem("data"));
 
             if (sessionStorage.getItem('data')) {
-               createUser(data)
-               btnExit[0].addEventListener('click', logoutUser)
-               $('.button-prop').on('click', UserButton)
-               styleMovebtnUser()
+               createUser(data);
+               btnExit[0].addEventListener('click', logoutUser);
+               $(userBtn).on('click', UserButton);
+               $('.button-prop').on('click',btnMobileActive);
+               styleMovebtnUser();
             }
          },
          error: function (error) {
             console.log('Erro:', error);
          }
       });
-   }
+   };
 
    menu = $('.menu-btn .line');
    sideBar = $(".sidebar");
    nameLogo = $('.logo--name');
-
-   $('.button-prop').on('click', mobileEvent)
 
    let btnLogin = $('#btn-login').find('.login')[0];
 
@@ -146,16 +132,17 @@ $(window).ready(() => {
          $(btnLogin).css('display', 'block');
 
       } else {
-         data = JSON.parse(sessionStorage.getItem("data"))
-         createUser(data)
-         btnExit[0].addEventListener('click', logoutUser)
-         styleMovebtnUser()
-         $(userBtn).on('click', UserButton)
-         $('.button-prop').on('click', btnMobileActive)
+         data = JSON.parse(sessionStorage.getItem("data"));
+         createUser(data);
+         btnExit[0].addEventListener('click', logoutUser);
+         styleMovebtnUser();
+         $(userBtn).on('click', UserButton);
+        $('.button-prop').on('click',btnMobileActive);
       }
    }
 
-
+ $('.button-prop').on('click', mobileEvent);
+ 
    $('#btn-Back').click(() => {
       if (location.protocol == 'https:') {
          if (window.location.host.includes('.app')) {
@@ -191,12 +178,12 @@ $(window).ready(() => {
       $(imgSrc).attr('src', obj.image);
 
       $(obj.caracteristics).map((i, obj) => {
-         let element = $('<p></p>').addClass('caracter--produto')
-         $(caracterProd).append(element.html(obj.p))
+         let element = $('<p></p>').addClass('caracter--produto');
+         $(caracterProd).append(element.html(obj.p));
       })
       $(obj.descricao).map((i, obj) => {
-         let element = $('<p></p>').addClass('descricao--produto')
-         $(desProd).append(element.html(obj.p))
+         let element = $('<p></p>').addClass('descricao--produto');
+         $(desProd).append(element.html(obj.p));
       })
    })
 })
