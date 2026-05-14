@@ -106,7 +106,7 @@ $(window).ready(() => {
                createUser(data);
                btnExit[0].addEventListener('click', logoutUser);
                $(userBtn).on('click', UserButton);
-               $('.button-prop').on('click',btnMobileActive);
+               $('.button-prop').on('click', btnMobileActive);
                styleMovebtnUser();
             }
          },
@@ -119,8 +119,14 @@ $(window).ready(() => {
    menu = $('.menu-btn .line');
    sideBar = $(".sidebar");
    nameLogo = $('.logo--name');
+   btnHeart = $('#heart');
 
    let btnLogin = $('#btn-login').find('.login')[0];
+
+   btnHeart.on('click', function () {
+      $('#heart').toggleClass('selecFavoritos');
+      $(this).find('p').text() === 'Add aos Favoritos' ? $(this).find('p').text('Excluir dos Favoritos') : $(this).find('p').text('Add aos Favoritos');
+   });
 
    if (window.location.hash.includes("access_token")) {
       const hash = window.location.hash.substring(1);
@@ -137,12 +143,12 @@ $(window).ready(() => {
          btnExit[0].addEventListener('click', logoutUser);
          styleMovebtnUser();
          $(userBtn).on('click', UserButton);
-        $('.button-prop').on('click',btnMobileActive);
+         $('.button-prop').on('click', btnMobileActive);
       }
    }
 
- $('.button-prop').on('click', mobileEvent);
- 
+   $('.button-prop').on('click', mobileEvent);
+
    $('#btn-Back').click(() => {
       if (location.protocol == 'https:') {
          if (window.location.host.includes('.app')) {

@@ -213,8 +213,8 @@ body {
     }
 
     .sidebar .container-User .btnExit:hover {
-    color: #000;
-}
+        color: #000;
+    }
 
     .sidebar .exitUser:hover~.btnExit {
         opacity: 1;
@@ -697,10 +697,6 @@ body {
     overflow-y: scroll;
 }
 
-
-/* .campo--caracteristicas::-webkit-scrollbar,
-.campo--descricao::-webkit-scrollbar {} */
-
 .parcePag {
     width: 100%;
     margin: .7rem 0;
@@ -749,7 +745,13 @@ body {
 
 }
 
-.btnPrimary button:nth-child(3) {
+.campo--button .containCar {
+    width: 55%;
+    display: flex;
+    align-items: start;
+}
+
+.campo--button .containCar .campoFavorito {
     background: none;
     color: #fff;
 
@@ -801,9 +803,18 @@ body {
     user-select: none;
 }
 
+.campoFavorito {
+    user-select: none;
+}
+
 .campoFavorito i {
     margin: 0 .5rem;
     font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.3);
+}
+
+.selecFavoritos i {
+    color: #ff0000;
 }
 
 
@@ -1015,6 +1026,7 @@ span.buttonText {
     .btnPrimary {
         display: flex;
         align-items: center;
+        justify-content: space-around;
         flex-wrap: wrap;
         width: 100%;
         gap: .2rem;
@@ -1024,96 +1036,124 @@ span.buttonText {
         position: relative;
         grid-row: buttons;
         flex-wrap: wrap;
-        margin-top: 2rem;
+        padding-top: 3.2rem;
         display: flex;
         align-items: start;
         justify-content: center;
+        -webkit-tap-highlight-color: transparent;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    }
+
+    .campo--button {
+        gap: .5rem;
+    }
+
+    .campo--button .containCar {
+        position: absolute;
+        top: 0;
+        width: 100%;
     }
 
     .campo--button button {
         font-size: .9rem;
-        margin: 0 .6rem;
+        margin: 1.3rem .3rem;
 
     }
 
-    .campo--button .campoFavorito {
-        margin: 1rem 0;
+    .campo--button #confirmar {
+        width: 8em;
+        padding: .8rem;
+        justify-content: center;
     }
 
+    .campo--button #adicionar-carrinho {
+        padding: .8rem;
+    }
 
-    .campo-container .title--produto {
+    .campo--button .containCar .campoFavorito {
         width: 100%;
-        font-size: 1.3rem;
-        padding: .5rem .7rem;
+        margin: 0;
+        padding-left: 0;
     }
 
-    .campo--Imgs {
-        width: 100%;
-        background-color: #b1b1b1;
-        padding: 10px;
-        object-fit: cover;
-    }
+    .campo--button .campoBack {
+        margin: .1rem 0;
+        width: 90%;
 
-
-    .campoSob {
-        width: 100%;
-        margin-left: .5em;
-    }
-
-    .campoSob h2 {
-        margin-top: 1rem;
-        width: 100%;
-    }
-
-    .campo--descricao,
-    .campo--caracteristicas {
-        margin: 2rem 0;
-    }
-
-    .preco-produto {
-        width: 100%;
-    }
-
-
-    .campoFavorito span {
-        font-size: .7rem;
-    }
-
-    .campoFavorito i {
-        margin: 0 .3rem;
-        font-size: 1.2rem;
-    }
-
-
-    .campo--button {
-        gap: 1rem;
-    }
-
-    .campo--button button img {
-
-        width: 1.2rem;
-
-    }
-
-    .campoBack {
-        position: absolute;
-
-        top: 0;
-        right: -1rem;
-    }
-
-    .mobile-btn {
-        left: -100em;
-        transition: all 0.5s ease-in;
     }
 
 }
 
+.campo-container .title--produto {
+    width: 100%;
+    font-size: 1.3rem;
+    padding: .5rem .7rem;
+}
+
+.campo--Imgs {
+    width: 100%;
+    background-color: #b1b1b1;
+    padding: 10px;
+    object-fit: cover;
+}
+
+
+.campoSob {
+    width: 100%;
+    margin-left: .5em;
+}
+
+.campoSob h2 {
+    margin-top: 1rem;
+    width: 100%;
+}
+
+.campo--descricao,
+.campo--caracteristicas {
+    margin: 2rem 0;
+}
+
+.preco-produto {
+    width: 100%;
+}
+
+
+.campoFavorito span {
+    font-size: .7rem;
+}
+
+.campoFavorito i {
+    margin: 0 .8rem;
+    font-size: 1.2rem;
+}
+
+
+.campo--button {
+    gap: 1rem;
+}
+
+.campo--button button img {
+
+    width: 1.2rem;
+
+}
+
+.campoBack {
+
+    align-items: center;
+    justify-content: center;
+}
+
+.mobile-btn {
+    left: -100em;
+    transition: all 0.5s ease-in;
+}
+
+
 @media screen and (max-width:425px) {
 
-
     .campoBack {
-        width: 85%;
+        width: 90%;
         align-items: center;
         justify-content: center;
         top: 7.4rem;
@@ -1123,7 +1163,7 @@ span.buttonText {
 
 @media screen and (min-width:625px) and (max-width:996px) {
     .campoBack {
-
+        width: 90%;
         align-items: center;
         justify-content: center;
         top: 1.1rem;
@@ -1140,7 +1180,7 @@ span.buttonText {
     }
 
     .campoBack {
-        width: 85%;
+        width: 90%;
         align-items: center;
         justify-content: center;
         top: 4.4rem;
@@ -1148,8 +1188,13 @@ span.buttonText {
     }
 }
 
-@media screen and (max-width:310px) {
+@media screen and (max-width:340px) {
     .campo-container {
         width: 249.406px;
+    }
+
+    .campoBack {
+        width: 50%;
+
     }
 }
