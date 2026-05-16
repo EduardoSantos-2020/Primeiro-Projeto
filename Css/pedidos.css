@@ -1055,26 +1055,31 @@ span.buttonText {
     }
 
     .campo--button button {
-        font-size: .9rem;
+        font-size: 1.1rem;
+        padding: 1rem;
         margin: 1.3rem .3rem;
 
     }
 
     .campo--button #confirmar {
         width: 8em;
-        padding: .8rem;
+        padding: 1rem;
         justify-content: center;
     }
 
     .campo--button #adicionar-carrinho {
-        padding: .8rem;
+        padding: 1rem;
     }
 
     .campo--button .containCar .campoFavorito {
         width: 100%;
         margin: 0;
-        padding-left: 0;
+        padding: 1rem 0;
+        
     }
+     .campo--button .containCar .campoFavorito p{
+         font-size: 1.1rem;
+     }
 
     .campo--button .campoBack {
         margin: .1rem 0;
