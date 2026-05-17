@@ -132,8 +132,13 @@ body {
     width: 50%;
     margin: .35rem 0;
     font-size: 1.2rem;
+    -webkit-appearance: none;
     color: #FFFF;
     transition: border .5s linear;
+}
+
+.passwordGrupo input:focus{
+    outline: none;
 }
 
 
