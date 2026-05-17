@@ -1761,7 +1761,7 @@ aside:not(.styleSidebar) .menu--secao:hover {
     border: none;
     outline: none;
     width: 100%;
-    padding: 2px 10px;
+    padding: 2px 0;
     color: #fff;
     font-weight: 500;
     font-size: 1.2rem;

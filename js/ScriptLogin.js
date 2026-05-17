@@ -94,7 +94,7 @@ function registerFunction() {
   btnCreate.classList.remove('btn-confirmar')
 
   Title.innerHTML = 'Criar sua conta'
-  InputName.focus()
+  //InputName.focus()
   btnEnter.innerHTML = 'Confirmar' //botao enter
   btnCreate.style.display = 'none' //botao criar conta
   btnCancelRecovery.style.display = 'block'//botao cancelar
@@ -111,7 +111,7 @@ function recoveryPassFunction() {
   btnCreate.classList.add('btn-confirmar');
   LabelPassword.innerHTML = 'Confirme o codigo';
   InputEmail.placeholder = 'Digite seu e-mail cadastrado';
-  InputEmail.focus();
+  // InputEmail.focus();
   btnRecovery.style.display = 'none';
   InputPassword.placeholder = 'Digite  o codigo';
   InputPassword.setAttribute('type', 'number');
@@ -136,7 +136,7 @@ function loginFunction() {
   btnCreate.style.display = 'block'
   LabelPassword.innerHTML = 'Senha';
   InputEmail.placeholder = 'Digite seu Email';
-  InputEmail.focus()
+  //InputEmail.focus()
   InputPassword.placeholder = "Digite sua Senha";
   InputPassword.setAttribute('type', 'password')
   btnCancelRecovery.style.display = 'none'
