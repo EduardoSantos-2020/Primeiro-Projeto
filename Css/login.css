@@ -130,10 +130,12 @@ body {
     font-weight: bold;
     font-family: var(--fontTerceiry);
 }
+
 .namePassword {
     white-space: nowrap;
     overflow: hidden;
 }
+
 .input-cad,
 .passwordGrupo input {
     padding-left: .8rem;
@@ -390,7 +392,7 @@ body {
     .nameLabel,
     .emailLabel,
     .namePassword {
-        margin: .5rem 0 0 0;
+        margin: .6rem 0 0 0;
         font-size: 95%;
         font-weight: bold;
         font-family: var(--fontTerceiry);
@@ -406,11 +408,6 @@ body {
     .passwordGrupo input {
         font-size: 90%;
     }
-
-
-    .cadastrar .nameLabel .namePassword,
-    .cadastrar .emailLabel,
-    .cadastrar .namePassword {}
 
     .cadastrar .namePassword {
         font-size: 95%;
@@ -550,7 +547,7 @@ body {
 
 @media screen and (max-width:654px) {
 
-  
+
     .recovery .namePassword {
         margin: .6rem 0 0 0;
         font-size: 1.2rem;
@@ -573,29 +570,21 @@ body {
 
 @media screen and (max-width:550px) {
     .recovery .namePassword {
-      margin: .8rem 0 0 0;   
-    font-size: 1rem;
+        min-width: 147.641px;
+        margin: .6rem 0 0 0;
     }
 
 }
 
 @media screen and (max-width:478px) {
-
-    .recovery .namePassword {  
-        margin: .8rem 0 0 0;
-        padding-right: .2rem;
-        font-size: 1rem;
+    .recovery .namePassword {
+        margin: .6rem 0 0 0; 
     }
 
 }
 
 @media screen and (max-width:421px) {
-
-    .recovery .namePassword {
-        width:123.672px;
-      font-size:14px;
-      padding-right: .1rem;
-    }
+    .recovery .namePassword {}
 
     .recovery .passwordGrupo .input-cad {}
 }
@@ -608,7 +597,6 @@ body {
         min-width: 370px;
         max-height: 446px;
     }
-
 
     .container,
     .containerMenu {
