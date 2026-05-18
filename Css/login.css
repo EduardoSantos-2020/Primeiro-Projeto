@@ -530,22 +530,21 @@ body {
     }
 
     .btn-google {
-        width: 85%;
-    }
-
-    .cadastrar .btn-google {
-        width: 80%;
+        width: 95%;
     }
 
     .recovery .btn-confirmar {
         width: 30%;
         word-break: break-all;
     }
+    
+     .recovery .btn-cancel-recovery {
+        width: 100%;
+ }
 
 }
 
 @media screen and (max-width:654px) {
-
 
     .recovery .namePassword {
         margin: .6rem 0 0 0;
@@ -561,10 +560,7 @@ body {
         width: 45%;
         font-size: 1.2rem;
     }
-
-    .recovery .btn-cancel-recovery {
-        width: 90%;
-    }
+   
 }
 
 @media screen and (max-width:550px) {

@@ -111,7 +111,7 @@ function loginFunction() {
   containerCadastro.classList.remove('recovery')
   btnCreate.classList.remove('btn-confirmar')
   btnCreate.classList.add('btn-cadastrar')
-  Title.innerHTML = 'Fazer login infortec'
+  Title.innerHTML = 'Login Infortec'
   btnEnter.innerHTML = 'Entrar'
   btnCreate.innerHTML = 'Criar Conta';
   btnGoogle.style.display = 'flex';
