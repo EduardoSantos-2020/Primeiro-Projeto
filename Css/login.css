@@ -191,7 +191,7 @@ body {
     margin: 1.5rem 0;
     padding: 0;
     display: flex;
-    align-items: center;
+    align-items: center; 
 }
 
 .botoesGrupo a {
@@ -357,10 +357,10 @@ body {
     }
 
 
-    .cadastrar {
+    .cadastrar,.recovery {
         width: 100dvw;
         height: 100dvh;
-        padding: 15px 5px;
+        padding: 15px 10px;
         align-items: center;
     }
 
@@ -458,7 +458,7 @@ body {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        padding: .8em;
+        padding: .8em .2em;
         margin: 1rem 0 0 0
     }
 
@@ -492,7 +492,8 @@ body {
     }
 
     .botoesGrupo a {
-        padding: .5rem;
+        width: 100%;
+        padding: 0;
         margin: 0;
         display: flex;
         align-items: start;
@@ -516,11 +517,15 @@ body {
     .btn-enter {
         width: 10rem;
     }
-
+    
+  .recovery  .botoesGrupo{
+      width: 100vw;
+  }
 
     .recovery .btn-enter,
     .recovery .btn-cadastrar {
         width: 12rem;
+    
     }
 
 
@@ -535,12 +540,17 @@ body {
 
     .recovery .btn-confirmar {
         width: 30%;
-        word-break: break-all;
+        margin: 1rem 0;
     }
     
      .recovery .btn-cancel-recovery {
+         margin:1rem 0;
         width: 100%;
  }
+ 
+    .recovery .btn-enter{
+        margin: 1rem 0;
+    }
 
 }
 
