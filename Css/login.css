@@ -102,7 +102,7 @@ body {
     color: #fff;
     margin: .5rem 0;
     padding: .5rem .8rem;
-  
+
     border: rgb(218, 218, 218) solid .1rem;
     border-radius: .7rem;
 }
@@ -122,6 +122,18 @@ body {
     background-color: #3f3c3c;
 }
 
+.nameLabel,
+.emailLabel,
+.namePassword {
+    margin: .5rem 0 0 0;
+    font-size: 1.3em;
+    font-weight: bold;
+    font-family: var(--fontTerceiry);
+}
+.namePassword {
+    white-space: nowrap;
+    overflow: hidden;
+}
 .input-cad,
 .passwordGrupo input {
     padding-left: .8rem;
@@ -132,7 +144,6 @@ body {
     margin: .35rem 0;
     font-size: 1.2rem;
     color: #FFFF;
-    transition: border .5s linear;
 }
 
 .passwordGrupo #bpassword::-webkit-inner-spin-button,
@@ -195,7 +206,6 @@ body {
 }
 
 #recovery {
-    width: 12em;
     -webkit-tap-highlight-color: transparent;
 }
 
@@ -211,7 +221,7 @@ body {
     background-color: #fff;
     border-radius: 5px;
     border: none;
-    transition: background-color .7s ease-in; 
+    transition: background-color .7s ease-in;
 }
 
 .btn-enter,
@@ -233,7 +243,7 @@ body {
     display: none;
 }
 
-.recovery .namePassword{
+.recovery .namePassword {
     white-space: nowrap;
     overflow: hidden;
 }
@@ -385,7 +395,6 @@ body {
         font-weight: bold;
         font-family: var(--fontTerceiry);
         text-shadow: 1px 1px 1px #000;
-        transition: width .5s ease-in-out; 
     }
 
     .FileButton {
@@ -458,7 +467,6 @@ body {
     }
 
     .recovery .namePassword {
-       
         margin: .5rem 0 0 0;
     }
 
@@ -542,13 +550,10 @@ body {
 
 @media screen and (max-width:654px) {
 
+  
     .recovery .namePassword {
-        width: 12em;
-    }
-
-    .recovery .namePassword {
-        width: 10em;
-        font-size: 1.4rem;
+        margin: .6rem 0 0 0;
+        font-size: 1.2rem;
     }
 
     .recovery .btn-enter {
@@ -564,34 +569,22 @@ body {
     .recovery .btn-cancel-recovery {
         width: 90%;
     }
-
-    .input-cad,
-    .passwordGrupo input {
-        padding-left: .5rem;
-    }
-
-
 }
 
-
-@media screen and (max-width:548px) {
+@media screen and (max-width:550px) {
     .recovery .namePassword {
-        width: 11em;
-        font-size: 1.4rem;
-    }
-
-    .recovery .passwordGrupo .input-cad {
-        padding-left: 0;
+      margin: .8rem 0 0 0;   
+    font-size: 1rem;
     }
 
 }
 
-@media screen and (max-width:470px) {
+@media screen and (max-width:478px) {
 
-    .recovery .namePassword {
-        width: 11.3em;
-        margin: .5rem 0 0 0;
-        font-size: 1.3rem;
+    .recovery .namePassword {  
+        margin: .8rem 0 0 0;
+        padding-right: .2rem;
+        font-size: 1rem;
     }
 
 }
@@ -599,7 +592,9 @@ body {
 @media screen and (max-width:421px) {
 
     .recovery .namePassword {
-        width: 11em;
+        width:123.672px;
+      font-size:14px;
+      padding-right: .1rem;
     }
 
     .recovery .passwordGrupo .input-cad {}
@@ -618,23 +613,11 @@ body {
     .container,
     .containerMenu {
         min-width: 370px;
-
     }
 
     .container-titulo,
     .container-gruop,
     .botoesGrupo {
         min-width: 350px;
-
-    }
-
-    .recovery .namePassword {
-        width: 12em;
-        transition: none;
-    }
-
-
-    .recovery .passwordGrupo .input-cad {
-        padding-left: .2rem;
     }
 }
