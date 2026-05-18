@@ -392,11 +392,12 @@ body {
     .nameLabel,
     .emailLabel,
     .namePassword {
-        margin: .6rem 0 0 0;
+        margin: .5rem 0 0 0;
         font-size: 95%;
         font-weight: bold;
         font-family: var(--fontTerceiry);
         text-shadow: 1px 1px 1px #000;
+
     }
 
     .FileButton {
@@ -405,9 +406,7 @@ body {
     }
 
     .input-cad,
-    .passwordGrupo input {
-        font-size: 90%;
-    }
+    .passwordGrupo input {}
 
     .cadastrar .namePassword {
         font-size: 95%;
@@ -420,7 +419,7 @@ body {
 
     .emailGrupo .input-cad,
     #bpassword {
-        width: 70%;
+    
     }
 
     .nameGrupo,
@@ -570,7 +569,7 @@ body {
 
 @media screen and (max-width:550px) {
     .recovery .namePassword {
-        min-width: 147.641px;
+        min-width: 138px;
         margin: .6rem 0 0 0;
     }
 
