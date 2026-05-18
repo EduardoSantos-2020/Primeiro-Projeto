@@ -880,7 +880,7 @@ span.buttonText {
         align-items: center;
 
         flex-direction: column;
-        gap: 2em;
+        gap: 5em;
         margin: 0;
         color: #fff;
         z-index: 100;
@@ -952,7 +952,7 @@ span.buttonText {
         display: flex;
         justify-content: space-evenly;
         align-items: center;
-        margin-top: 40%;
+        /* margin-top: 65%; */
         padding: 1rem 0;
     }
 
@@ -1056,9 +1056,9 @@ span.buttonText {
 
     .campo--button button {
         font-size: 1.1rem;
-        padding: 1rem;
+        padding: 1.2rem;
         margin: 1.3rem .3rem;
-
+        border-radius: 7px;
     }
 
     .campo--button #confirmar {
@@ -1083,7 +1083,7 @@ span.buttonText {
 
     .campo--button .campoBack {
         margin: .1rem 0;
-        width: 90%;
+        width: 100%;
 
     }
 

@@ -96,7 +96,7 @@ body {
 
 .nameGrupo,
 .emailGrupo,
-.passwordGrupo {
+.passwordGrupo{
     display: flex;
     align-items: start;
     color: #fff;
@@ -473,7 +473,7 @@ body {
     }
 
     .recovery #link {
-        width: 90%;
+        width: 100%;
         margin: 0 auto;
     }
 
@@ -518,9 +518,6 @@ body {
         width: 10rem;
     }
     
-  .recovery  .botoesGrupo{
-      width: 100vw;
-  }
 
     .recovery .btn-enter,
     .recovery .btn-cadastrar {
@@ -545,7 +542,7 @@ body {
     
      .recovery .btn-cancel-recovery {
          margin:1rem 0;
-        width: 100%;
+        width: 95%;
  }
  
     .recovery .btn-enter{
