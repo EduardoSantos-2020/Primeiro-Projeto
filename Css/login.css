@@ -172,16 +172,6 @@ body {
 
 }
 
-.nameLabel,
-.emailLabel,
-.namePassword {
-    margin: .5rem 0;
-    font-size: 1.3em;
-    font-weight: bold;
-    font-family: var(--fontTerceiry);
-    text-shadow: 1px 1px 1px #000;
-     transition: width .5s ease-in-out; 
-}
 
 .botoesGrupo {
     width: 100%;
