@@ -121,8 +121,6 @@ body {
     background-color: #3f3c3c;
 }
 
-
-
 .input-cad,
 .passwordGrupo input {
     padding-left: .8rem;
@@ -132,23 +130,20 @@ body {
     width: 50%;
     margin: .35rem 0;
     font-size: 1.2rem;
-    -webkit-appearance: none;
     color: #FFFF;
     transition: border .5s linear;
 }
 
-.passwordGrupo input:focus{
-    outline: none;
+.passwordGrupo #bpassword::-webkit-inner-spin-button,
+.passwordGrupo #bpassword::-webkit-outer-spin-button {
+    display: none;
 }
-
 
 .input-cad::selection,
 .passwordGrupo input::selection {
     color: #fff;
     background-color: #3f3c3c;
 }
-
-
 
 .input-cad:-webkit-autofill,
 .input-cad:-webkit-autofill:hover,
@@ -183,7 +178,7 @@ body {
     font-weight: bold;
     font-family: var(--fontTerceiry);
     text-shadow: 1px 1px 1px #000;
-    transition: all .5s ease-in-out;
+     transition: width .5s ease-in-out; 
 }
 
 .botoesGrupo {
@@ -225,7 +220,7 @@ body {
     background-color: #fff;
     border-radius: 5px;
     border: none;
-    /* transition: background-color .7s ease-in; */
+    transition: background-color .7s ease-in; 
 }
 
 .btn-enter,
@@ -394,7 +389,7 @@ body {
         font-weight: bold;
         font-family: var(--fontTerceiry);
         text-shadow: 1px 1px 1px #000;
-        transition: all .5s ease-in-out;
+        transition: width .5s ease-in-out; 
     }
 
     .FileButton {
@@ -413,7 +408,7 @@ body {
     .cadastrar .namePassword {}
 
     .cadastrar .namePassword {
-        font-size: 90%;
+        font-size: 95%;
     }
 
     .cadastrar .nameGrupo,
@@ -422,7 +417,7 @@ body {
     }
 
     .emailGrupo .input-cad,
-    #password {
+    #bpassword {
         width: 70%;
     }
 
@@ -467,6 +462,7 @@ body {
     }
 
     .recovery .namePassword {
+       
         margin: .5rem 0 0 0;
     }
 
@@ -562,12 +558,12 @@ body {
 
     .recovery .btn-enter {
         width: 40%;
-        font-size: 1rem;
+        font-size: 1.2rem;
     }
 
     .recovery .btn-confirmar {
         width: 45%;
-        font-size: 1rem;
+        font-size: 1.2rem;
     }
 
     .recovery .btn-cancel-recovery {
@@ -599,10 +595,10 @@ body {
 @media screen and (max-width:470px) {
 
     .recovery .namePassword {
-        width: 10em;
+        width: 11.3em;
         transition: none;
-        margin: .8rem 0 0 0;
-        font-size: 1.1rem;
+        margin: .5rem 0 0 0;
+        font-size: 1.3rem;
     }
 
 }

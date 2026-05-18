@@ -9,7 +9,7 @@ const btnEnter = document.getElementById('btn-entrar');
 const btnRecovery = document.getElementById('recovery')
 const InputName = document.getElementById('Name')
 const InputEmail = document.getElementById('Email')
-const InputPassword = document.getElementById('password')
+const InputPassword = document.getElementById('bpassword')
 const LabelPassword = document.querySelector('.namePassword')
 const btnCreateUser = document.querySelector('.btn-cadastrar')
 const btnCancelRecovery = document.getElementById('btn-cancel-recovery')
@@ -41,7 +41,7 @@ btnCreateUser.addEventListener('click', function () {
   link.setAttribute('href', '#registrar-se')
 })
 // btnRecovery.addEventListener('click', function () {
-  // ink.setAttribute('href', '#password') // não precisa esta no html
+  // link.setAttribute('href', '#password') // não precisa esta no html
 // })
 
 fileImg.addEventListener('change', (item) => {
@@ -72,21 +72,6 @@ function redirectUrlPages(){
     
 }
 
-function recoveryFunction() {
-  containerCadastro.classList.add('recovery')
-  btnCreate.classList.remove('btn-cadastrar')
-  btnCreate.classList.add('btn-confirmar')
-  LabelPassword.innerHTML = 'Confirme o codigo'
-  InputEmail.placeholder = 'Digite seu e-mail cadastrado'
-  btnRecovery.style.display = 'none'
-  InputPassword.placeholder = 'Digite  o codigo'
-  Title.innerHTML = 'Esqueceu a sua senha'
-  btnEnter.innerHTML = 'Enviar código'
-  btnCreate.innerHTML = 'Confirmar código'
-  btnCancelRecovery.style.display = 'block'
-  btnGoogle.style.display = 'none'
-}
-
 function registerFunction() {
 
   containerCadastro.classList.add('cadastrar');
@@ -94,7 +79,6 @@ function registerFunction() {
   btnCreate.classList.remove('btn-confirmar')
 
   Title.innerHTML = 'Criar sua conta'
-  //InputName.focus()
   btnEnter.innerHTML = 'Confirmar' //botao enter
   btnCreate.style.display = 'none' //botao criar conta
   btnCancelRecovery.style.display = 'block'//botao cancelar
@@ -109,10 +93,9 @@ function recoveryPassFunction() {
   containerCadastro.classList.add('recovery');
   btnCreate.classList.remove('btn-cadastrar');
   btnCreate.classList.add('btn-confirmar');
-  LabelPassword.innerHTML = 'Confirme o codigo';
   InputEmail.placeholder = 'Digite seu e-mail cadastrado';
-  // InputEmail.focus();
   btnRecovery.style.display = 'none';
+  LabelPassword.innerHTML = 'Confirme o codigo';
   InputPassword.placeholder = 'Digite  o codigo';
   InputPassword.setAttribute('type', 'number');
   Title.innerHTML = 'Esqueceu a sua senha ?';
@@ -136,7 +119,6 @@ function loginFunction() {
   btnCreate.style.display = 'block'
   LabelPassword.innerHTML = 'Senha';
   InputEmail.placeholder = 'Digite seu Email';
-  //InputEmail.focus()
   InputPassword.placeholder = "Digite sua Senha";
   InputPassword.setAttribute('type', 'password')
   btnCancelRecovery.style.display = 'none'
