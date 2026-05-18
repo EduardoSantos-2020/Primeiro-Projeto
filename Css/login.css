@@ -102,6 +102,8 @@ body {
     color: #fff;
     margin: .5rem 0;
     padding: .5rem .8rem;
+    white-space: nowrap;
+    overflow: hidden;
     border: rgb(218, 218, 218) solid .1rem;
     border-radius: .7rem;
 }
@@ -548,7 +550,6 @@ body {
 
     .recovery .namePassword {
         width: 12em;
-        transition: none;
     }
 
     .recovery .namePassword {
@@ -582,7 +583,6 @@ body {
 @media screen and (max-width:548px) {
     .recovery .namePassword {
         width: 11em;
-        transition: none;
         font-size: 1.4rem;
     }
 
@@ -596,7 +596,6 @@ body {
 
     .recovery .namePassword {
         width: 11.3em;
-        transition: none;
         margin: .5rem 0 0 0;
         font-size: 1.3rem;
     }
@@ -607,7 +606,6 @@ body {
 
     .recovery .namePassword {
         width: 11em;
-        transition: none;
     }
 
     .recovery .passwordGrupo .input-cad {}
