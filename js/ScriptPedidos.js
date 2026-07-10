@@ -39,7 +39,7 @@ $(window).ready(() => {
          if ($('.userGrup').hasClass('exitUser')) {
             $(btn.currentTarget).css({ 'width': '14%' });
          } else {
-            $(btn.currentTarget).css({ 'width': '85%' });
+            $(btn.currentTarget).css({ 'width': '100%' });
          }
       } else {
          if ($('.userGrup').hasClass('exitUser')) {

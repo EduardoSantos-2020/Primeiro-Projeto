@@ -430,7 +430,6 @@ aside:not(.styleSidebar) .menu--secao:hover {
     }
 
     .container--login {
-        width: 100%;
         display: flex;
         justify-content: center;
         margin: 1rem 0;
@@ -462,21 +461,21 @@ aside:not(.styleSidebar) .menu--secao:hover {
     .userGrup {
         display: flex;
         align-items: center;
+        justify-content: center;
         width: 12%;
-        padding-left: 0;
-        padding: 0 auto;
+        padding:0 auto;
         transition: none;
     }
 
     .contNameEmail {
-        width: 100%;
+        width: 75%;
         height: 100%;
-        justify-content: center;
+       
     }
 
     .container-User .textName {
         font-size: 1.8rem;
-        margin: 0 0 0 1rem;
+        /* margin: 0 0 0 1.5rem; */
         font-weight: bold;
         line-height: 1.8rem;
         color: #fff;
@@ -485,10 +484,9 @@ aside:not(.styleSidebar) .menu--secao:hover {
     }
 
     .container-User .textEmail {
-        width: 100%;
         font-size: .8rem;
         color: #fff;
-        margin-left: .5rem;
+        /* margin-left: .5rem; */
         overflow: hidden;
     }
 
@@ -498,6 +496,7 @@ aside:not(.styleSidebar) .menu--secao:hover {
     .sidebar .container-User :hover .textName,
     .sidebar .container-User :hover .textEmail {
         color: #fff;
+        /* text-align: center; */
     }
 
     .styleSidebar .container-User .textName,
@@ -505,6 +504,7 @@ aside:not(.styleSidebar) .menu--secao:hover {
     .sidebar .container-User .textName,
     .sidebar .container-User .textEmail {
         color: #fff;
+        /* text-align: center; */
     }
 
     .sidebar .container-User :active .textName,
