@@ -349,6 +349,7 @@ body {
         margin: 0.5rem 0;
         display: flex;
         align-items: center;
+        justify-content: center;
         padding: 0;
         transition: none;
         border-radius: 8px 8px 0 0;
@@ -361,6 +362,7 @@ body {
     .userGrup {
         display: flex;
         align-items: center;
+        justify-content: center;
         width: 12%;
 
         padding: 0 auto;
@@ -368,14 +370,14 @@ body {
     }
 
     .contNameEmail {
-        width: 100%;
+        width: 75%;
         height: 100%;
         justify-content: center;
     }
 
     .container-User .textName {
         font-size: 1.7rem;
-        margin: 0 0 0 1rem;
+        /* margin: 0 0 0 1rem; */
         font-weight: bold;
         line-height: 1.8rem;
         color: #fff;
@@ -387,7 +389,7 @@ body {
         width: 100%;
         font-size: .8rem;
         color: #fff;
-        margin-left: .5rem;
+        /* margin-left: .5rem; */
         overflow: hidden;
     }
 
