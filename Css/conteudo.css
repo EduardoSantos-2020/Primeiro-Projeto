@@ -7,6 +7,8 @@ a {
     text-decoration: none;
     list-style: none;
     outline: none;
+    user-select: none; 
+    -webkit-tap-highlight-color: transparent;
 }
 
 .navegação--menu {
@@ -319,8 +321,6 @@ a {
     opacity: 1;
 }
 
-
-
 .menu--secao {
     position: relative;
     margin: 0 10px;
@@ -331,6 +331,7 @@ a {
     color: #fff;
     text-align: center;
     vertical-align: bottom;
+     
     transition: color .5s ease-in-out;
 }
 
@@ -620,29 +621,34 @@ aside:not(.styleSidebar) .menu--secao:hover {
         transition: all 1s ease-in-out;
     }
 
+    aside .menu--secao:hover{
+    color: #fff;
+}
     .sidebar .active .menu--secao,
     .sidebar .menu--secao,
     aside:not(.styleSidebar) .menu--secao {
         color: #fff;
     }
 
+    .sidebar .menu--secao:active,
+    aside:not(.styleSidebar) .menu--secao:active{
+        background-color: #4947475b;
+        color: rgb(116, 114, 114);
+        box-shadow: 0 0 .2rem #000;
+    }
+
     .menu--secao {
         position: relative;
         margin: 0 10px;
+        padding: 0 10px ;
         border: 2px transparent;
         border-radius: 10px;
         font-weight: 800;
         font-size: 1.3rem;
         text-align: center;
         vertical-align: bottom;
-    }
-
-    .menu--secao:hover {
-        color: none;
-    }
-
-    .active .menu--secao {
-        color: #fff;
+        transition: none;
+        
     }
 
     /*-------------------------*\
@@ -753,7 +759,6 @@ aside:not(.styleSidebar) .menu--secao:hover {
         font-size: 2rem;
         color: #fff;
         text-align: center;
-
     }
 
     .active .menu--secao::after,
@@ -1465,6 +1470,7 @@ aside:not(.styleSidebar) .menu--secao:hover {
 
 .localizacao-itens {
     width: 70%;
+    height: 28em;
     padding: 2.5em 2em;
     display: flex;
     flex-direction: column;
@@ -1500,7 +1506,13 @@ aside:not(.styleSidebar) .menu--secao:hover {
 .localizacao-itens .botao-loq {
     width: 8em;
     font-size: 1.4rem;
+    margin-top:1rem;
 }
+
+ .localizacao-itens .botao-loq:active {
+        box-shadow: none;
+        margin-top: 1.4rem;
+    }
 
 
 @media screen and (max-width:540px) {
@@ -1543,7 +1555,6 @@ aside:not(.styleSidebar) .menu--secao:hover {
     .localizacao-itens .botao-loq {
         width: 7em;
         padding: 1rem;
-        margin-top: 25px;
         display: flex;
         align-items: center;
         font-size: 1.3rem;
@@ -1554,9 +1565,8 @@ aside:not(.styleSidebar) .menu--secao:hover {
         width: 30%;
     }
 
-    .botao-loq:active {
+   .localizacao-itens .botao-loq:active {
         box-shadow: none;
-        margin-top: 1.7rem;
     }
 }
 
@@ -1567,10 +1577,14 @@ aside:not(.styleSidebar) .menu--secao:hover {
         width: 100%;
     }
 
+    .localizacao--container a {
+        position: relative;
+        height: 100%;
+    }
+
     .localizacao-itens {
         position: relative;
         width: 100%;
-
     }
 
     .localizacao-itens p {
@@ -1595,11 +1609,8 @@ aside:not(.styleSidebar) .menu--secao:hover {
         font-weight: bolder;
     }
 
-
-    .botao-loq:active {
-
+  .localizacao-itens  .botao-loq:active {
         box-shadow: none;
-        margin-top: 28px;
     }
 }
 
@@ -1647,13 +1658,11 @@ aside:not(.styleSidebar) .menu--secao:hover {
     }
 
     .botao-loq {
-        margin-top: 25px;
         border: 1px solid #000;
     }
 
-    .botao-loq:active {
+ .localizacao-itens   .botao-loq:active {
         box-shadow: none;
-        margin-top: 28px;
     }
 }
 

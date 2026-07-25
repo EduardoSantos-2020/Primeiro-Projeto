@@ -1058,19 +1058,18 @@ span.buttonText {
 
     .campo--button button {
         font-size: 1.1rem;
-        padding: 1.2rem;
         margin: 1.3rem .3rem;
         border-radius: 7px;
     }
 
     .campo--button #confirmar {
         width: 8em;
-        padding: 1rem;
+        padding: 1.11rem;
         justify-content: center;
     }
 
     .campo--button #adicionar-carrinho {
-        padding: 1rem;
+        padding: 1.11rem;
     }
 
     .campo--button .containCar .campoFavorito {
@@ -1085,6 +1084,7 @@ span.buttonText {
 
     .campo--button .campoBack {
         margin: .1rem 0;
+        padding: 1rem ;
         width: 100%;
 
     }

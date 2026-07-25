@@ -24,7 +24,7 @@
     box-sizing: border-box;
     font-family: var(--fontPrimary);
     font-size: 14px;
-    user-select: none;
+    user-select: none;  
 }
 
 html {
@@ -32,7 +32,7 @@ html {
     height: 100%;
     scroll-behavior: smooth;
     scroll-padding-top: 90px;
-    transition-duration: 2.5s smooth;
+    transition-duration: 2.2s smooth;
 }
 
 body {
