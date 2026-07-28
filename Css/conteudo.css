@@ -7,7 +7,7 @@ a {
     text-decoration: none;
     list-style: none;
     outline: none;
-    user-select: none; 
+    user-select: none;
     -webkit-tap-highlight-color: transparent;
 }
 
@@ -331,7 +331,7 @@ a {
     color: #fff;
     text-align: center;
     vertical-align: bottom;
-     
+
     transition: color .5s ease-in-out;
 }
 
@@ -464,14 +464,14 @@ aside:not(.styleSidebar) .menu--secao:hover {
         align-items: center;
         justify-content: center;
         width: 12%;
-        padding:0 auto;
+        padding: 0 auto;
         transition: none;
     }
 
     .contNameEmail {
         width: 75%;
         height: 100%;
-       
+
     }
 
     .container-User .textName {
@@ -621,17 +621,17 @@ aside:not(.styleSidebar) .menu--secao:hover {
         transition: all 1s ease-in-out;
     }
 
-    aside .menu--secao:hover{
-    color: #fff;
-}
     .sidebar .active .menu--secao,
     .sidebar .menu--secao,
-    aside:not(.styleSidebar) .menu--secao {
+    aside:not(.styleSidebar) .menu--secao,
+    .sidebar .menu--secao:hover,
+    .styleSidebar .menu--secao:hover,
+    aside:not(.styleSidebar) .menu--secao:hover {
         color: #fff;
     }
 
-    .sidebar .menu--secao:active,
-    aside:not(.styleSidebar) .menu--secao:active{
+    aside:not(.styleSidebar) .menu--secao:active,
+    .sidebar .menu--secao:active {
         background-color: #4947475b;
         color: rgb(116, 114, 114);
         box-shadow: 0 0 .2rem #000;
@@ -640,7 +640,7 @@ aside:not(.styleSidebar) .menu--secao:hover {
     .menu--secao {
         position: relative;
         margin: 0 10px;
-        padding: 0 10px ;
+        padding: 0 10px;
         border: 2px transparent;
         border-radius: 10px;
         font-weight: 800;
@@ -648,7 +648,7 @@ aside:not(.styleSidebar) .menu--secao:hover {
         text-align: center;
         vertical-align: bottom;
         transition: none;
-        
+
     }
 
     /*-------------------------*\
@@ -1142,12 +1142,12 @@ aside:not(.styleSidebar) .menu--secao:hover {
     .produto--item button {
         width: 7em;
         padding: 1rem;
-        margin: 25px auto;
+        margin: 1.8rem auto;
         font-size: 1.3rem;
     }
 
     .produto--item button:active {
-        margin-top: 1.9rem;
+       margin-top: 2rem;
         box-shadow: none;
 
     }
@@ -1506,13 +1506,13 @@ aside:not(.styleSidebar) .menu--secao:hover {
 .localizacao-itens .botao-loq {
     width: 8em;
     font-size: 1.4rem;
-    margin-top:1rem;
+    margin-top: 1rem;
 }
 
- .localizacao-itens .botao-loq:active {
-        box-shadow: none;
-        margin-top: 1.4rem;
-    }
+.localizacao-itens .botao-loq:active {
+    box-shadow: none;
+    margin-top: 1.2rem;
+}
 
 
 @media screen and (max-width:540px) {
@@ -1565,8 +1565,8 @@ aside:not(.styleSidebar) .menu--secao:hover {
         width: 30%;
     }
 
-   .localizacao-itens .botao-loq:active {
-        box-shadow: none;
+    .localizacao-itens .botao-loq:active {
+        box-shadow: none;  
     }
 }
 
@@ -1609,7 +1609,7 @@ aside:not(.styleSidebar) .menu--secao:hover {
         font-weight: bolder;
     }
 
-  .localizacao-itens  .botao-loq:active {
+    .localizacao-itens .botao-loq:active {
         box-shadow: none;
     }
 }
@@ -1661,7 +1661,8 @@ aside:not(.styleSidebar) .menu--secao:hover {
         border: 1px solid #000;
     }
 
- .localizacao-itens   .botao-loq:active {
+    .localizacao-itens .botao-loq:active {
+        margin-top: 1.6rem;
         box-shadow: none;
     }
 }
@@ -1733,10 +1734,11 @@ aside:not(.styleSidebar) .menu--secao:hover {
 
 .form-contatos {
     display: flex;
+    height: 38em;
     flex-direction: column;
-    justify-content: center;
+   
     align-items: flex-start;
-    margin: 0 2rem 0 2rem;
+    margin:  2rem ;
     padding: 10px 30px;
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
     border-radius: var(--radius);
@@ -1833,7 +1835,7 @@ textarea:focus {
 .btn-contatos {
     width: 8em;
     padding: 10px 12px;
-    margin: 15px 9em;
+    margin: 1.5rem auto;
     font-weight: bolder;
     font-size: 1.3rem;
     background-color: #fff;
@@ -1842,6 +1844,11 @@ textarea:focus {
     box-shadow: 3px 4px 3px rgba(0, 0, 0, 0.5);
 }
 
+
+ .btn-contatos:active {
+    box-shadow: none;
+    margin-top: 1.7rem;
+}
 .itemDecontato {
     display: inline-flex;
     align-items: center;
@@ -1936,6 +1943,7 @@ footer .logMark p:nth-child(3) {
         display: flex;
         align-items: center;
         width: 100%;
+     
         flex-direction: column;
         position: relative;
     }
@@ -1948,6 +1956,7 @@ footer .logMark p:nth-child(3) {
 
     .form-contatos {
         width: 90%;
+       height: 45em;
         margin: 4.5rem 0;
         padding: 30px 0;
     }
@@ -2082,6 +2091,11 @@ footer .logMark p:nth-child(3) {
     }
 
 
+ .btn-contatos:active {
+    box-shadow: none;
+    margin-top: 1.6rem;
+}
+
     .inform-site {
         grid-area: 'social';
         order: 1;
@@ -2176,8 +2190,8 @@ footer .logMark p:nth-child(3) {
 
     .form-contatos {
         display: flex;
+        height: 100%;
         flex-direction: column;
-        justify-content: center;
         align-items: flex-start;
         margin: 8rem 2rem 0 2rem;
         padding: 30px;
