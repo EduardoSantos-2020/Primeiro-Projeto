@@ -1053,6 +1053,7 @@ aside:not(.styleSidebar) .menu--secao:hover {
 .produto--item button:active {
     margin-top: 33px;
     box-shadow: none;
+    background-color: #3f3c3c;
 }
 
 @media screen and (max-width:400px) {
@@ -1278,9 +1279,9 @@ aside:not(.styleSidebar) .menu--secao:hover {
     padding: 10px;
     margin: 10px;
     background-color: #fff;
+    border:none;
     border-radius: 8px;
     box-shadow: 3px 4px 3px rgba(0, 0, 0, 0.5);
-    border: 2px solid #fff;
 }
 
 .botao-loq span {
@@ -1512,6 +1513,7 @@ aside:not(.styleSidebar) .menu--secao:hover {
 .localizacao-itens .botao-loq:active {
     box-shadow: none;
     margin-top: 1.2rem;
+    background-color: #3f3c3c;
 }
 
 
@@ -1839,7 +1841,7 @@ textarea:focus {
     font-weight: bolder;
     font-size: 1.3rem;
     background-color: #fff;
-    border: 2px solid #fff;
+    border:none;
     border-radius: 7px;
     box-shadow: 3px 4px 3px rgba(0, 0, 0, 0.5);
 }
@@ -1848,6 +1850,7 @@ textarea:focus {
  .btn-contatos:active {
     box-shadow: none;
     margin-top: 1.7rem;
+    background-color: #3f3c3c;
 }
 .itemDecontato {
     display: inline-flex;
