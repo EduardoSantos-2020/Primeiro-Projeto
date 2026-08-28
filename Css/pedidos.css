@@ -494,8 +494,24 @@ body {
         text-transform: uppercase;
         border-radius: 5px;
         background-color: rgb(252, 14, 2);
-        transition: all 1s ease-in-out;
+        transition: none;
     }
+
+    .login:hover {
+    background-color: rgb(252, 14, 2); 
+    color: #fff;
+    transition: none;
+}
+
+    .login:active {
+    background-color: rgb(160, 14, 6);
+    color: rgb(216, 213, 213);
+    transition: none;
+}
+
+
+
+
 
     .mobile-btn {
         left: 40em;

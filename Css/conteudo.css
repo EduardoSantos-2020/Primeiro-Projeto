@@ -618,7 +618,19 @@ aside:not(.styleSidebar) .menu--secao:hover {
         text-transform: uppercase;
         border-radius: 5px;
         background-color: rgb(252, 14, 2);
-        transition: all 1s ease-in-out;
+        transition: none;
+    }
+
+    .login:hover {
+        background-color: rgb(252, 14, 2);
+        color: #fff;
+        transition: none;
+    }
+
+    .login:active {
+        background-color: rgb(160, 14, 6);
+        color: rgb(216, 213, 213);
+        transition: none;
     }
 
     .sidebar .active .menu--secao,
@@ -1148,7 +1160,7 @@ aside:not(.styleSidebar) .menu--secao:hover {
     }
 
     .produto--item button:active {
-       margin-top: 2rem;
+        margin-top: 2rem;
         box-shadow: none;
 
     }
@@ -1279,7 +1291,7 @@ aside:not(.styleSidebar) .menu--secao:hover {
     padding: 10px;
     margin: 10px;
     background-color: #fff;
-    border:none;
+    border: none;
     border-radius: 8px;
     box-shadow: 3px 4px 3px rgba(0, 0, 0, 0.5);
 }
@@ -1568,7 +1580,7 @@ aside:not(.styleSidebar) .menu--secao:hover {
     }
 
     .localizacao-itens .botao-loq:active {
-        box-shadow: none;  
+        box-shadow: none;
     }
 }
 
@@ -1738,9 +1750,9 @@ aside:not(.styleSidebar) .menu--secao:hover {
     display: flex;
     height: 38em;
     flex-direction: column;
-   
+
     align-items: flex-start;
-    margin:  2rem ;
+    margin: 2rem;
     padding: 10px 30px;
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
     border-radius: var(--radius);
@@ -1841,17 +1853,18 @@ textarea:focus {
     font-weight: bolder;
     font-size: 1.3rem;
     background-color: #fff;
-    border:none;
+    border: none;
     border-radius: 7px;
     box-shadow: 3px 4px 3px rgba(0, 0, 0, 0.5);
 }
 
 
- .btn-contatos:active {
+.btn-contatos:active {
     box-shadow: none;
     margin-top: 1.7rem;
     background-color: #3f3c3c;
 }
+
 .itemDecontato {
     display: inline-flex;
     align-items: center;
@@ -1946,7 +1959,7 @@ footer .logMark p:nth-child(3) {
         display: flex;
         align-items: center;
         width: 100%;
-     
+
         flex-direction: column;
         position: relative;
     }
@@ -1959,7 +1972,7 @@ footer .logMark p:nth-child(3) {
 
     .form-contatos {
         width: 90%;
-       height: 45em;
+        height: 45em;
         margin: 4.5rem 0;
         padding: 30px 0;
     }
@@ -2094,10 +2107,10 @@ footer .logMark p:nth-child(3) {
     }
 
 
- .btn-contatos:active {
-    box-shadow: none;
-    margin-top: 1.6rem;
-}
+    .btn-contatos:active {
+        box-shadow: none;
+        margin-top: 1.6rem;
+    }
 
     .inform-site {
         grid-area: 'social';
