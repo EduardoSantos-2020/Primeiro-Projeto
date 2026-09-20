@@ -94,10 +94,16 @@ body {
     font-weight: bolder;
     text-transform: uppercase;
 }
- #link div {
-        display: flex;
-        align-items: center;
-    }
+
+#link div {
+    display: flex;
+    align-items: center;
+}
+
+.recovery #link div {
+    width: 100%;
+    justify-content: space-around;
+}
 
 .nameGrupo,
 .emailGrupo,
@@ -111,6 +117,8 @@ body {
     border: rgb(218, 218, 218) solid .1rem;
     border-radius: .7rem;
 }
+
+
 
 
 .nameGrupo,
@@ -247,6 +255,10 @@ body {
 .btn-enter,
 .btn-confirmar {
     width: 14rem;
+}
+
+.recovery .botoesGrupo #link div:nth-child(2) {
+    display: none;
 }
 
 
@@ -449,24 +461,27 @@ body {
     .emailGrupo,
     .passwordGrupo,
     .botoesGrupo {
-        width: 100%;
+        width: 97%;
         font-size: 1.5rem;
         position: relative;
         color: #FFFF;
-        margin: .5rem 0;
+        margin: .5rem auto;
         padding: .8rem 1rem;
     }
-.btn-enter:hover,
-.btn-cadastrar:hover,
-.btn-cancel-recovery:hover,
-.btn-google:hover {
-    cursor: pointer;
-    background-color: #fff;
-    transition: none
-}
 
+    .btn-enter:hover,
+    .btn-cadastrar:hover,
+    .btn-cancel-recovery:hover,
+    .btn-google:hover {
+        cursor: pointer;
+        background-color: #fff;
+        transition: none
+    }
 
- 
+    .container-gruop .linkSenha {
+        margin: 0 0 0 1rem;
+    }
+
     .linkSenha p {
         font-size: 1.3em;
         margin: 10px 0 0 0;
@@ -503,6 +518,7 @@ body {
     .cadastrar #link {
         margin: 0;
         padding: 0;
+        margin-top: 5rem;
     }
 
     .recovery #link {
@@ -512,11 +528,15 @@ body {
 
 
 
+    .recovery .botoesGrupo {
+        height: 5em;
+    }
+
     .botoesGrupo {
-        width: 100%;
-        height: 12em;
+        width: 95%;
+        margin: 0 auto;
+        height: 7em;
         padding: 0;
-        margin: 0;
     }
 
     #link div {
@@ -529,13 +549,10 @@ body {
 
     .botoesGrupo a {
         display: flex;
-        height: 13em;
         justify-content: space-around;
     }
 
-    .botoesGrupo button {
-       
-    }
+    .botoesGrupo button {}
 
     .btn-Login {
         padding: 1.5rem 1.6rem;
@@ -582,7 +599,7 @@ body {
 
     .recovery .btn-cancel-recovery {
         position: absolute;
-        top: 10rem;
+        top: 8rem;
         width: 95%;
         text-transform: capitalize;
     }
